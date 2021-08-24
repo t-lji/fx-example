@@ -1,0 +1,37 @@
+.page > ul {
+    margin: auto;
+    border-bottom: none;
+}
+
+.page > ul > li {
+    background-color: inherit;
+    margin: 1rem;
+}
+
+.page > ul > li > a {
+    font-size: 14px;
+    min-height: 32px;
+    border-bottom-color: rgb(98, 100, 167);
+}
+
+.center {
+    text-align: center;
+}
+
+code:not([class*="language-"]) {
+    font-size: 87.5%;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 3px;
+    white-space: pre;
+    display: inline-block;
+}
+
+code:not([class*="language-"])::before {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+}
+
+code:not([class*="language-"])::after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+}

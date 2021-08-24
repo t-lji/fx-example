@@ -4,6 +4,7 @@ import Bot from "./teamsfx/Bot"
 import MessagingExtension from "./teamsfx/MessagingExtension"
 import AzureFunction from "./teamsfx/AzureFunction"
 import { Menu } from '@fluentui/react-northstar'
+import "./App.css"
 
 function Catalogue() {
   const steps = ["Tab", "Bot", "MessagingExtension", "AzureFunction"];
@@ -16,7 +17,7 @@ function Catalogue() {
     };
   });
   return (
-  <div>
+  <div className="page">
     <Menu defaultActiveIndex={0} items={items} underlined secondary />
     <div>
       <div>
