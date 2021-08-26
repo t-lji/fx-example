@@ -4,7 +4,11 @@ import { Flex, Segment, FlexItem, Grid } from '@fluentui/react-northstar'
 import { AddIcon, EmailIcon, EmojiIcon, CloseIcon } from '@fluentui/react-icons-northstar'
 import { Link } from 'react-router-dom'
 import "./Overall.css";
-import { NestingThemesCode, FlexGapCode, FlexColumnCode, GridFourCode, GridTwoCode } from "./OverallCode";
+import NestingThemesCode from '!!raw-loader!../code/NestingThemesCode.jsx'
+import FlexGapCode from '!!raw-loader!../code/FlexGapCode.jsx'
+import FlexColumnCode from '!!raw-loader!../code/FlexColumnCode.jsx'
+import GridFourCode from '!!raw-loader!../code/GridFourCode.jsx'
+import GridTwoCode from '!!raw-loader!../code/GridTwoCode.jsx'
 import Code from "../util/CodeUtil"
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 
@@ -47,7 +51,6 @@ function Theme() {
   )
 }
 
-// https://fluentsite.z22.web.core.windows.net/0.57.0/theming-examples#nesting-themes
 function NestingThemesNode() {
   return (
     <div>
@@ -121,7 +124,6 @@ function Layout() {
       <Header as="h3" content="Layout" />
         
       <div>
-        {/* https://fluentsite.z22.web.core.windows.net/0.57.0/layout#flex */}
         <Header as="h4" content="Flex" />
 
           <Code code={ FlexGapCode } />
@@ -142,7 +144,6 @@ function Layout() {
       </div>
 
       <div>
-        {/* https://fluentsite.z22.web.core.windows.net/0.57.0/layout#grid */}
         <Header as="h4" content="Grid" />
 
         <Code code={ GridFourCode } />

@@ -8,7 +8,8 @@
     },
     "devDependencies": {
         "@babel/parser": "^7.15.3",
-        "@microsoft/teamsfx-cli": "^0.3.1"
+        "@microsoft/teamsfx-cli": "^0.3.1",
+        "cz-conventional-changelog": "^3.3.0"
     },
     "license": "MIT",
     "dependencies": {
@@ -23,5 +24,10 @@
         "react-document-title": "^2.0.3",
         "react-syntax-highlighter": "^15.4.4",
         "regenerator-runtime": "^0.13.9"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }
