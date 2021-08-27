@@ -9,7 +9,8 @@
     "devDependencies": {
         "@babel/parser": "^7.15.3",
         "@microsoft/teamsfx-cli": "^0.3.1",
-        "cz-conventional-changelog": "^3.3.0"
+        "cz-conventional-changelog": "^3.3.0",
+        "raw-loader": "^4.0.2"
     },
     "license": "MIT",
     "dependencies": {
