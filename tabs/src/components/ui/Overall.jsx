@@ -11,6 +11,7 @@ import GridFourCode from '!!raw-loader!../code/GridFourCode.jsx'
 import GridTwoCode from '!!raw-loader!../code/GridTwoCode.jsx'
 import Code from "../util/CodeUtil"
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
+import { Collapse } from "../util/PageUtil";
 
 // show teams theme picture
 function Theme() {
@@ -112,7 +113,7 @@ function NestingThemes() {
     <div>
       <Header as="h3" content="Nesting Themes" />
 
-      <Code code={ NestingThemesCode } />
+      <Collapse><Code code={ NestingThemesCode } /></Collapse>
       <NestingThemesNode />
     </div>
   )
@@ -126,7 +127,7 @@ function Layout() {
       <div>
         <Header as="h4" content="Flex" />
 
-          <Code code={ FlexGapCode } />
+        <Collapse><Code code={ FlexGapCode } /></Collapse>
           <Flex gap="gap.small">
             <Segment color="brand" content="Home" inverted />
             <Segment color="green" content="Search" inverted />
@@ -135,7 +136,7 @@ function Layout() {
             </FlexItem>
           </Flex>
 
-          <Code code={ FlexColumnCode } />
+          <Collapse><Code code={ FlexColumnCode } /></Collapse>
           <Flex column>
             <Segment color="brand" content="Header" inverted />
             <Segment content="Content" />
@@ -146,7 +147,7 @@ function Layout() {
       <div>
         <Header as="h4" content="Grid" />
 
-        <Code code={ GridFourCode } />
+        <Collapse><Code code={ GridFourCode } /></Collapse>
         <Grid columns="repeat(4, 1fr)" rows="50px 150px 50px">
           <Segment
             color="brand"
@@ -180,7 +181,7 @@ function Layout() {
           />
         </Grid>
 
-        <Code code={ GridTwoCode } />
+        <Collapse><Code code={ GridTwoCode } /></Collapse>
         <Grid columns="repeat(2, 1fr)">
           <Segment
             color="brand"
