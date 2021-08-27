@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GettingStarted from "./teamstoolkit/GettingStarted"
 import Project from "./teamstoolkit/Project"
 import { Menu } from '@fluentui/react-northstar'
+import "./App.css"
 
 function Catalogue() {
   const steps = ["GettingStarted", "Project"];
@@ -14,7 +15,7 @@ function Catalogue() {
     };
   });
   return (
-  <div>
+  <div className="page">
     <Menu defaultActiveIndex={0} items={items} underlined secondary />
     <div>
       <div>

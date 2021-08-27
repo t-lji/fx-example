@@ -3,6 +3,7 @@ import Overall from "./ui/Overall"
 import Component from "./ui/Component"
 import Prototypes from "./ui/Prototypes"
 import { Menu } from '@fluentui/react-northstar'
+import "./App.css";
 
 function Catalogue() {
   const steps = ["Overall", "Component", "Prototypes"];
@@ -15,7 +16,7 @@ function Catalogue() {
     };
   });
   return (
-  <div>
+  <div className="page">
     <Menu defaultActiveIndex={0} items={items} underlined secondary />
     <div>
       <div>

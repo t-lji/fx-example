@@ -1,26 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Label, Provider, Image, Menu, Header  } from '@fluentui/react-northstar'
-import { Flex, Segment, FlexItem, Grid, createComponent, buttonBehavior } from '@fluentui/react-northstar'
+import { Flex, Segment, FlexItem, Grid } from '@fluentui/react-northstar'
 import { AddIcon, EmailIcon, EmojiIcon, CloseIcon } from '@fluentui/react-icons-northstar'
-import { AcceptIcon, ClipboardCopiedToIcon } from '@fluentui/react-icons-northstar'
 import { Link } from 'react-router-dom'
 import "./Overall.css";
-import copy from 'copy-to-clipboard'; 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import NestingThemesCode from '!!raw-loader!../code/NestingThemesCode.jsx'
+import FlexGapCode from '!!raw-loader!../code/FlexGapCode.jsx'
+import FlexColumnCode from '!!raw-loader!../code/FlexColumnCode.jsx'
+import GridFourCode from '!!raw-loader!../code/GridFourCode.jsx'
+import GridTwoCode from '!!raw-loader!../code/GridTwoCode.jsx'
+import Code from "../util/CodeUtil"
+import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 
-class Code extends React.Component {
-  render() {
-  return <SyntaxHighlighter 
-          language='jsx'
-          style={dark}
-          showLineNumbers={true}
-          wrapLines={true}>
-          {this.props.children.replace(/^\s+|\s+$/g, '')}
-        </SyntaxHighlighter>
-  }
-}
-
+// show teams theme picture
 function Theme() {
   const steps = ["Default", "Dark", "High contrast"];
   const [selectedMenuItem, setSelectedMenuItem] = useState("Default");
@@ -32,8 +24,9 @@ function Theme() {
     };
   });
   return (
-    <div>
+    <div className="Theme page">
       <Header as="h4" content="Themes" />
+
       <Menu defaultActiveIndex={0} items={items} underlined secondary />
       <div>
         <div>
@@ -115,241 +108,45 @@ function NestingThemesNode() {
 }
 
 function NestingThemes() {
-  const codeString = 
-  '{/* Default theming */}\n'
-  + '<Header as="h4" content="Default theming" />\n'
-  + '<Button content="Button" />'
-  + '<Button content="Button" />\n'
-  + '<Button icon={<AddIcon />} iconOnly primary />\n'
-  + '<Button icon={<EmailIcon />} content="Send email" secondary />\n'
-  + '<EmojiIcon size="larger" />\n'
-  + '<Label content="Label with icon" icon={<CloseIcon />} />\n'
-  + '\n'
-  + '{/* First nested theming */}\n'
-  + '<Provider\n'
-  + '  theme={{\n'
-  + '    componentVariables: {\n'
-  + '      Button: {\n'
-  + '        primaryBackgroundColor: "darkred",\n'
-  + '      },\n'
-  + '    },\n'
-  + '  }}\n'
-  + '>\n'
-  + '  <div>\n'
-  + '    <Header as="h4" content="First nested theming" />\n'
-  + '    \n'
-  + '    <Button content="Button" />\n'
-  + '    <Button icon={<AddIcon />} iconOnly primary />\n'
-  + '    <Button icon={<EmailIcon />} content="Send email" secondary />\n'
-  + '    <EmojiIcon size="larger" />\n'
-  + '    <Label content="Label with icon" icon={<CloseIcon />} />\n'
-  + '    \n'
-  + '    {/* Second nested theming */}\n'
-  + '    <Provider\n'
-  + '      theme={{\n'
-  + '        componentStyles: {\n'
-  + '          Button: {\n'
-  + '            root: { color: "goldenrod" },\n'
-  + '          },\n'
-  + '        },\n'
-  + '      }}\n'
-  + '    >\n'
-  + '      <div>\n'
-  + '        <Header as="h4" content="Second nested theming" />\n'
-  + '        \n'
-  + '        <Button content="Button" />\n'
-  + '        <Button icon={<AddIcon />} iconOnly primary />\n'
-  + '        <Button icon={<EmailIcon />} content="Send email" secondary />\n'
-  + '        <EmojiIcon size="larger" />\n'
-  + '        <Label content="Label with icon" icon={<CloseIcon />} />\n'
-  + '      </div>\n'
-  + '    </Provider>\n'
-  + '  </div>\n'
-  + '</Provider>\n';
   return (
     <div>
       <Header as="h3" content="Nesting Themes" />
-      <StyledButton onClick={ () => { 
-          if (copy(codeString)) {
-            alert('success')
-          } else {
-            alert('error, please copy with your mouse');
-          }
-        }}></StyledButton>
-      {/* <Button icon={ <ClipboardCopiedToIcon /> } content="click to copy code" onClick={ () => {
-        if (copy(codeString)) {
-          alert('success')
-        } else {
-          alert('error, please copy with your mouse');
-        }
-      }} /> */}
-      <Code>{codeString}</Code>
+
+      <Code code={ NestingThemesCode } />
       <NestingThemesNode />
     </div>
   )
 }
 
-const StyledButton = createComponent({
-  displayName: 'StyledButton',
-  defaultProps: {
-    accessibility: buttonBehavior,
-  },
-  render: ({ config, children }) => {
-    const { classes, accessibility } = config
-    return (
-      <Button {...accessibility.attributes.root} 
-      className={classes.root} 
-      content="click to copy code" 
-      icon={ <ClipboardCopiedToIcon /> }
-      >
-        {children}
-      </Button>
-    )
-  },
-})
-
 function Layout() {
-  const flexGap = 
-    '<Flex gap="gap.small">\n'
-  + '  <Segment color="brand" content="Home" inverted />\n'
-  + '  <Segment color="green" content="Search" inverted />\n'
-  + '  <FlexItem push>\n'
-  + '    <Segment color="red" content="Logout" inverted />\n'
-  + '  </FlexItem>\n'
-  + '</Flex>\n'
-  + '<Flex column>\n'
-  + '  <Segment color="brand" content="Header" inverted />\n'
-  + '  <Segment content="Content" />\n'
-  + '  <Segment color="green" content="Footer" inverted />\n'
-  + '</Flex>\n'
-
-  const flexColumn = 
-    '<Flex column>\n'
-  + '  <Segment color="brand" content="Header" inverted />\n'
-  + '  <Segment content="Content" />\n'
-  + '  <Segment color="green" content="Footer" inverted />\n'
-  + '</Flex>\n'
-
-  const gridFour = 
-    '<Grid columns="repeat(4, 1fr)" rows="50px 150px 50px">\n'
-  + '  <Segment\n'
-  + '    color="brand"\n'
-  + '    content="Header"\n'
-  + '    inverted\n'
-  + '    styles={{\n'
-  + '      gridColumn: "span 4",\n'
-  + '    }}\n'
-  + '  />\n'
-  + '  <Segment\n'
-  + '    color="green"\n'
-  + '    content="Menu"\n'
-  + '    inverted\n'
-  + '    styles={{\n'
-  + '      gridColumn: "span 1",\n'
-  + '    }}\n'
-  + '  />\n'
-  + '  <Segment\n'
-  + '    content="Content"\n'
-  + '    styles={{\n'
-  + '      gridColumn: "span 3",\n'
-  + '    }}\n'
-  + '  />\n'
-  + '  <Segment\n'
-  + '    color="brand"\n'
-  + '    content="Footer"\n'
-  + '    inverted\n'
-  + '    styles={{\n'
-  + '      gridColumn: "span 4",\n'
-  + '    }}\n'
-  + '  />\n'
-  + '</Grid>\n'
-  
-  const gridTwo = 
-    '<Grid columns="repeat(2, 1fr)">\n'
-  + '  <Segment\n'
-  + '    color="brand"\n'
-  + '    content="Header"\n'
-  + '    inverted\n'
-  + '    styles={{\n'
-  + '      gridColumn: "1/3",\n'
-  + '      gridRow: 1,\n'
-  + '    }}\n'
-  + '  />\n'
-  + '  <Segment\n'
-  + '    color="red"\n'
-  + '    content="Menu"\n'
-  + '    inverted\n'
-  + '    styles={{\n'
-  + '      gridColumn: "3",\n'
-  + '      gridRow: "1/3",\n'
-  + '    }}\n'
-  + '  />\n'
-  + '  <Segment\n'
-  + '    color="green"\n'
-  + '    content="Notes"\n'
-  + '    inverted\n'
-  + '    styles={{\n'
-  + '      gridColumn: "1",\n'
-  + '      gridRow: "2",\n'
-  + '    }}\n'
-  + '  />\n'
-  + '  <Segment\n'
-  + '    color="grey"\n'
-  + '    content="News"\n'
-  + '    inverted\n'
-  + '    styles={{\n'
-  + '      gridColumn: "2",\n'
-  + '      gridRow: "2",\n'
-  + '    }}\n'
-  + '  />\n'
-  + '</Grid>\n'
-
   return (
     <div>
       <Header as="h3" content="Layout" />
-
+        
+      <div>
         <Header as="h4" content="Flex" />
-        <Button icon={ <ClipboardCopiedToIcon /> } content="click to copy code" onClick={ () => {
-        if (copy(flexGap)) {
-          alert('success');
-        } else {
-          alert('error, please copy with your mouse');
-        }
-        }} />
-        <Code>{flexGap}</Code>
-        <Flex gap="gap.small">
-          <Segment color="brand" content="Home" inverted />
-          <Segment color="green" content="Search" inverted />
-          <FlexItem push>
-            <Segment color="red" content="Logout" inverted />
-          </FlexItem>
-        </Flex>
 
-        <Button icon={ <ClipboardCopiedToIcon /> } content="click to copy code" onClick={ () => {
-        if (copy(flexColumn)) {
-          alert('success')
-        } else {
-          alert('error, please copy with your mouse');
-        }
-        }} />
-        <Code>{flexColumn}</Code>
-        <Flex column>
-          <Segment color="brand" content="Header" inverted />
-          <Segment content="Content" />
-          <Segment color="green" content="Footer" inverted />
-        </Flex>
+          <Code code={ FlexGapCode } />
+          <Flex gap="gap.small">
+            <Segment color="brand" content="Home" inverted />
+            <Segment color="green" content="Search" inverted />
+            <FlexItem push>
+              <Segment color="red" content="Logout" inverted />
+            </FlexItem>
+          </Flex>
+
+          <Code code={ FlexColumnCode } />
+          <Flex column>
+            <Segment color="brand" content="Header" inverted />
+            <Segment content="Content" />
+            <Segment color="green" content="Footer" inverted />
+          </Flex>
+      </div>
 
       <div>
         <Header as="h4" content="Grid" />
 
-        <Button icon={ <ClipboardCopiedToIcon /> } content="click to copy code" onClick={ () => {
-        if (copy(gridFour)) {
-          alert('success')
-        } else {
-          alert('error, please copy with your mouse');
-        }
-        }} />
-        <Code>{gridFour}</Code>
+        <Code code={ GridFourCode } />
         <Grid columns="repeat(4, 1fr)" rows="50px 150px 50px">
           <Segment
             color="brand"
@@ -383,14 +180,7 @@ function Layout() {
           />
         </Grid>
 
-        <Button icon={ <ClipboardCopiedToIcon /> } content="click to copy code" onClick={ () => {
-        if (copy(gridTwo)) {
-          alert('success')
-        } else {
-          alert('error, please copy with your mouse');
-        }
-        }} />
-        <Code>{gridTwo}</Code>
+        <Code code={ GridTwoCode } />
         <Grid columns="repeat(2, 1fr)">
           <Segment
             color="brand"
@@ -434,41 +224,15 @@ function Layout() {
   )
 }
 
-function TopJumper() {
-  const [show, switchShow] = useState(false);
-
-  useEffect(()=>{
-    const listener = ()=>{
-        switchShow(window.scrollY > 300)
-    };
-    document.addEventListener('scroll', listener);
-    return ()=>document.removeEventListener('scroll', listener); // 组件销毁后，取消监听
-  }, [show] /* 依赖记得给上，否则死循环 */)
-
-  return show ? (
-    <div className="top-jumper" onClick={()=>window.scrollTo(0, 0)}>
-      <span className="text"> </span>
-    </div>) : null;
-}
-
-class Overall extends React.Component {
-  scrollToAnchor = (anchorName) => {
-    if (anchorName) {
-      let anchorElement = document.getElementById(anchorName);
-      if (anchorElement) {
-        anchorElement.scrollIntoView({behavior:'smooth', block:'start'});
-      }
-    }
-  }
-
+export default class Overall extends React.Component {
   render() {
     return (
-      <div>
+      <div className="Overall page">
         <Header as="h3" content="Overall" />
         <ul id="OverallList">
-          <li><Link onClick={ () => this.scrollToAnchor('Themes') }>Themes</Link></li>
-          <li><Link onClick={ () => this.scrollToAnchor('NestingThemes') }>Nesting Themes</Link></li>
-          <li><Link onClick={ () => this.scrollToAnchor('Layout') }>Layout</Link></li>
+          <li><Link onClick={ () => ScrollToAnchor('Themes') }>Themes</Link></li>
+          <li><Link onClick={ () => ScrollToAnchor('NestingThemes') }>Nesting Themes</Link></li>
+          <li><Link onClick={ () => ScrollToAnchor('Layout') }>Layout</Link></li>
         </ul>
         <div id="Themes"><Theme /></div>
         <div id="NestingThemes"><NestingThemes /></div>
@@ -478,5 +242,3 @@ class Overall extends React.Component {
     )
   }
 }
-
-export default Overall;

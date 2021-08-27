@@ -2,10 +2,9 @@ import React from "react";
 // https://fluentsite.z22.web.core.windows.net/quick-start
 import { Provider, teamsTheme, Loader } from "@fluentui/react-northstar";
 import { HashRouter as Router, Route } from "react-router-dom";
-import { useTeamsFx } from "./sample/lib/useTeamsFx";
+import { useTeamsFx } from "./util/useTeamsFx";
 import Privacy from "./Privacy";
 import TermsOfUse from "./TermsOfUse";
-import Tab from "./Tab";
 import "./App.css";
 import TabConfig from "./TabConfig";
 import UI from "./FluentUI"
@@ -27,7 +26,6 @@ export default function App() {
           <>
             <Route exact path="/privacy" component={Privacy} />
             <Route exact path="/termsofuse" component={TermsOfUse} />
-            <Route exact path="/tab" component={Tab} />
             <Route exact path="/config" component={TabConfig} />
             <Route exact path="/ui" component={ UI } />
             <Route exact path="/fx" component={ TeamsFx } />
