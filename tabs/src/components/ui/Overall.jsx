@@ -4,11 +4,11 @@ import { Flex, Segment, FlexItem, Grid } from '@fluentui/react-northstar'
 import { AddIcon, EmailIcon, EmojiIcon, CloseIcon } from '@fluentui/react-icons-northstar'
 import { Link } from 'react-router-dom'
 import "./Overall.css";
-import NestingThemesCode from '!!raw-loader!../code/NestingThemesCode.jsx'
-import FlexGapCode from '!!raw-loader!../code/FlexGapCode.jsx'
-import FlexColumnCode from '!!raw-loader!../code/FlexColumnCode.jsx'
-import GridFourCode from '!!raw-loader!../code/GridFourCode.jsx'
-import GridTwoCode from '!!raw-loader!../code/GridTwoCode.jsx'
+import NestingThemesCode from '!!raw-loader!../code/layout/NestingThemesCode.jsx'
+import FlexGapCode from '!!raw-loader!../code/layout/FlexGapCode.jsx'
+import FlexColumnCode from '!!raw-loader!../code/layout/FlexColumnCode.jsx'
+import GridFourCode from '!!raw-loader!../code/layout/GridFourCode.jsx'
+import GridTwoCode from '!!raw-loader!../code/layout/GridTwoCode.jsx'
 import Code from "../util/CodeUtil"
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 import { Collapse } from "../util/PageUtil";
@@ -229,7 +229,7 @@ export default class Overall extends React.Component {
   render() {
     return (
       <div className="Overall page">
-        <Header as="h3" content="Overall" />
+        <Header as="h2" content="Overall" />
         <ul id="OverallList">
           <li><Link onClick={ () => ScrollToAnchor('Themes') }>Themes</Link></li>
           <li><Link onClick={ () => ScrollToAnchor('NestingThemes') }>Nesting Themes</Link></li>
