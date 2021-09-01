@@ -1,6 +1,5 @@
 import React from "react";
-import { Button, Provider, teamsTheme } from "@fluentui/react-northstar";
-import { AcceptIcon, ClipboardCopiedToIcon } from '@fluentui/react-icons-northstar'
+import { AcceptIcon, Button, ClipboardCopiedToIcon, Provider, teamsTheme } from "@fluentui/react-northstar";
 import copy from 'copy-to-clipboard';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { coy } from "react-syntax-highlighter/dist/esm/styles/prism";

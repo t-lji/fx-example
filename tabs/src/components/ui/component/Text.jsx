@@ -1,16 +1,33 @@
 import React from "react";
 import { Link } from 'react-router-dom'
-import { Alert, Header, Label, Pill, Text as TextTag, TextArea, Toolbar } from '@fluentui/react-northstar'
-import { AcceptIcon, BoldIcon, CodeSnippetIcon, FontSizeIcon } from '@fluentui/react-northstar'
-import { IndentIcon, ItalicIcon, LinkIcon, LikeIcon, MoreIcon } from '@fluentui/react-northstar'
-import { OutdentIcon, QuoteIcon, RemoveFormatIcon, UnderlineIcon } from '@fluentui/react-northstar'
-import AlertCode from '!!raw-loader!../../code/component/text/Alert.jsx'
-import HeaderCode from '!!raw-loader!../../code/component/text/Header.jsx'
-import LabelCode from '!!raw-loader!../../code/component/text/Label.jsx'
-import PillCode from '!!raw-loader!../../code/component/text/Pill.jsx'
-import TextCode from '!!raw-loader!../../code/component/text/Text.jsx'
-import TextAreaCode from '!!raw-loader!../../code/component/text/TextAreaItem.jsx'
-import ToolbarCode from '!!raw-loader!../../code/component/text/Toolbar.jsx'
+import { 
+  AcceptIcon, 
+  Alert, 
+  BoldIcon, 
+  CodeSnippetIcon, 
+  FontSizeIcon, 
+  IndentIcon, 
+  ItalicIcon, 
+  Header, 
+  Label, 
+  LinkIcon, 
+  LikeIcon, 
+  MoreIcon, 
+  OutdentIcon, 
+  Pill, 
+  QuoteIcon, 
+  RemoveFormatIcon, 
+  Text as TextTag, 
+  TextArea, 
+  Toolbar, 
+  UnderlineIcon } from '@fluentui/react-northstar'
+import AlertCode from '!!raw-loader!../../code/component/text/AlertCode.jsx'
+import HeaderCode from '!!raw-loader!../../code/component/text/HeaderCode.jsx'
+import LabelCode from '!!raw-loader!../../code/component/text/LabelCode.jsx'
+import PillCode from '!!raw-loader!../../code/component/text/PillCode.jsx'
+import TextCode from '!!raw-loader!../../code/component/text/TextCode.jsx'
+import TextAreaCode from '!!raw-loader!../../code/component/text/TextAreaItemCode.jsx'
+import ToolbarCode from '!!raw-loader!../../code/component/text/ToolbarCode.jsx'
 import Code from "../../util/CodeUtil"
 import { Collapse } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
@@ -214,7 +231,6 @@ function ToolbarItem() {
             onClick: () => dispatch('underline'),
           },
           {
-            key: 'divider-1',
             kind: 'divider',
           },
           {
@@ -240,7 +256,6 @@ function ToolbarItem() {
             title: 'Remove formatting',
           },
           {
-            key: 'divider-2',
             kind: 'divider',
           },
           {
@@ -266,7 +281,6 @@ function ToolbarItem() {
             title: 'Indent',
           },
           {
-            key: 'divider-3',
             kind: 'divider',
           },
           {

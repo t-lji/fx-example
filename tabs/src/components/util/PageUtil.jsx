@@ -1,6 +1,5 @@
 import React from "react";
-import { Button } from "@fluentui/react-northstar";
-import { ExpandIcon, CollapseIcon } from "@fluentui/react-northstar";
+import { Button, ExpandIcon, CollapseIcon } from "@fluentui/react-northstar";
 
 function CollapseHelper(props) {
   const [isCollapsed, setIsCollapsed] = React.useState(true);

@@ -1,7 +1,17 @@
 import React from "react";
-import { Toolbar } from '@fluentui/react-northstar'
-import { BoldIcon, ItalicIcon, UnderlineIcon, FontSizeIcon, RemoveFormatIcon } from '@fluentui/react-northstar'
-import { OutdentIcon, IndentIcon, MoreIcon, LinkIcon, CodeSnippetIcon, QuoteIcon } from '@fluentui/react-northstar'
+import { 
+  BoldIcon, 
+  CodeSnippetIcon, 
+  FontSizeIcon,
+  IndentIcon, 
+  ItalicIcon, 
+  LinkIcon, 
+  MoreIcon, 
+  OutdentIcon, 
+  QuoteIcon, 
+  RemoveFormatIcon,
+  Toolbar, 
+  UnderlineIcon } from '@fluentui/react-northstar'
 
 export default function ToolbarExample() {
   const stateReducer = (prevState, action) => ({ ...prevState, [action]: !prevState[action] })
@@ -58,7 +68,6 @@ export default function ToolbarExample() {
         onClick: () => dispatch('underline'),
       },
       {
-        key: 'divider-1',
         kind: 'divider',
       },
       {
@@ -84,7 +93,6 @@ export default function ToolbarExample() {
         title: 'Remove formatting',
       },
       {
-        key: 'divider-2',
         kind: 'divider',
       },
       {
@@ -110,7 +118,6 @@ export default function ToolbarExample() {
         title: 'Indent',
       },
       {
-        key: 'divider-3',
         kind: 'divider',
       },
       {

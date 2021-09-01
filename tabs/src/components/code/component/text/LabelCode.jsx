@@ -1,5 +1,4 @@
-import { Label } from '@fluentui/react-northstar'
-import { AcceptIcon } from '@fluentui/react-northstar'
+import { AcceptIcon, Label } from '@fluentui/react-northstar'
 
 <Label 
 color={ 'brand' }

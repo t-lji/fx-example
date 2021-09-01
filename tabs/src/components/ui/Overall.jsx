@@ -1,7 +1,19 @@
 import React, { useState } from "react";
-import { Button, Label, Provider, Image, Menu, Header  } from '@fluentui/react-northstar'
-import { Flex, Segment, FlexItem, Grid } from '@fluentui/react-northstar'
-import { AddIcon, EmailIcon, EmojiIcon, CloseIcon } from '@fluentui/react-icons-northstar'
+import { 
+  AddIcon, 
+  Button, 
+  CloseIcon, 
+  EmailIcon, 
+  EmojiIcon, 
+  Flex, 
+  FlexItem, 
+  Grid, 
+  Header,
+  Image,
+  Label,
+  Menu,
+  Provider,
+  Segment  } from '@fluentui/react-northstar'
 import { Link } from 'react-router-dom'
 import "./Overall.css";
 import NestingThemesCode from '!!raw-loader!../code/layout/NestingThemesCode.jsx'
@@ -129,18 +141,18 @@ function Layout() {
 
         <Collapse><Code code={ FlexGapCode } /></Collapse>
           <Flex gap="gap.small">
-            <Segment color="brand" content="Home" inverted />
-            <Segment color="green" content="Search" inverted />
+            <Segment color="brand" content="ABCDEF" inverted />
+            <Segment color="green" content="GHIJKL" inverted />
             <FlexItem push>
-              <Segment color="red" content="Logout" inverted />
+              <Segment color="red" content="MNOPQR" inverted />
             </FlexItem>
           </Flex>
 
           <Collapse><Code code={ FlexColumnCode } /></Collapse>
           <Flex column>
-            <Segment color="brand" content="Header" inverted />
-            <Segment content="Content" />
-            <Segment color="green" content="Footer" inverted />
+            <Segment color="brand" content="ABCDEF" inverted />
+            <Segment content="GHIJKL" />
+            <Segment color="green" content="MNOPQR" inverted />
           </Flex>
       </div>
 
@@ -151,7 +163,7 @@ function Layout() {
         <Grid columns="repeat(4, 1fr)" rows="50px 150px 50px">
           <Segment
             color="brand"
-            content="Header"
+            content="ABCDEF"
             inverted
             styles={{
               gridColumn: "span 4",
@@ -159,21 +171,21 @@ function Layout() {
           />
           <Segment
             color="green"
-            content="Menu"
+            content="GHIJKL"
             inverted
             styles={{
               gridColumn: "span 1",
             }}
           />
           <Segment
-            content="Content"
+            content="MNOPQR"
             styles={{
               gridColumn: "span 3",
             }}
           />
           <Segment
             color="brand"
-            content="Footer"
+            content="STUVWX"
             inverted
             styles={{
               gridColumn: "span 4",
@@ -185,7 +197,7 @@ function Layout() {
         <Grid columns="repeat(2, 1fr)">
           <Segment
             color="brand"
-            content="Header"
+            content="ABCDEF"
             inverted
             styles={{
               gridColumn: "1/3",
@@ -194,7 +206,7 @@ function Layout() {
           />
           <Segment
             color="red"
-            content="Menu"
+            content="GHIJKL"
             inverted
             styles={{
               gridColumn: "3",
@@ -203,7 +215,7 @@ function Layout() {
           />
           <Segment
             color="green"
-            content="Notes"
+            content="MNOPQR"
             inverted
             styles={{
               gridColumn: "1",
@@ -212,7 +224,7 @@ function Layout() {
           />
           <Segment
             color="grey"
-            content="News"
+            content="STUVWX"
             inverted
             styles={{
               gridColumn: "2",
