@@ -1,5 +1,12 @@
-import { Button, Label, Provider, Header } from '@fluentui/react-northstar'
-import { AddIcon, EmailIcon, EmojiIcon, CloseIcon } from '@fluentui/react-icons-northstar'
+import { 
+  AddIcon, 
+  Button, 
+  CloseIcon, 
+  EmailIcon, 
+  EmojiIcon, 
+  Header, 
+  Label, 
+  Provider } from '@fluentui/react-icons-northstar'
 
 <div>
   {/* Default theming */}
