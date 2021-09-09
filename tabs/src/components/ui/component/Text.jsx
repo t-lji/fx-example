@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from 'react-router-dom'
 import { 
   AcceptIcon, 
   Alert, 
-  BoldIcon, 
+  BoldIcon,
+  Button, 
   CodeSnippetIcon, 
   FontSizeIcon, 
   IndentIcon, 
@@ -326,13 +326,13 @@ export default function Text() {
     <div>
       <Header as="h3" content="Text" />
       <ul id="TextList">
-        <li><Link onClick={ () => ScrollToAnchor('Alert') }>Alert</Link></li>
-        <li><Link onClick={ () => ScrollToAnchor('Header') }>Header</Link></li>
-        <li><Link onClick={ () => ScrollToAnchor('Label') }>Label</Link></li>
-        <li><Link onClick={ () => ScrollToAnchor('Pill') }>Pill</Link></li>
-        <li><Link onClick={ () => ScrollToAnchor('Text') }>Text</Link></li>
-        <li><Link onClick={ () => ScrollToAnchor('TextArea') }>TextArea</Link></li>
-        <li><Link onClick={ () => ScrollToAnchor('Toolbar') }>Toolbar</Link></li>
+        <li><Button onClick={ () => ScrollToAnchor('Alert') }>Alert</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('Header') }>Header</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('Label') }>Label</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('Pill') }>Pill</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('Text') }>Text</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('TextArea') }>TextArea</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('Toolbar') }>Toolbar</Button></li>
       </ul>
       <div id="Alert"><AlertItem /></div>
       <div id="Header"><HeaderItem /></div>
