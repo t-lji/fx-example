@@ -38,6 +38,7 @@ class SSODialog extends ComponentDialog {
       new WaterfallDialog(MAIN_WATERFALL_DIALOG, [
         this.ssoStep.bind(this),
         this.dedupStep.bind(this),
+        this.executeOperationWithSSO.bind(this),
       ])
     );
 
@@ -83,6 +84,19 @@ class SSODialog extends ComponentDialog {
     return await stepContext.beginDialog(TEAMS_SSO_PROMPT_ID);
   }
 
+  async executeOperationWithSSO(stepContext) {
+    const tokenResponse = stepContext.result;
+    if (!tokenResponse || !tokenResponse.ssoToken) {
+      return;
+    }
+
+    // Once got ssoToken, run operation that depends on ssoToken
+    if (this.operationWithSSO) {
+      await this.operationWithSSO(stepContext.context, tokenResponse.ssoToken);
+    }
+    return await stepContext.endDialog();
+  }
+
   async dedupStep(stepContext) {
     const tokenResponse = stepContext.result;
 
@@ -97,7 +111,7 @@ class SSODialog extends ComponentDialog {
       );
     }
 
-    return await stepContext.endDialog(tokenResponse);
+    return await stepContext.next(tokenResponse);
   }
 
   async onEndDialog(context) {
@@ -109,6 +123,7 @@ class SSODialog extends ComponentDialog {
     this.dedupStorageKeys = this.dedupStorageKeys.filter(
       (key) => key.indexOf(conversationId) < 0
     );
+    this.resetSSOOperation();
   }
 
   // If a user is signed into multiple Teams clients, the Bot might receive a "signin/tokenExchange" from each client.
