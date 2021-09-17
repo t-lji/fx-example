@@ -14,7 +14,6 @@ import {
   Menu,
   Provider,
   Segment  } from '@fluentui/react-northstar'
-import { Link } from 'react-router-dom'
 import "./Overall.css";
 import NestingThemesCode from '!!raw-loader!../code/layout/NestingThemesCode.jsx'
 import FlexGapCode from '!!raw-loader!../code/layout/FlexGapCode.jsx'
@@ -243,9 +242,9 @@ export default class Overall extends React.Component {
       <div className="Overall page">
         <Header as="h2" content="Overall" />
         <ul id="OverallList">
-          <li><Link onClick={ () => ScrollToAnchor('Themes') }>Themes</Link></li>
-          <li><Link onClick={ () => ScrollToAnchor('NestingThemes') }>Nesting Themes</Link></li>
-          <li><Link onClick={ () => ScrollToAnchor('Layout') }>Layout</Link></li>
+          <li><Button onClick={ () => ScrollToAnchor('Themes') }>Themes</Button></li>
+          <li><Button onClick={ () => ScrollToAnchor('NestingThemes') }>Nesting Themes</Button></li>
+          <li><Button onClick={ () => ScrollToAnchor('Layout') }>Layout</Button></li>
         </ul>
         <div id="Themes"><Theme /></div>
         <div id="NestingThemes"><NestingThemes /></div>

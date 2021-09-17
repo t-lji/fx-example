@@ -1,0 +1,7 @@
+{
+    "entityId": "tab example",
+    "name": "tab example",
+    "contentUrl": "{baseUrl}/index.html#/personaltab",
+    "websiteUrl": "{baseUrl}/index.html#/personaltab",    
+    "scopes": ["personal"]
+}
