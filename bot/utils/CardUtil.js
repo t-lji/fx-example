@@ -1,0 +1,14 @@
+const { CardFactory, Attachment } = require("botbuilder");
+const ACData = require("adaptivecards-templating");
+
+class CardUtil {
+  // Bind AdaptiveCard with data
+  static renderAdaptiveCard(rawCardTemplate, dataObj) {
+    const cardTemplate = new ACData.Template(rawCardTemplate);
+    const cardWithData = cardTemplate.expand({ $root: dataObj });
+    const card = CardFactory.adaptiveCard(cardWithData);
+    return card;
+  }
+}
+
+module.exports.CardUtil = CardUtil;
