@@ -22,6 +22,7 @@
         "adaptivecards-reactnative": "^2.2.11",
         "adaptivecards-templating": "^2.1.0",
         "babel-prettier-parser": "^0.10.0",
+        "botbuilder-dialogs-adaptive": "^4.14.1-preview",
         "copy-to-clipboard": "^3.3.1",
         "detect-newline": "^3.1.0",
         "jest-docblock": "^27.0.6",

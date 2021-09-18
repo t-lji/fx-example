@@ -1,0 +1,11 @@
+switch (txt) {
+    case "welcome": {
+        const card = this.renderAdaptiveCard(rawWelcomeCard);
+        await context.sendActivity({ attachments: [card] });
+        break;
+    }
+    case "yourCommand": {
+        await context.sendActivity(`Add your response here!`);
+        break;
+    }
+}
