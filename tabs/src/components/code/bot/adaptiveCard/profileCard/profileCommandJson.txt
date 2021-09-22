@@ -1,0 +1,14 @@
+"bots": [
+    {
+        "commandLists": [
+            {
+                "commands": [
+                    {
+                        "title": "me",
+                        "description": "Show your personal profile"
+                    }
+                ]
+            }
+        ]
+    }
+],
