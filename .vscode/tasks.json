@@ -11,18 +11,6 @@
             "dependsOrder": "sequence"
         },
         {
-            "label": "Start Frontend",
-            "dependsOn": [
-                "teamsfx: frontend start",
-                "teamsfx: auth start"
-            ],
-            "dependsOrder": "parallel"
-        },
-        {
-            "label": "Start Bot",
-            "dependsOn": "teamsfx: bot start"
-        },
-        {
             "label": "dependency check",
             "type": "shell",
             "command": "echo ${command:fx-extension.validate-dependencies}"
@@ -45,17 +33,17 @@
             "dependsOrder": "parallel"
         },
         {
-            "label": "bot npm install",
-            "type": "shell",
-            "command": "npm install",
-            "options": {
-                "cwd": "${workspaceFolder}/bot"
-            }
-        },
-        {
             "label": "prepare local environment",
             "type": "shell",
             "command": "echo ${command:fx-extension.pre-debug-check}"
+        },
+        {
+            "label": "Start Frontend",
+            "dependsOn": [
+                "teamsfx: frontend start",
+                "teamsfx: auth start"
+            ],
+            "dependsOrder": "parallel"
         },
         {
             "label": "frontend npm install",
@@ -63,6 +51,18 @@
             "command": "npm install",
             "options": {
                 "cwd": "${workspaceFolder}/tabs"
+            }
+        },
+        {
+            "label": "Start Bot",
+            "dependsOn": "teamsfx: bot start"
+        },
+        {
+            "label": "bot npm install",
+            "type": "shell",
+            "command": "npm install",
+            "options": {
+                "cwd": "${workspaceFolder}/bot"
             }
         }
     ]

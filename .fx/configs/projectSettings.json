@@ -1,16 +1,16 @@
 {
     "appName": "FxExample",
-    "projectId": "da923348-0efd-46a1-a07e-54263d3bac56",
+    "projectId": "c2aa0e1e-96e5-462d-9d31-e554bd8df312",
     "solutionSettings": {
         "name": "fx-solution-azure",
         "version": "1.0.0",
         "hostType": "Azure",
+        "azureResources": [],
         "capabilities": [
             "Tab",
             "Bot",
             "MessagingExtension"
         ],
-        "azureResources": [],
         "activeResourcePlugins": [
             "fx-resource-frontend-hosting",
             "fx-resource-bot",
@@ -20,5 +20,7 @@
             "fx-resource-simple-auth"
         ]
     },
+    "version": "1.0.0",
+    "activeEnvironment": "dev",
     "programmingLanguage": "javascript"
 }
