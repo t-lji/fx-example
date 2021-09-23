@@ -27,7 +27,7 @@ export default function StaticTab() {
           <Code code={ JsxLocation } />
         </Segment>
         <Segment inverted>
-          <Text content="3. Open manifest.json from the following location in your code editor:" />
+          <Text content='3. Open "manifest.source.json" from the following location in your code editor:' />
           <Code code={ ManifestLocation } />
         </Segment>
         <Segment inverted>
@@ -35,7 +35,7 @@ export default function StaticTab() {
           <Code code={ ManifestJson } />
         </Segment>
         <Segment inverted>
-          <Text content='5. Save the updated manifest.json file.' />
+          <Text content='5. Save the updated "manifest.source.json" file.' />
         </Segment>
         <Segment inverted>
           <Text content='6. Add Route in your App.jsx:' />

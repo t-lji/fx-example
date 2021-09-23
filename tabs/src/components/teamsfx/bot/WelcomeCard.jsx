@@ -29,7 +29,7 @@ export default function WelcomeCard() {
             </Collapse>
           </Segment>
           <Segment inverted>
-            <Text content='3. Modify the "this.onMessage()" function in "teamsBot.js", order text should match the "manifest:"' />
+            <Text content='3. Modify the "this.onMessage()" function in "teamsBot.js", order text should match the "manifest.source.json":' />
             <Collapse>
               <Code code={ WelcomeMessageCode } />
             </Collapse>
