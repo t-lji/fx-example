@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Header, Text } from '@fluentui/react-northstar'
 import Deeplink from './tab/Deeplink.jsx'
 import StaticTab from './tab/StaticTab.jsx'
-import InitializeDefinitionCode from '!!raw-loader!../code/tab/InitializeDefinitionCode.txt'
+import InitializeDefinitionCode from '!!raw-loader!../../assets/code/tab/InitializeDefinitionCode.js'
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 import Code from "../util/CodeUtil"
 import { Collapse } from "../util/PageUtil.jsx";

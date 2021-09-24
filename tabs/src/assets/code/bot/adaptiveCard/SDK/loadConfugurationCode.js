@@ -2,6 +2,6 @@
 // import
 const { loadConfiguration } = require("@microsoft/teamsfx");
 // function
-function loadConfiguration(configuration?: Configuration)
+// function loadConfiguration(configuration?: Configuration)
 // usage
 loadConfiguration();

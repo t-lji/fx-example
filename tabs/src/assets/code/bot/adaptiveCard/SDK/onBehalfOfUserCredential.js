@@ -2,6 +2,7 @@
 // import
 const { OnBehalfOfUserCredential } = require("@microsoft/teamsfx");
 // function
-new OnBehalfOfUserCredential(ssoToken: string)
+// new OnBehalfOfUserCredential(ssoToken: string)
 // usage
-const oboCredential = new OnBehalfOfUserCredential(ssoToken);
+const ssoToken = "";
+new OnBehalfOfUserCredential(ssoToken);

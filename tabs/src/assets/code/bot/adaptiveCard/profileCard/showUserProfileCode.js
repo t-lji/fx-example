@@ -1,5 +1,4 @@
 const ResponseType = require("@microsoft/microsoft-graph-client");
-const { CardFactory, TurnContext } = require("botbuilder");
 const {
   createMicrosoftGraphClient,
   OnBehalfOfUserCredential,

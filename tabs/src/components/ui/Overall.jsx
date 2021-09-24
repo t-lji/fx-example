@@ -15,11 +15,11 @@ import {
   Provider,
   Segment  } from '@fluentui/react-northstar'
 import "./Overall.css";
-import NestingThemesCode from '!!raw-loader!../code/layout/NestingThemesCode.jsx'
-import FlexGapCode from '!!raw-loader!../code/layout/FlexGapCode.jsx'
-import FlexColumnCode from '!!raw-loader!../code/layout/FlexColumnCode.jsx'
-import GridFourCode from '!!raw-loader!../code/layout/GridFourCode.jsx'
-import GridTwoCode from '!!raw-loader!../code/layout/GridTwoCode.jsx'
+import NestingThemesCode from '!!raw-loader!../../assets/code/layout/NestingThemesCode.jsx'
+import FlexGapCode from '!!raw-loader!../../assets/code/layout/FlexGapCode.jsx'
+import FlexColumnCode from '!!raw-loader!../../assets/code/layout/FlexColumnCode.jsx'
+import GridFourCode from '!!raw-loader!../../assets/code/layout/GridFourCode.jsx'
+import GridTwoCode from '!!raw-loader!../../assets/code/layout/GridTwoCode.jsx'
 import Code from "../util/CodeUtil"
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 import { Collapse } from "../util/PageUtil";

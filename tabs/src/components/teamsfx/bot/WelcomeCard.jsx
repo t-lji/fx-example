@@ -1,8 +1,8 @@
 import { Button, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
-import WelcomeCardJson from '!!raw-loader!../../code/bot/adaptiveCard/welcomeCard/welcomeCardJson.txt'
-import WelcomeCommandJson from '!!raw-loader!../../code/bot/adaptiveCard/welcomeCard/welcomeCommandJson.txt'
-import WelcomeMessageCode from '!!raw-loader!../../code/bot/adaptiveCard/welcomeCard/welcomeMessageCode.txt'
-import WelcomeMemberAddedCode from '!!raw-loader!../../code/bot/adaptiveCard/welcomeCard/welcomeMemberAddedCode.txt'
+import WelcomeCardJson from '../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeCardJson.json'
+import WelcomeCommandJson from '../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeCommandJson.json'
+import WelcomeMessageCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeMessageCode.js'
+import WelcomeMemberAddedCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeMemberAddedCode.js'
 import Code from "../../util/CodeUtil"
 import { Collapse } from "../../util/PageUtil";
 
@@ -19,17 +19,17 @@ export default function WelcomeCard() {
             <Button onClick={ event => { window.open("https://adaptivecards.io/designer/", "_blank"); } }>Design your card</Button><br />
             <Text content='Or using an already completed json:' />
             <Collapse>
-              <Code code={ WelcomeCardJson } />
+              <Code code={ WelcomeCardJson } language='json' />
             </Collapse>
           </Segment>
           <Segment inverted>
-            <Text content='2. Modify the "appPackage/manifest.source.json" your project, you can use your own order:' />
+            <Text content='2. Modify the "appPackage/manifest.template.json" your project, you can use your own order:' />
             <Collapse>
-              <Code code={ WelcomeCommandJson } />
+              <Code code={ WelcomeCommandJson } language='json' />
             </Collapse>
           </Segment>
           <Segment inverted>
-            <Text content='3. Modify the "this.onMessage()" function in "teamsBot.js", order text should match the "manifest.source.json":' />
+            <Text content='3. Modify the "this.onMessage()" function in "teamsBot.js", order text should match the "manifest.template.json":' />
             <Collapse>
               <Code code={ WelcomeMessageCode } />
             </Collapse>

@@ -1,0 +1,20 @@
+{
+    "bots": [
+        {
+            "commandLists": [
+                {
+                    "commands": [
+                        {
+                            "title": "welcome",
+                            "description": "Resend welcome card of this Bot"
+                        },
+                        {
+                            "title": "yourCommand",
+                            "description": "this line will display when you choose your command in chat"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

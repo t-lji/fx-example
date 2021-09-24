@@ -1,3 +1,5 @@
+const rawWelcomeCard = require("./welcomeCardJson.json");
+
 this.onMembersAdded(async (context, next) => {
   const membersAdded = context.activity.membersAdded;
   for (let cnt = 0; cnt < membersAdded.length; cnt++) {

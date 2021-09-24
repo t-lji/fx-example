@@ -2,6 +2,6 @@
 // import
 import * as microsoftTeams from "@microsoft/teams-js";
 // function
-function initialize(callback?: () => void, validMessageOrigins?: string[])
+// function initialize(callback?: () => void, validMessageOrigins?: string[])
 // usage
 microsoftTeams.initialize();

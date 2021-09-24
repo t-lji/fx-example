@@ -21,13 +21,13 @@ import {
   TextArea, 
   Toolbar, 
   UnderlineIcon } from '@fluentui/react-northstar'
-import AlertCode from '!!raw-loader!../../code/component/text/AlertCode.jsx'
-import HeaderCode from '!!raw-loader!../../code/component/text/HeaderCode.jsx'
-import LabelCode from '!!raw-loader!../../code/component/text/LabelCode.jsx'
-import PillCode from '!!raw-loader!../../code/component/text/PillCode.jsx'
-import TextCode from '!!raw-loader!../../code/component/text/TextCode.jsx'
-import TextAreaCode from '!!raw-loader!../../code/component/text/TextAreaItemCode.jsx'
-import ToolbarCode from '!!raw-loader!../../code/component/text/ToolbarCode.jsx'
+import AlertCode from '!!raw-loader!../../../assets/code/component/text/AlertCode.jsx'
+import HeaderCode from '!!raw-loader!../../../assets/code/component/text/HeaderCode.jsx'
+import LabelCode from '!!raw-loader!../../../assets/code/component/text/LabelCode.jsx'
+import PillCode from '!!raw-loader!../../../assets/code/component/text/PillCode.jsx'
+import TextCode from '!!raw-loader!../../../assets/code/component/text/TextCode.jsx'
+import TextAreaCode from '!!raw-loader!../../../assets/code/component/text/TextAreaItemCode.jsx'
+import ToolbarCode from '!!raw-loader!../../../assets/code/component/text/ToolbarCode.jsx'
 import Code from "../../util/CodeUtil"
 import { Collapse } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";

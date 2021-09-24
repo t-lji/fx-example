@@ -1,10 +1,6 @@
 const {
   TeamsActivityHandler,
   TurnContext,
-  SigninStateVerificationQuery,
-  BotState,
-  AdaptiveCardInvokeValue,
-  AdaptiveCardInvokeResponse,
   MemoryStorage,
   ConversationState,
   UserState,

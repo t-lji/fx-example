@@ -1,4 +1,4 @@
-const { CardFactory, Attachment } = require("botbuilder");
+const { CardFactory } = require("botbuilder");
 const ACData = require("adaptivecards-templating");
 
 class CardUtil {

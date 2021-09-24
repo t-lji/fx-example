@@ -1,16 +1,16 @@
 import { Button, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
-import ProfileCardJson from '!!raw-loader!../../code/bot/adaptiveCard/profileCard/profileCardJson.txt'
-import ProfileCommandJson from '!!raw-loader!../../code/bot/adaptiveCard/profileCard/profileCommandJson.txt'
-import CommandUtilCode from '!!raw-loader!../../code/bot/adaptiveCard/profileCard/commandUtilCode.txt'
-import CardUtilCode from '!!raw-loader!../../code/bot/adaptiveCard/profileCard/cardUtilCode.txt'
-import SSODialogCode from '!!raw-loader!../../code/bot/adaptiveCard/profileCard/ssoDialogCode.txt'
-import ShowUserProfileCode from '!!raw-loader!../../code/bot/adaptiveCard/profileCard/showUserProfileCode.txt'
-import DateUtilCode from '!!raw-loader!../../code/bot/adaptiveCard/profileCard/dateUtilCode.txt'
-import TeamsBotCode from '!!raw-loader!../../code/bot/adaptiveCard/profileCard/teamsBotCode.txt'
-import LoadConfugurationCode from '!!raw-loader!../../code/bot/adaptiveCard/SDK/loadConfugurationCode.txt'
-import TeamsBotSsoPromptCode from '!!raw-loader!../../code/bot/adaptiveCard/SDK/TeamsBotSsoPromptCode.txt'
-import createMicrosoftGraphClientCode from '!!raw-loader!../../code/bot/adaptiveCard/SDK/createMicrosoftGraphClientCode.txt'
-import OnBehalfOfUserCredentialCode from '!!raw-loader!../../code/bot/adaptiveCard/SDK/onBehalfOfUserCredential.txt'
+import ProfileCardJson from '../../../assets/code/bot/adaptiveCard/profileCard/profileCardJson.json'
+import ProfileCommandJson from '../../../assets/code/bot/adaptiveCard/profileCard/profileCommandJson.json'
+import CommandUtilCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/profileCard/commandUtilCode.js'
+import CardUtilCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/profileCard/cardUtilCode.js'
+import SSODialogCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/profileCard/ssoDialogCode.js'
+import ShowUserProfileCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/profileCard/showUserProfileCode.js'
+import DateUtilCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/profileCard/dateUtilCode.js'
+import TeamsBotCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/profileCard/teamsBotCode.js'
+import LoadConfugurationCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/SDK/loadConfugurationCode.js'
+import TeamsBotSsoPromptCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/SDK/TeamsBotSsoPromptCode.js'
+import createMicrosoftGraphClientCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/SDK/createMicrosoftGraphClientCode.js'
+import OnBehalfOfUserCredentialCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/SDK/onBehalfOfUserCredential.js'
 import Code from "../../util/CodeUtil"
 import { Collapse } from "../../util/PageUtil";
 
@@ -52,13 +52,13 @@ export default function ProfileCard() {
             <Button onClick={ event => { window.open("https://adaptivecards.io/designer/", "_blank"); } }>Design your card</Button><br />
             <Text content='Or using an already completed personal profile card json:' />
             <Collapse>
-              <Code code={ ProfileCardJson } />
+              <Code code={ ProfileCardJson } language='json' />
             </Collapse>
           </Segment>
           <Segment inverted>
             <Text content='2. Modify the "appPackage/manifest.source.json" your project:' />
             <Collapse>
-              <Code code={ ProfileCommandJson } />
+              <Code code={ ProfileCommandJson } language='json' />
             </Collapse>
           </Segment>
           <Segment inverted>

@@ -11,7 +11,7 @@ import {
   RedbangIcon,
   Segment, 
   ShorthandCollection } from '@fluentui/react-northstar'
-import ChatMessagesCode from '!!raw-loader!../../code/prototypes/chat/ChatMessagesCode.jsx'
+import ChatMessagesCode from '!!raw-loader!../../../assets/code/prototypes/chat/ChatMessagesCode.jsx'
 import Code from "../../util/CodeUtil"
 import { Collapse } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
