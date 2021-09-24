@@ -47,19 +47,19 @@ export default function WelcomeCard() {
             <Text content='6. You can select your command or type your command in message window:' />
           </Segment>
           <Segment inverted>
-            <Image src="welcome_command.png" />
+            <Image src="pic/welcome_command.png" />
           </Segment>
           <Segment inverted>
             <Text content='7. You will get a welcome adaptive card by your bot:' />
           </Segment>
           <Segment inverted>
-            <Image src="welcome_card.png" />
+            <Image src="pic/welcome_card.png" />
           </Segment>
           <Segment inverted>
             <Text content='8. When you first add your bot in your project, you and your bot will trigger twice "onMembersAdded()" function:' />
           </Segment>
           <Segment inverted>
-            <Image src="first_add_member.png" />
+            <Image src="pic/first_add_member.png" />
           </Segment>
         </Flex>
     </div>

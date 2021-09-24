@@ -104,25 +104,25 @@ export default function ProfileCard() {
             <Text content='10. You can select your command or type your command in message window:' />
           </Segment>
           <Segment inverted>
-            <Image src="me_command.png" />
+            <Image src="pic/me_command.png" />
           </Segment>
           <Segment inverted>
             <Text content='11. When you first add "me" command, the bot will request your SSO:' />
           </Segment>
           <Segment inverted>
-            <Image src="sso-auth.png" />
+            <Image src="pic/sso-auth.png" />
           </Segment>
           <Segment inverted>
             <Text content='12. After you choose "continue" and "Accept", Teams will get your SSO token automatically:' />
           </Segment>
           <Segment inverted>
-            <Image src="sso-login.png" />
+            <Image src="pic/sso-login.png" />
           </Segment>
           <Segment inverted>
             <Text content='13. You will get a personal profile adaptive card by your bot:' />
           </Segment>
           <Segment inverted>
-            <Image src="profile_card.png" />
+            <Image src="pic/profile_card.png" />
           </Segment>
         </Flex>
     </div>

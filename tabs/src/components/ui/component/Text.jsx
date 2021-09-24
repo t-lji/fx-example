@@ -93,7 +93,7 @@ function LabelItem() {
         color={ 'brand' }
         content="Label Content"
         icon={ <AcceptIcon /> } iconPosition="start"
-        image="Microsoft.png"
+        image="pic/Microsoft.png"
         imagePosition="end"
         />
     </div>

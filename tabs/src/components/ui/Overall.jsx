@@ -44,17 +44,17 @@ function Theme() {
         <div>
           {selectedMenuItem === "Default" && (
             <div>
-              <Image src="default_theme.png" />
+              <Image src="pic/default_theme.png" />
             </div>
           )}
           {selectedMenuItem === "Dark" && (
             <div>
-              <Image src="dark_theme.png" />
+              <Image src="pic/dark_theme.png" />
             </div>
           )}
           {selectedMenuItem === "High contrast" && (
             <div>
-              <Image src="high_contrast_theme.png" />
+              <Image src="pic/high_contrast_theme.png" />
             </div>
           )}
         </div>

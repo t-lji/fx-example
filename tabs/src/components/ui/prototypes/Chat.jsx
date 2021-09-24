@@ -18,7 +18,7 @@ import { ScrollToAnchor } from "../../util/ScrollUtil";
 
 function ChatMessages() {
   const MicrosoftAvatar = {
-    image: 'Microsoft.png',
+    image: 'pic/Microsoft.png',
     status: { color: 'green', icon: <AcceptIcon /> },
   }
   const items: ShorthandCollection<ChatItemProps> = [
