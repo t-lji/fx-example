@@ -7,12 +7,10 @@ const {
 } = require("botbuilder-dialogs");
 const {
   ActivityTypes,
-  Storage,
-  tokenExchangeOperationName,
-  TurnContext,
+  tokenExchangeOperationName
 } = require("botbuilder");
 const { loadConfiguration, TeamsBotSsoPrompt } = require("@microsoft/teamsfx");
-const { polyfills } = require("isomorphic-fetch");
+require("isomorphic-fetch");
 
 const DIALOG_NAME = "SSODialog";
 const MAIN_WATERFALL_DIALOG = "MainWaterfallDialog";

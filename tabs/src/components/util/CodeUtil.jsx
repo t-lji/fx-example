@@ -9,12 +9,12 @@ function Highlight(props) {
   return (
     <Provider theme={teamsTheme} styles={{ backgroundColor: "#eeeeee" }}>
       <SyntaxHighlighter 
-        language='jsx'
+        language={ props.language === 'json' ? 'json' : 'jsx' }
         showLineNumbers={true}
         style={ coy }
         wrapLines={true}
         wrapLongLines={true}>
-          {props.children.replace(/^\s+|\s+$/g, '')}
+          {props.code.replace(/^\s+|\s+$/g, '')}
       </SyntaxHighlighter>
     </Provider>
   )
@@ -23,16 +23,17 @@ function Highlight(props) {
 // provide copy code components
 export default function Code(props) {
   const [isCopied, setIsCopied] = React.useState(false);
+  const code = props.language === 'json' ? JSON.stringify(props.code, null, '\t') : props.code;
 
   return (
     <div>
       <Button 
         icon={ isCopied ? <AcceptIcon /> : <ClipboardCopiedToIcon /> } 
         content="click to copy code" 
-        onClick={ () => { copy(props.code) ? 
+        onClick={ () => { copy(code) ? 
           setIsCopied(true) || setTimeout(() => { setIsCopied(false) }, 1000) : 
           alert('error, please copy with your mouse or keyboard') }} />
-      <Highlight>{ props.code }</Highlight>
+      <Highlight code={ code } language={ props.language } />
     </div>
   )
 }

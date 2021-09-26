@@ -1,7 +1,7 @@
 import * as microsoftTeams from '@microsoft/teams-js';
 import { Button, Flex, Header, Segment, Text } from '@fluentui/react-northstar';
-import DeepLinkCode from '!!raw-loader!../../code/tab/deepLink/DeepLinkCode.jsx'
-import DeepLinkDefinition from '!!raw-loader!../../code/tab/deepLink/DefinitionCode.txt'
+import DeepLinkCode from '!!raw-loader!../../../assets/code/tab/deepLink/DeepLinkCode.jsx'
+import DeepLinkDefinition from '!!raw-loader!../../../assets/code/tab/deepLink/DefinitionCode.txt'
 import Code from "../../util/CodeUtil"
 import { Collapse } from "../../util/PageUtil";
 

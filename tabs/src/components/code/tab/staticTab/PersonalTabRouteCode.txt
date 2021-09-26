@@ -1,2 +1,0 @@
-import PersonalTab from "./<YourPath>/PersonalTab";
-<Route exact path="/personaltab" component={ PersonalTab } />'

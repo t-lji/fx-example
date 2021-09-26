@@ -1,0 +1,45 @@
+{
+    "solution": {
+        "resourceNameSuffix": "c4843b",
+        "resourceGroupName": "FxExample-dev-rg",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "subscriptionId": "1756abc0-3554-4341-8d6a-46674962ea19",
+        "subscriptionName": "Teams Cloud - Dev Test with TTL = 7 Days",
+        "location": "centralus",
+        "teamsAppTenantId": "{{solution.teamsAppTenantId}}",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "teamsAppId": "6b7d29ec-57ec-4c7e-99da-2563cce959cf"
+    },
+    "fx-resource-frontend-hosting": {
+        "storageName": "fxexamplefec4843b",
+        "endpoint": "https://fxexamplefec4843b.z19.web.core.windows.net",
+        "domain": "fxexamplefec4843b.z19.web.core.windows.net"
+    },
+    "fx-resource-bot": {
+        "siteName": "fxexamplebtc4843b",
+        "skuName": "B1",
+        "botId": "f69c44db-8ed4-483f-ab1f-5efab34a0c2c",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "321ecd96-fba6-4970-8837-b4a5dea3605d",
+        "validDomain": "fxexamplebtc4843b.azurewebsites.net",
+        "appServicePlan": "fxexamplebtc4843b",
+        "botChannelReg": "fxexamplebtc4843b",
+        "siteEndpoint": "https://fxexamplebtc4843b.azurewebsites.net"
+    },
+    "fx-resource-aad-app-for-teams": {
+        "clientId": "84ed11b4-540e-49f4-ac44-8201bca13fda",
+        "clientSecret": "{{fx-resource-aad-app-for-teams.clientSecret}}",
+        "objectId": "c20bdf13-fdd3-464f-bac3-cdaa6115aa00",
+        "oauth2PermissionScopeId": "77c1f71c-0aca-4aa9-93d1-5af4571f3325",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "oauthHost": "https://login.microsoftonline.com",
+        "oauthAuthority": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "applicationIdUris": "api://fxexamplefec4843b.z19.web.core.windows.net/botid-f69c44db-8ed4-483f-ab1f-5efab34a0c2c"
+    },
+    "fx-resource-simple-auth": {
+        "skuName": "B1",
+        "endpoint": "https://fxexamplesac4843b.azurewebsites.net"
+    }
+}

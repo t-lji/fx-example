@@ -1,0 +1,12 @@
+{
+    "$schema": "https://raw.githubusercontent.com/OfficeDev/TeamsFx/dev/packages/api/src/schemas/envConfig.json",
+    "manifest": {
+        "description": "You can customize the 'values' object to customize Teams app manifest for different environments. Visit https://aka.ms/teamsfx-config to learn more about this.",
+        "values": {
+            "appName": {
+                "short": "FxExample",
+                "full": "Full name for FxExample"
+            }
+        }
+    }
+}

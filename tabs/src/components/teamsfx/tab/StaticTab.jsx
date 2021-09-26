@@ -1,9 +1,9 @@
 import { Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
-import PersonalTabCode from '!!raw-loader!../../code/tab/staticTab/PersonalTabCode.jsx'
-import JsxLocation from '!!raw-loader!../../code/tab/staticTab/JsxLocationCode.txt'
-import ManifestLocation from '!!raw-loader!../../code/tab/staticTab/ManifestLocationCode.txt'
-import ManifestJson from '!!raw-loader!../../code/tab/staticTab/ManifestJsonCode.txt'
-import PersonalTabRoute from '!!raw-loader!../../code/tab/staticTab/PersonalTabRouteCode.txt'
+import PersonalTabCode from '!!raw-loader!../../../assets/code/tab/staticTab/PersonalTabCode.jsx'
+import JsxLocation from '!!raw-loader!../../../assets/code/tab/staticTab/JsxLocation.txt'
+import ManifestLocation from '!!raw-loader!../../../assets/code/tab/staticTab/ManifestLocation.txt'
+import ManifestJson from '../../../assets/code/tab/staticTab/ManifestJson.json'
+import PersonalTabRouteCode from '!!raw-loader!../../../assets/code/tab/staticTab/PersonalTabRouteCode.jsx'
 import Code from "../../util/CodeUtil"
 import { Collapse } from "../../util/PageUtil";
 
@@ -27,19 +27,19 @@ export default function StaticTab() {
           <Code code={ JsxLocation } />
         </Segment>
         <Segment inverted>
-          <Text content="3. Open manifest.json from the following location in your code editor:" />
+          <Text content='3. Open "manifest.template.json" from the following location in your code editor:' />
           <Code code={ ManifestLocation } />
         </Segment>
         <Segment inverted>
           <Text content='4. Add the following to the empty staticTabs array (staticTabs":[]) and add the following JSON object:' />
-          <Code code={ ManifestJson } />
+          <Code code={ ManifestJson } language='json' />
         </Segment>
         <Segment inverted>
-          <Text content='5. Save the updated manifest.json file.' />
+          <Text content='5. Save the updated "manifest.template.json" file.' />
         </Segment>
         <Segment inverted>
           <Text content='6. Add Route in your App.jsx:' />
-          <Code code={ PersonalTabRoute } />
+          <Code code={ PersonalTabRouteCode } />
         </Segment>
         <Segment inverted>
           <Text content='7. Restart your application or deploy your application to Azure again.' />
@@ -48,13 +48,13 @@ export default function StaticTab() {
           <Text content='8. Access your tab by inputing url directly:' />
           </Segment>
         <Segment inverted>
-          <Image src="url_tab_example.png" />
+          <Image src="pic/url_tab_example.png" />
         </Segment>
         <Segment inverted>
           <Text content='9. Access your tab by app menu:' />
           </Segment>
         <Segment inverted>
-          <Image src="tab_example.png" />
+          <Image src="pic/tab_example.png" />
         </Segment>
       </Flex>
     </div>

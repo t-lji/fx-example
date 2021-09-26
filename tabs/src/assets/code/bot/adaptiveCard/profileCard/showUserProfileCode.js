@@ -1,5 +1,4 @@
 const ResponseType = require("@microsoft/microsoft-graph-client");
-const { CardFactory, TurnContext } = require("botbuilder");
 const {
   createMicrosoftGraphClient,
   OnBehalfOfUserCredential,
@@ -39,7 +38,7 @@ class ShowUserProfile {
       const arrayBuffer = await photoBinary.arrayBuffer();
       const buffer = Buffer.from(arrayBuffer);
       const imageUri = "data:image/png;base64," + buffer.toString("base64");
-      // Date Format: 2021-09-22T14:47:35Z
+      // Date Format: 2021-09-15T10:30:00Z
       const curDate = DateUtil.formatUTCTime(new Date());
 
       const data = {

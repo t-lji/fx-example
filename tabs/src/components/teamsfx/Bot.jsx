@@ -1,11 +1,20 @@
 import React from "react";
+import { Button, Header } from '@fluentui/react-northstar'
+import AdaptiveCard from './bot/AdaptiveCard.jsx'
+import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 
-class Bot extends React.Component {
+export default class Bot extends React.Component {
   render() {
-    return <div>
-      <h1>Bot</h1>
-    </div>
+    return (
+      <div className="Bot page">
+        <Header as="h2" content="Bot" />
+
+        <ul id="OverallList">
+          <li><Button onClick={ () => ScrollToAnchor('Adaptive Card') }>Adaptive Card</Button></li>
+        </ul>
+        <div id="AdaptiveCard"><AdaptiveCard /></div>
+        <TopJumper />
+      </div>
+    )
   }
 }
-
-export default Bot;
