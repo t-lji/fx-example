@@ -10,7 +10,7 @@
         "@babel/parser": "^7.15.3",
         "@microsoft/teamsfx-cli": "^0.3.1",
         "@types/restify": "^8.5.2",
-        "cz-conventional-changelog": "~3.3.0"
+        "cz-conventional-changelog": "^3.3.0"
     },
     "license": "MIT",
     "dependencies": {
