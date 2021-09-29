@@ -7,26 +7,10 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "devDependencies": {
-        "@babel/parser": "^7.15.3",
-        "@microsoft/teamsfx-cli": "^0.3.1",
-        "@types/restify": "^8.5.2",
+        "@microsoft/teamsfx-cli": "0.*",
         "cz-conventional-changelog": "^3.3.0"
     },
     "license": "MIT",
-    "dependencies": {
-        "@babel/runtime": "^7.15.3",
-        "@fluentui/docs-components": "^0.57.0",
-        "adaptivecards": "~2.9.0",
-        "adaptivecards-reactnative": "~2.2.11",
-        "babel-prettier-parser": "^0.10.0",
-        "botbuilder-dialogs-adaptive": "^4.14.1-preview",
-        "detect-newline": "^3.1.0",
-        "jest-docblock": "^27.0.6",
-        "pettier": "^1.1.0",
-        "prettier": "^2.3.2",
-        "react-document-title": "^2.0.3",
-        "regenerator-runtime": "^0.13.9"
-    },
     "config": {
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"

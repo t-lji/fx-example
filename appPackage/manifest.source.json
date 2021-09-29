@@ -2,30 +2,30 @@
     "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
     "manifestVersion": "1.9",
     "version": "1.0.0",
-    "id": "{{profile.fx-resource-appstudio.teamsAppId}}",
+    "id": "{appid}",
     "packageName": "com.microsoft.teams.extension",
     "developer": {
         "name": "Teams App, Inc.",
-        "websiteUrl": "{{{profile.fx-resource-frontend-hosting.endpoint}}}",
-        "privacyUrl": "{{{profile.fx-resource-frontend-hosting.endpoint}}}/index.html#/privacy",
-        "termsOfUseUrl": "{{{profile.fx-resource-frontend-hosting.endpoint}}}/index.html#/termsofuse"
+        "websiteUrl": "{baseUrl}",
+        "privacyUrl": "{baseUrl}/index.html#/privacy",
+        "termsOfUseUrl": "{baseUrl}/index.html#/termsofuse"
     },
     "icons": {
-        "color": "resources/color.png",
-        "outline": "resources/outline.png"
+        "color": "color.png",
+        "outline": "outline.png"
     },
     "name": {
-        "short": "{{config.manifest.values.appName.short}}",
-        "full": "{{config.manifest.values.appName.full}}"
+        "short": "FxExample",
+        "full": "This field is not used"
     },
     "description": {
-        "short": "Short description of {{config.manifest.values.appName.short}}",
-        "full": "Full description of {{config.manifest.values.appName.short}}"
+        "short": "Short description of FxExample.",
+        "full": "Full description of FxExample."
     },
     "accentColor": "#FFFFFF",
     "bots": [
         {
-            "botId": "{{profile.fx-resource-bot.botId}}",
+            "botId": "{botId}",
             "scopes": [
                 "personal",
                 "team",
@@ -56,7 +56,7 @@
     ],
     "composeExtensions": [
         {
-            "botId": "{{profile.fx-resource-bot.botId}}",
+            "botId": "{botId}",
             "commands": [
                 {
                     "id": "createCard",
@@ -137,7 +137,7 @@
     ],
     "configurableTabs": [
         {
-            "configurationUrl": "{{{profile.fx-resource-frontend-hosting.endpoint}}}/index.html#/config",
+            "configurationUrl": "{baseUrl}/index.html#/config",
             "canUpdateConfiguration": true,
             "scopes": [
                 "team",
@@ -180,7 +180,7 @@
     ],
     "validDomains": [],
     "webApplicationInfo": {
-        "id": "{{profile.fx-resource-aad-app-for-teams.clientId}}",
-        "resource": "{{{profile.fx-resource-aad-app-for-teams.applicationIdUris}}}"
+        "id": "{appClientId}",
+        "resource": "{webApplicationInfoResource}"
     }
 }

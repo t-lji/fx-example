@@ -1,4 +1,6 @@
 node_modules
+/.fx/*.env
+/.fx/*.userdata
 .fx/configs/localSettings.json
 .fx/publishProfiles/*.userdata
 .DS_Store
