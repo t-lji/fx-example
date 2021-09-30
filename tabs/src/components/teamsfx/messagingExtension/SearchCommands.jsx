@@ -1,4 +1,4 @@
-import { Button, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
+import { Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
 import searchCommandsJson from '../../../assets/code/messageExtension/searchCommands/searchCommandsJson.json';
 import searchCommandsCode from '!!raw-loader!../../../assets/code/messageExtension/searchCommands/searchCommandsCode.js';
 import Code from "../../util/CodeUtil"
@@ -12,8 +12,8 @@ export default function SearchCommands() {
       <Flex column>
         <Segment inverted>
           <Text weight="regular">Messaging extension search commands allow users to search 
-          external systems and insert the results of that search into a message in the form
-          of a card. 
+            external systems and insert the results of that search into a message in the form
+            of a card. 
           </Text>
         </Segment>
         <Segment inverted>
