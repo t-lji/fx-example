@@ -128,7 +128,7 @@
                     "type": "link",
                     "value": {
                         "domains": [
-                            "*.botframework.com"
+                            "*.unfurling-example.com"
                         ]
                     }
                 }
