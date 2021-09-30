@@ -207,7 +207,14 @@ function shareMessageCommand(context, action) {
   // shared message.  This demonstrates sending custom parameters along with the message payload.
   let images = [];
   const includeImage = action.data.includeImage;
-  if (includeImage === "true") {
+  if (includeImage === "true" && action.messagePayload.attachments.length > 0) {
+    let attachments = action.messagePayload.attachments
+    for (let i = 0; i < attachments.length; i++) {
+      const content = action.messagePayload.attachments[i].content;
+      const originImages = JSON.parse(content).images
+      images = images.concat(originImages);
+    }
+  } else if (includeImage === "true" && action.messagePayload.body.content.indexOf('img') == -1) {
     images = [
       "https://raw.githubusercontent.com/t-lji/fx-example/main/tabs/public/pic/Microsoft.png",
     ];
