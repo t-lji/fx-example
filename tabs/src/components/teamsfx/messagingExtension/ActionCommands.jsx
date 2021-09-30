@@ -14,11 +14,10 @@ export default function ActionCommands() {
           <Text weight="regular">Action commands allow you to present your users with a
             modal popup called a task module in Teams. The task module collects or displays
             information, processes the interaction and sends the information back to Teams.
-            This document guides you on how to select action command invoke locations, create your task module, send final message, or card, create action command using app studio, or create it manually.
           </Text>
         </Segment>
         <Segment inverted>
-          <Text content='1. Select action command invoke locations: ' />
+          <Text content='1. Select action command invoke locations:' />
           <ui>
             <li>commandBox: By @mentioning your app in the command box.</li>
             <Image src="pic/search_command_box.png" />
