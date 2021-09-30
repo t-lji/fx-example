@@ -1,6 +1,6 @@
 {
     "appName": "FxExample",
-    "projectId": "c2aa0e1e-96e5-462d-9d31-e554bd8df312",
+    "projectId": "697cc7f4-1e5b-4fbe-b9e6-eb7fdcf194df",
     "solutionSettings": {
         "name": "fx-solution-azure",
         "version": "1.0.0",
@@ -21,6 +21,6 @@
         ]
     },
     "version": "1.0.0",
-    "activeEnvironment": "dev",
+    "activeEnvironment": "default",
     "programmingLanguage": "javascript"
 }

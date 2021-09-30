@@ -23,6 +23,12 @@ class SSODialog extends ComponentDialog {
   // In this sample the provider is shared in all conversations
   constructor(dedupStorage) {
     super(DIALOG_NAME);
+
+    // to solve auth fail
+    if (!process.env.INITIATE_LOGIN_ENDPOINT.endsWith("/auth-start.html")) {
+      process.env.INITIATE_LOGIN_ENDPOINT += "/auth-start.html";
+    }
+
     loadConfiguration();
     // hard code the scopes for demo purpose only
     this.requiredScopes = ["User.Read"];
@@ -70,13 +76,6 @@ class SSODialog extends ComponentDialog {
     let dialogTurnResult = await dialogContext.continueDialog();
     if (dialogTurnResult.status === DialogTurnStatus.empty) {
       dialogTurnResult = await dialogContext.beginDialog(this.id);
-    }
-
-    // Once got ssoToken, run operation that depends on ssoToken
-    if (dialogTurnResult.result?.ssoToken && this.operationWithSSO) {
-      await this.operationWithSSO(context, dialogTurnResult.result?.ssoToken);
-      this.resetSSOOperation();
-      await dialogContext.endDialog();
     }
   }
 
