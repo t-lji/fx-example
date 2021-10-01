@@ -1,14 +1,40 @@
-# More Information
+# Overview
 
-You have a new Teams project scaffolded! To understand more about the structure of the project, you can read the readme files listed below to get further information.
-
-Microsoft Teams apps bring key information, common tools, and trusted processes to where people increasingly gather, learn, and work.Apps are how you extend Teams to fit your needs. Create something brand new for Teams or integrate an existing app.
-
-There are multiple ways to extend Teams, so every app is unique. Some only have one capability, while others have more than one feature to give users various options. For example, your app can display data in a central location, that is, the tab and present that same information through a conversational interface, that is, the bot.
+At current stage, Teams App has a wealth of features and many applications. At present, however, only the web documents provide information on these features. This way has a weak direct-viewing display effect. Therefore, this Teams App to show Teams Extension (Teams Toolkit) features. The goal is to allow all the developers, especially rookies, of Teams App to easily access it and get a better development experience.
 
 [What is Teams app capabilities](https://aka.ms/teamsfx-capabilities-overview)
 
-## Capabilities scaffolded in this project
+# Features
 
-- Tab capabilities: [README](./tabs/README.md)
-- Bot capabilities: [README](./bot/README.md)
+- Simple, intuitive interface for all developers for developers with limited acknowledge and experience on Teams App to be as simple and intuitive as possible.
+- Efficient – since reading documents and finding APIs on webs is time consuming, my App had to be efficient with examples such as getting the user information, uploading/downloading files and showing UI components.
+- Cross platform[optional] – the App be available across 2 platforms: Teams Client and Mobile Teams App. I chose to adaptive design to achieve the same experience both on computers and mobile phones.
+
+# Interface
+
+## App
+
+### UI
+
+@fluentui/react-northstar - A themable React component library.
+
+The UI components are derived from [@fluentui/react-northstar](https://fluentsite.z22.web.core.windows.net/0.57.0/) and are divided into 3 parts:
+
+1. Overall: includes theming and layout aspects components
+2. Component: logically divided into multiple parts instead of sorting in alphabetical order
+3. Prototypes: includes complex or combined components
+
+### TeamsFx
+
+This part shows our Teams App ability and how Azure Function use in Teams, I may show some features in the form of GIF graph and give tips on TeamsFx SDK:
+
+1. Tab: includes Adaptive Card/Deeplink/Mobile tab[optional]/Static Tab - [README](./tabs/README.md)
+2. Bot: includes Q&A/Command Menu/Calls - [README](./bot/README.md)
+3. Messaging Extension: includes Action Commands/Search Commands/Link Unfurling
+
+### Teams Toolkit
+
+This part shows our Teams Extension (Teams Toolkit) features, I may show almost all the features in the form of GIF graph and give tips:
+
+1. GETTING STARTED: includes Quick Start/Samples/Documentation
+2. PROJECT: includes Create New Project, Add Capabilities, Deploy to the Cloud and so on. You can create your own App and publish it on the Azure or Teams just in Visual Studio Code.
