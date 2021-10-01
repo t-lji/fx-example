@@ -1,0 +1,17 @@
+{
+    "composeExtensions": [
+        {
+            "botId": "{botId}",
+            "messageHandlers": [
+                {
+                    "type": "link",
+                    "value": {
+                        "domains": [
+                            "*.github.com/t-lji"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
