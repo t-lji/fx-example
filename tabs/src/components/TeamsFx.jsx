@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import Tab from "./teamsfx/Tab"
 import Bot from "./teamsfx/Bot"
 import MessagingExtension from "./teamsfx/MessagingExtension"
-import AzureFunction from "./teamsfx/AzureFunction"
 import { Menu } from '@fluentui/react-northstar'
 import "./App.css"
 
 function Catalogue() {
-  const steps = ["Tab", "Bot", "MessagingExtension", "AzureFunction"];
+  const steps = ["Tab", "Bot", "MessagingExtension"];
   const [selectedMenuItem, setSelectedMenuItem] = useState("Tab");
   const items = steps.map((step) => {
     return {
@@ -29,9 +28,6 @@ function Catalogue() {
         )}
         {selectedMenuItem === "MessagingExtension" && (
           <MessagingExtension />
-        )}
-        {selectedMenuItem === "AzureFunction" && (
-          <AzureFunction />
         )}
       </div>
     </div>
