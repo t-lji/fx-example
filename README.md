@@ -1,6 +1,6 @@
 # Overview
 
-At current stage, Teams App has a wealth of features and many applications. At present, however, only the web documents provide information on these features. This way has a weak direct-viewing display effect. Therefore, I decided to complete a Teams App to show our Teams Extension (Teams Toolkit) features. My goal is to allow developers of Teams App to easily access it and get a better development experience.
+At current stage, Teams App has a wealth of features and many applications. At present, however, only the web documents provide information on these features. This way has a weak direct-viewing display effect. Therefore, this Teams App to show Teams Extension (Teams Toolkit) features. The goal is to allow all the developers, especially rookies, of Teams App to easily access it and get a better development experience.
 
 [What is Teams app capabilities](https://aka.ms/teamsfx-capabilities-overview)
 
@@ -31,7 +31,6 @@ This part shows our Teams App ability and how Azure Function use in Teams, I may
 1. Tab: includes Adaptive Card/Deeplink/Mobile tab[optional]/Static Tab - [README](./tabs/README.md)
 2. Bot: includes Q&A/Command Menu/Calls - [README](./bot/README.md)
 3. Messaging Extension: includes Action Commands/Search Commands/Link Unfurling
-4. Azure Function: includes Build a web API/Process file uploads, and 3 functions optional: Build a serverless workflow/Respond to database changes/Run scheduled tasks
 
 ### Teams Toolkit
 
