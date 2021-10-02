@@ -27,9 +27,9 @@ function TextAreaAutoResize() {
 export default class Texts extends React.Component {
   render() {
     return (
-      <div className="LayOut page">
-        <Header as="h2" content="LayOut" />
-        <ul id="ChatList">
+      <div className="Texts page">
+        <Header as="h2" content="Texts" />
+        <ul id="TextsList">
           <li><Button onClick={ () => ScrollToAnchor('TextAreaAutoResize') }>Text Area Autosize</Button></li>
         </ul>
         <div id="TextAreaAutoResize"><TextAreaAutoResize /></div>

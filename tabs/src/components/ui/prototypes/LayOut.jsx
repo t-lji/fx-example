@@ -244,7 +244,7 @@ export default class LayOut extends React.Component {
     return (
       <div className="LayOut page">
         <Header as="h2" content="LayOut" />
-        <ul id="ChatList">
+        <ul id="LayOutList">
           <li><Button onClick={ () => ScrollToAnchor('AdvancedTable') }>Advanced Table</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('FormValidateFormik') }>Form Validation</Button></li>
         </ul>
