@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Header } from '@fluentui/react-northstar'
 import "./Overall.css";
 import Chat from './prototypes/Chat.jsx'
+import LayOut from './prototypes/LayOut.jsx'
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 
 export default class Prototypes extends React.Component {
@@ -17,6 +18,7 @@ export default class Prototypes extends React.Component {
           <li><Button onClick={ () => ScrollToAnchor('ToolBar') }>ToolBar</Button></li>
         </ul>
         <div id="Chat"><Chat /></div>
+        <div id="LayOut"><LayOut /></div>
       <TopJumper />
     </div>
     )
