@@ -249,14 +249,14 @@ function ChatCompact() {
   ]
   return (
     <div>
-      <Header as="h4" content="Compact chat messages" />
+      <Header as="h4" content="Compact chat density" />
 
       <Collapse>
         <Code code={ ChatCompactCode } />
       </Collapse>
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
-          <Header as="h3" content="Important and mention messages" />
+          <Header as="h3" content="Compact chat messages" />
           <p>Compact chat messages have the author floating in the content</p>
           <p>Chat messages can show edited and translated status, sent and read 
             receipt status, have badges for importance and at-mentions, display 
