@@ -1,0 +1,55 @@
+import { Tree, treeAsListboxBehavior } from '@fluentui/react-northstar'
+
+export default function TreeItem() {
+  const items = [
+    {
+      id: 'tree-as-list-item-1',
+      title: 'House Lannister',
+      'aria-label': 'House Lannister, expandable',
+      items: [
+        {
+          id: 'tree-as-list-item-11',
+          title: 'Tywin',
+        },
+        {
+          id: 'tree-as-list-item-12',
+          title: 'Kevan',
+        },
+      ],
+    },
+    {
+      id: 'tree-as-list-item-2',
+      title: 'House Targaryen',
+      'aria-label': 'House Targaryen, expandable',
+      items: [
+        {
+          id: 'tree-as-list-item-21',
+          title: 'Aerys',
+          'aria-label': 'Aerys, expandable',
+          items: [
+            {
+              id: 'tree-as-list-item-211',
+              title: 'Rhaegar',
+            },
+            {
+              id: 'tree-as-list-item-212',
+              title: 'Viserys',
+            },
+            {
+              id: 'tree-as-list-item-213',
+              title: 'Daenerys',
+            },
+          ],
+        },
+      ],
+    },
+  ]
+  return (
+    <Tree
+      selectable
+      aria-label="Multi Select Tree as list"
+      items={items}
+      accessibility={treeAsListboxBehavior}
+    />
+  )
+}
