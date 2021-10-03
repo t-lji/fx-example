@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Header } from '@fluentui/react-northstar'
-import Text from './component/Text.jsx'
 import Buttons from './component/Buttons.jsx'
+import Chats from './component/Chats.jsx'
+import Text from './component/Text.jsx'
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 
 export default class Component extends React.Component {
@@ -18,6 +19,7 @@ export default class Component extends React.Component {
           <li><Button onClick={ () => ScrollToAnchor('Text') }>Text</Button></li>
         </ul>
         <div id="Buttons"><Buttons /></div>
+        <div id="Chats"><Chats /></div>
         <div id="Text"><Text /></div>
         <TopJumper />
       </div>

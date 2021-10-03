@@ -298,7 +298,7 @@ export default function Buttons() {
   return (
     <div>
       <Header as="h3" content="Button" />
-      <ul id="TextList">
+      <ul id="ButtonList">
         <li><Button onClick={ () => ScrollToAnchor('AttachmentItem') }>Attachment</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('DatepickerItem') }>Datepicker</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('DialogItem') }>Dialog</Button></li>
