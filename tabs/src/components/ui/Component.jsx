@@ -5,6 +5,7 @@ import Chats from './component/Chats.jsx'
 import Layouts from './component/Layouts.jsx'
 import Media from './component/Media.jsx'
 import Text from './component/Text.jsx'
+import Other from './component/Other.jsx'
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 
 export default class Component extends React.Component {
@@ -24,6 +25,7 @@ export default class Component extends React.Component {
         <div id="Chats"><Chats /></div>
         <div id="Layouts"><Layouts /></div>
         <div id="Media"><Media /></div>
+        <div id="Other"><Other /></div>
         <div id="Text"><Text /></div>
         <TopJumper />
       </div>
