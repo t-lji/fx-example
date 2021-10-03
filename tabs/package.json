@@ -8,14 +8,16 @@
     "@microsoft/teamsfx": "^0.2.0",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
+    "copy-to-clipboard": "~3.3.1",
+    "formik": "~2.2.9",
     "msteams-react-base-component": "^3.1.0",
+    "raw-loader": "~4.0.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^4.0.3",
-    "raw-loader": "~4.0.2",
     "react-syntax-highlighter": "~15.4.4",
-    "copy-to-clipboard": "~3.3.1"
+    "react-textarea-autosize": "~8.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
