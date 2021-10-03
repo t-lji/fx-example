@@ -553,8 +553,8 @@ function TreeItem() {
 export default function Layouts() {
   return (
     <div>
-      <Header as="h3" content="Chat" />
-      <ul id="ChatList">
+      <Header as="h3" content="Layout" />
+      <ul id="LayoutList">
         <li><Button onClick={ () => ScrollToAnchor('AccordionItem') }>Accordion</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('BoxItem') }>Box</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('BreadcrumbItem') }>Breadcrumb</Button></li>
