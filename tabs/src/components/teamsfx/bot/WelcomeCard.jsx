@@ -1,4 +1,4 @@
-import { Button, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Button, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
 import WelcomeCardJson from '../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeCardJson.json'
 import WelcomeCommandJson from '../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeCommandJson.json'
 import WelcomeMessageCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeMessageCode.js'
@@ -8,7 +8,7 @@ import { Collapse } from "../../util/PageUtil";
 
 export default function WelcomeCard() {
   return (
-    <div id="welcomeCard page">
+    <Box id="welcomeCard page">
       <Header as="h4" content="Welcome Card" />
         <Flex column>
           <Segment inverted>
@@ -62,6 +62,6 @@ export default function WelcomeCard() {
             <Image src="pic/first_add_member.png" />
           </Segment>
         </Flex>
-    </div>
+    </Box>
   )
 }

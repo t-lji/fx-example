@@ -1,10 +1,10 @@
 import React from "react";
-import { Image } from "@fluentui/react-northstar";
+import { Box, Image } from "@fluentui/react-northstar";
 
 class Project extends React.Component {
   render() {
     return (
-    <div>
+    <Box>
       <h1>Project</h1>
       <h2>Create New Project</h2>
       <Image src="pic/create_new_project.gif" />
@@ -19,7 +19,7 @@ class Project extends React.Component {
       <Image src="pic/local_dubug_web_page.gif" />
       <h2>Add Capabilities</h2>
       <Image src="pic/add_capabilities.gif" />
-    </div>
+    </Box>
     )
   }
 }

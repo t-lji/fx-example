@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { 
   AddIcon, 
+  Box,
   Button, 
   CloseIcon, 
   EmailIcon, 
@@ -36,36 +37,36 @@ function Theme() {
     };
   });
   return (
-    <div className="Theme page">
+    <Box className="Theme page">
       <Header as="h4" content="Themes" />
 
       <Menu defaultActiveIndex={0} items={items} underlined secondary />
-      <div>
-        <div>
+      <Box>
+        <Box>
           {selectedMenuItem === "Default" && (
-            <div>
+            <Box>
               <Image src="pic/default_theme.png" />
-            </div>
+            </Box>
           )}
           {selectedMenuItem === "Dark" && (
-            <div>
+            <Box>
               <Image src="pic/dark_theme.png" />
-            </div>
+            </Box>
           )}
           {selectedMenuItem === "High contrast" && (
-            <div>
+            <Box>
               <Image src="pic/high_contrast_theme.png" />
-            </div>
+            </Box>
           )}
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 
 function NestingThemesNode() {
   return (
-    <div>
+    <Box>
       {/* Default theming */}
       <Header as="h4" content="Default theming" />
       <Button content="Button" />
@@ -84,7 +85,7 @@ function NestingThemesNode() {
           },
         }}
       >
-        <div>
+        <Box>
           <Header as="h4" content="First nested theming" />
 
           <Button content="Button" />
@@ -103,7 +104,7 @@ function NestingThemesNode() {
               },
             }}
           >
-            <div>
+            <Box>
               <Header as="h4" content="Second nested theming" />
 
               <Button content="Button" />
@@ -111,31 +112,31 @@ function NestingThemesNode() {
               <Button icon={<EmailIcon />} content="Send email" secondary />
               <EmojiIcon size="larger" />
               <Label content="Label with icon" icon={<CloseIcon />} />
-            </div>
+            </Box>
           </Provider>
-        </div>
+        </Box>
       </Provider>
-    </div>
+    </Box>
   )
 }
 
 function NestingThemes() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Nesting Themes" />
 
       <Collapse><Code code={ NestingThemesCode } /></Collapse>
       <NestingThemesNode />
-    </div>
+    </Box>
   )
 }
 
 function Layout() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Layout" />
         
-      <div>
+      <Box>
         <Header as="h4" content="Flex" />
 
         <Collapse><Code code={ FlexGapCode } /></Collapse>
@@ -153,9 +154,9 @@ function Layout() {
             <Segment content="GHIJKL" />
             <Segment color="green" content="MNOPQR" inverted />
           </Flex>
-      </div>
+      </Box>
 
-      <div>
+      <Box>
         <Header as="h4" content="Grid" />
 
         <Collapse><Code code={ GridFourCode } /></Collapse>
@@ -231,26 +232,26 @@ function Layout() {
             }}
           />
         </Grid>
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 
 export default class Overall extends React.Component {
   render() {
     return (
-      <div className="Overall page">
+      <Box className="Overall page">
         <Header as="h2" content="Overall" />
         <ul id="OverallList">
           <li><Button onClick={ () => ScrollToAnchor('Themes') }>Themes</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('NestingThemes') }>Nesting Themes</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('Layout') }>Layout</Button></li>
         </ul>
-        <div id="Themes"><Theme /></div>
-        <div id="NestingThemes"><NestingThemes /></div>
-        <div id="Layout"><Layout /></div>
+        <Box id="Themes"><Theme /></Box>
+        <Box id="NestingThemes"><NestingThemes /></Box>
+        <Box id="Layout"><Layout /></Box>
         <TopJumper />
-      </div>
+      </Box>
     )
   }
 }

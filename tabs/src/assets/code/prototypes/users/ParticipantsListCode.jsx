@@ -35,7 +35,7 @@ export default function ParticipantsList() {
   ];
 
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Participants List" />
 
       <Box styles={{ marginTop: '20px' }}>
@@ -45,6 +45,6 @@ export default function ParticipantsList() {
         </Segment>
         <Segment><List navigable items={items3} horizontal /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }

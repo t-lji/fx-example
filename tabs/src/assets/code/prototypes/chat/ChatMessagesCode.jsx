@@ -97,7 +97,7 @@ export default function ChatMessages() {
   ]
 
   return (
-    <div>
+    <Box>
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="Important and mention messages" />
@@ -105,6 +105,6 @@ export default function ChatMessages() {
         </Segment>
         <Segment><ChatTag items={items} /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }

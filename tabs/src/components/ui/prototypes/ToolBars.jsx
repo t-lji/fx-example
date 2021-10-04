@@ -7,7 +7,7 @@ import { ScrollToAnchor } from "../../util/ScrollUtil";
 
 function NestedDialogs() {
   return (
-    <div>
+    <Box>
     <Header as="h4" content="Nested Dialogs" />
 
     <Collapse>
@@ -53,7 +53,7 @@ function NestedDialogs() {
         />
       </Segment>
     </Box>
-  </div>
+  </Box>
     
   );
 }
@@ -61,13 +61,13 @@ function NestedDialogs() {
 export default class ToolBars extends React.Component {
   render() {
     return (
-      <div className="ToolBars page">
+      <Box className="ToolBars page">
         <Header as="h2" content="ToolBars" />
         <ul id="ToolBarsList">
           <li><Button onClick={ () => ScrollToAnchor('NestedDialogs') }>Nested Dialogs</Button></li>
         </ul>
-        <div id="NestedDialogs"><NestedDialogs /></div>
-      </div>
+        <Box id="NestedDialogs"><NestedDialogs /></Box>
+      </Box>
     )
   }
 }

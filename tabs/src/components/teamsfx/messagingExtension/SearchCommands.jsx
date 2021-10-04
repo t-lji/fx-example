@@ -1,4 +1,4 @@
-import { Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
 import searchCommandsJson from '../../../assets/code/messageExtension/searchCommands/searchCommandsJson.json';
 import searchCommandsCode from '!!raw-loader!../../../assets/code/messageExtension/searchCommands/searchCommandsCode.js';
 import Code from "../../util/CodeUtil"
@@ -6,7 +6,7 @@ import { Collapse } from "../../util/PageUtil";
 
 export default function SearchCommands() {
   return (
-    <div id="SearchCommands page">
+    <Box id="SearchCommands page">
       <Header as="h4" content="Search Commands" />
 
       <Flex column>
@@ -53,6 +53,6 @@ export default function SearchCommands() {
           <Image src="pic/search_command_result.png" />
         </Segment>
       </Flex>
-    </div>
+    </Box>
   )
 }

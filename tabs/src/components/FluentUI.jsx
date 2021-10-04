@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Overall from "./ui/Overall"
 import Component from "./ui/Component"
 import Prototypes from "./ui/Prototypes"
-import { Menu } from '@fluentui/react-northstar'
+import { Box, Menu } from '@fluentui/react-northstar'
 import "./App.css";
 
 function Catalogue() {
@@ -16,10 +16,10 @@ function Catalogue() {
     };
   });
   return (
-  <div className="page">
+  <Box className="page">
     <Menu defaultActiveIndex={0} items={items} underlined secondary />
-    <div>
-      <div>
+    <Box>
+      <Box>
         {selectedMenuItem === "Overall" && (
           <Overall />
         )}
@@ -29,9 +29,9 @@ function Catalogue() {
         {selectedMenuItem === "Prototypes" && (
           <Prototypes />
         )}
-      </div>
-    </div>
-  </div>
+      </Box>
+    </Box>
+  </Box>
   )
 }
 

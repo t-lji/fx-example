@@ -1,4 +1,4 @@
-import { Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
 import ActionCommandsJson from '../../../assets/code/messageExtension/actionCommands/actionCommandsJson.json';
 import ActionCommandsBotCode from '!!raw-loader!../../../assets/code/messageExtension/actionCommands/actionCommandsBotCode.js';
 import Code from "../../util/CodeUtil";
@@ -6,7 +6,7 @@ import { Collapse } from "../../util/PageUtil";
 
 export default function ActionCommands() {
   return (
-    <div id="ActionCommands page">
+    <Box id="ActionCommands page">
       <Header as="h4" content="Action Commands" />
 
       <Flex column>
@@ -61,6 +61,6 @@ export default function ActionCommands() {
           <Image src="pic/share_message_result.png" />
         </Segment>
       </Flex>
-    </div>
+    </Box>
   )
 }

@@ -4,7 +4,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 export default function TextAreaAutoResize() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="TextArea Autosize" />
 
       <Box styles={{ marginTop: '20px' }}>
@@ -13,6 +13,6 @@ export default function TextAreaAutoResize() {
         </Segment>
         <Segment><TextArea as={TextareaAutosize} /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }

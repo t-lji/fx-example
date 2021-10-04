@@ -1,4 +1,5 @@
 import { 
+  Box, 
   ContactGroupIcon, 
   ChatIcon,
   ChannelShareIcon,
@@ -6,7 +7,7 @@ import {
 
 export default function SplitButtonItem() {
   return (
-    <div>
+    <Box>
       <>
         <SplitButton
           menu={[
@@ -43,6 +44,6 @@ export default function SplitButtonItem() {
           to open menu, press Alt + Arrow Down
         </span>
       </>
-    </div>
+    </Box>
   )
 }

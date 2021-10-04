@@ -3,6 +3,7 @@ import {
   AcceptIcon, 
   Alert, 
   BoldIcon,
+  Box, 
   Button, 
   CodeSnippetIcon, 
   FontSizeIcon, 
@@ -34,7 +35,7 @@ import { ScrollToAnchor } from "../../util/ScrollUtil";
 
 function AlertItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Alert" />
 
       <TextTag weight="regular" size="large">
@@ -50,13 +51,13 @@ function AlertItem() {
         content="Alert content" 
         visible
         success />
-    </div>
+    </Box>
   )
 }
 
 function HeaderItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Header" />
 
       <TextTag weight="regular" size="large">
@@ -74,13 +75,13 @@ function HeaderItem() {
           color: 'orange'
         }}
         />
-    </div>
+    </Box>
   )
 }
 
 function LabelItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Label" />
 
       <TextTag weight="regular" size="large">
@@ -96,13 +97,13 @@ function LabelItem() {
         image="pic/Microsoft.png"
         imagePosition="end"
         />
-    </div>
+    </Box>
   )
 }
 
 function PillItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Pill" />
 
       <TextTag weight="regular" size="large">
@@ -118,13 +119,13 @@ function PillItem() {
         appearance="outline"
         icon={ <AcceptIcon /> }
         />
-    </div>
+    </Box>
   )
 }
 
 function TextItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Text" />
 
       <TextTag weight="regular" size="large">
@@ -139,13 +140,13 @@ function TextItem() {
         weight="semibold"
         size="larger"
       />
-    </div>
+    </Box>
   )
 }
 
 function TextAreaItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="TextArea" />
 
       <TextTag weight="regular" size="large">
@@ -160,7 +161,7 @@ function TextAreaItem() {
         placeholder="No more than 10 characters can be here" 
         maxLength={ 10 }
       />
-    </div>
+    </Box>
   )
 }
 
@@ -174,7 +175,7 @@ function ToolbarItem() {
   })
 
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Toolbar" />
 
       <TextTag weight="regular" size="large">
@@ -317,13 +318,13 @@ function ToolbarItem() {
           },
         ]}
       />
-    </div>
+    </Box>
   )
 }
 
 export default function Text() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Text" />
       <ul id="TextList">
         <li><Button onClick={ () => ScrollToAnchor('Alert') }>Alert</Button></li>
@@ -334,13 +335,13 @@ export default function Text() {
         <li><Button onClick={ () => ScrollToAnchor('TextArea') }>TextArea</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('Toolbar') }>Toolbar</Button></li>
       </ul>
-      <div id="Alert"><AlertItem /></div>
-      <div id="Header"><HeaderItem /></div>
-      <div id="Label"><LabelItem /></div>
-      <div id="Pill"><PillItem /></div>
-      <div id="Text"><TextItem /></div>
-      <div id="TextArea"><TextAreaItem /></div>
-      <div id="Toolbar"><ToolbarItem /></div>
-    </div>
+      <Box id="Alert"><AlertItem /></Box>
+      <Box id="Header"><HeaderItem /></Box>
+      <Box id="Label"><LabelItem /></Box>
+      <Box id="Pill"><PillItem /></Box>
+      <Box id="Text"><TextItem /></Box>
+      <Box id="TextArea"><TextAreaItem /></Box>
+      <Box id="Toolbar"><ToolbarItem /></Box>
+    </Box>
   )
 }

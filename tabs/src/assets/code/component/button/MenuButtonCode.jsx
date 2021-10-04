@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { 
   Alert,
+  Box, 
   Button, 
   ExpandIcon,
   Flex,
@@ -23,7 +24,7 @@ export default function MenuButtonItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <>
         <Flex gap="gap.smaller">
           <MenuButton
@@ -61,6 +62,6 @@ export default function MenuButtonItem() {
           />
         )}
       </>
-    </div>
+    </Box>
   )
 }

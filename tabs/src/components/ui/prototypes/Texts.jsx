@@ -8,7 +8,7 @@ import { ScrollToAnchor } from "../../util/ScrollUtil";
 
 function TextAreaAutoResize() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="TextArea Autosize" />
 
       <Collapse>
@@ -20,20 +20,20 @@ function TextAreaAutoResize() {
         </Segment>
         <Segment><TextArea as={TextareaAutosize} /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }
 
 export default class Texts extends React.Component {
   render() {
     return (
-      <div className="Texts page">
+      <Box className="Texts page">
         <Header as="h2" content="Texts" />
         <ul id="TextsList">
           <li><Button onClick={ () => ScrollToAnchor('TextAreaAutoResize') }>Text Area Autosize</Button></li>
         </ul>
-        <div id="TextAreaAutoResize"><TextAreaAutoResize /></div>
-      </div>
+        <Box id="TextAreaAutoResize"><TextAreaAutoResize /></Box>
+      </Box>
     )
   }
 }

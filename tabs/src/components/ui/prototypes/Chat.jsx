@@ -109,7 +109,7 @@ function ChatMessages() {
   ]
 
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Chat messages" />
 
       <Collapse>
@@ -122,7 +122,7 @@ function ChatMessages() {
         </Segment>
         <Segment><ChatTag items={items} /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }
 
@@ -248,7 +248,7 @@ function ChatCompact() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Compact chat density" />
 
       <Collapse>
@@ -264,22 +264,22 @@ function ChatCompact() {
         </Segment>
         <Segment><ChatTag items={items} density="compact" /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }
 
 export default class Chat extends React.Component {
   render() {
     return (
-      <div className="Chat page">
+      <Box className="Chat page">
         <Header as="h2" content="Chat" />
         <ul id="ChatList">
           <li><Button onClick={ () => ScrollToAnchor('Chat messages') }>Chat messages</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('Compact chat messages') }>Compact chat density</Button></li>
         </ul>
-        <div id="Chat messages"><ChatMessages /></div>
-        <div id="Compact chat messages"><ChatCompact /></div>
-      </div>
+        <Box id="Chat messages"><ChatMessages /></Box>
+        <Box id="Compact chat messages"><ChatCompact /></Box>
+      </Box>
     )
   }
 }

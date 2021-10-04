@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { 
   Alert,
   Attachment, 
+  Box, 
   Button, 
   ChannelShareIcon,
   ChatIcon,
@@ -39,7 +40,7 @@ function AttachmentItem() {
   }
 
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Attachment" />
 
       <Text weight="regular" size="large">
@@ -62,13 +63,13 @@ function AttachmentItem() {
         progress={33}
         onClick={handleClick('Attachment')}
       />
-    </div>
+    </Box>
   )
 }
 
 function DatepickerItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Datepicker" />
 
       <Text weight="regular" size="large">
@@ -86,13 +87,13 @@ function DatepickerItem() {
         }}
         today={new Date()}
       />
-    </div>
+    </Box>
   )
 }
 
 function DialogItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Dialog" />
 
       <Text weight="regular" size="large">
@@ -123,7 +124,7 @@ function DialogItem() {
         }}
         trigger={<Button content="Open a dialog" />}
       />
-    </div>
+    </Box>
   )
 }
 
@@ -144,7 +145,7 @@ function MenuButtonItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="MenuButton" />
 
       <Text weight="regular" size="large">
@@ -190,13 +191,13 @@ function MenuButtonItem() {
           />
         )}
       </>
-    </div>
+    </Box>
   )
 }
 
 function SplitButtonItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="SplitButton" />
 
       <Text weight="regular" size="large">
@@ -242,14 +243,14 @@ function SplitButtonItem() {
           to open menu, press Alt + Arrow Down
         </span>
       </>
-    </div>
+    </Box>
   )
 }
 
 function TooltipItem() {
   const [target, setTarget] = useState(null)
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Tooltip" />
 
       <Text weight="regular" size="large">
@@ -275,7 +276,7 @@ function TooltipItem() {
         content="well, yes, I am just a garbish text ¯\_(ツ)_/¯"
         position="below"
       />
-        <div
+        <Box
           style={{
             marginLeft: 10,
           }}
@@ -288,15 +289,15 @@ function TooltipItem() {
               majesto, to the souls of York."
             </Text>
           </Ref>
-        </div>
+        </Box>
       </Grid>
-    </div>
+    </Box>
   )
 }
 
 export default function Buttons() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Button" />
       <ul id="ButtonList">
         <li><Button onClick={ () => ScrollToAnchor('AttachmentItem') }>Attachment</Button></li>
@@ -306,12 +307,12 @@ export default function Buttons() {
         <li><Button onClick={ () => ScrollToAnchor('SplitButtonItem') }>SplitButton</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('TooltipItem') }>Tooltip</Button></li>
       </ul>
-      <div id="AttachmentItem"><AttachmentItem /></div>
-      <div id="DatepickerItem"><DatepickerItem /></div>
-      <div id="DialogItem"><DialogItem /></div>
-      <div id="MenuButtonItem"><MenuButtonItem /></div>
-      <div id="SplitButtonItem"><SplitButtonItem /></div>
-      <div id="TooltipItem"><TooltipItem /></div>
-    </div>
+      <Box id="AttachmentItem"><AttachmentItem /></Box>
+      <Box id="DatepickerItem"><DatepickerItem /></Box>
+      <Box id="DialogItem"><DialogItem /></Box>
+      <Box id="MenuButtonItem"><MenuButtonItem /></Box>
+      <Box id="SplitButtonItem"><SplitButtonItem /></Box>
+      <Box id="TooltipItem"><TooltipItem /></Box>
+    </Box>
   )
 }

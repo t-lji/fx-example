@@ -1,4 +1,4 @@
-import { Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
 import LinkUnfurlingJson from '../../../assets/code/messageExtension/linkUnfurling/linkUnfurlingJson.json';
 import LinkUnfurlingCode from '!!raw-loader!../../../assets/code/messageExtension/linkUnfurling/linkUnfurlingCode.js';
 import Code from "../../util/CodeUtil"
@@ -6,7 +6,7 @@ import { Collapse } from "../../util/PageUtil";
 
 export default function LinkUnfurling() {
   return (
-    <div id="welcomeCard page">
+    <Box id="welcomeCard page">
       <Header as="h4" content="Link Unfurling" />
 
       <Flex column>
@@ -47,6 +47,6 @@ export default function LinkUnfurling() {
           <Image src="pic/link_unfurling_result.png" />
         </Segment>
       </Flex>
-    </div>
+    </Box>
   )
 }

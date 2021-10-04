@@ -65,7 +65,7 @@ function HexagonalAvatar() {
   };
 
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Hexagonal Avatar" />
 
       <Collapse>
@@ -84,7 +84,7 @@ function HexagonalAvatar() {
         'bot-hexagon-clip-path',
       )}
       <Flex column padding="padding.medium" gap="gap.medium">
-        <div>
+        <Box>
           <Text content="Hexagonal Avatar" />
           &emsp;
           <CustomAvatar
@@ -92,17 +92,17 @@ function HexagonalAvatar() {
             image="https://fabricweb.azureedge.net/fabric-website/assets/images/avatar/RobertTolbert.jpg"
             status={statusProps}
           />
-        </div>
-        <div>
+        </Box>
+        <Box>
           <Text content="Regular Avatar" />
           &emsp;
           <CustomAvatar
             image="https://fabricweb.azureedge.net/fabric-website/assets/images/avatar/RobertTolbert.jpg"
             status={statusProps}
           />
-        </div>
+        </Box>
       </Flex>
-    </div>
+    </Box>
   )
 }
 
@@ -140,7 +140,7 @@ function ParticipantsList() {
   ];
 
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Participants List" />
 
       <Collapse>
@@ -153,22 +153,22 @@ function ParticipantsList() {
         </Segment>
         <Segment><List navigable items={items3} horizontal /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }
 
 export default class Users extends React.Component {
   render() {
     return (
-      <div className="Users page">
+      <Box className="Users page">
         <Header as="h2" content="Users" />
         <ul id="UsersList">
           <li><Button onClick={ () => ScrollToAnchor('HexagonalAvatar') }>Hexagonal Avatar</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('ParticipantsList') }>Participants List</Button></li>
         </ul>
-        <div id="HexagonalAvatar"><HexagonalAvatar /></div>
-        <div id="ParticipantsList"><ParticipantsList /></div>
-      </div>
+        <Box id="HexagonalAvatar"><HexagonalAvatar /></Box>
+        <Box id="ParticipantsList"><ParticipantsList /></Box>
+      </Box>
     )
   }
 }

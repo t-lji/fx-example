@@ -88,7 +88,7 @@ function AccordionItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Accordion" />
 
       <Text weight="regular" size="large">
@@ -99,18 +99,18 @@ function AccordionItem() {
         <Code code={ AccordionCode } />
       </Collapse>
       <Accordion defaultActiveIndex={[0]} panels={panels} />
-    </div>
+    </Box>
   )
 }
 
 function BoxItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Box" />
 
       <Text weight="regular" size="large">
         A Box is a basic component, commonly used for slots in other Fluent UI 
-        components. By default it just renders a 'div'.
+        components. By default it just renders a 'Box'.
       </Text>
       <Collapse>
         <Code code={ BoxCode } />
@@ -127,13 +127,13 @@ function BoxItem() {
           },
         }}
       />
-    </div>
+    </Box>
   )
 }
 
 function BreadcrumbItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Breadcrumb" />
 
       <Text weight="regular" size="large">
@@ -155,13 +155,13 @@ function BreadcrumbItem() {
         </Breadcrumb.Divider>
         <Breadcrumb.Item aria-current="page">T-shirt</Breadcrumb.Item>
       </Breadcrumb>
-    </div>
+    </Box>
   )
 }
 
 function CheckboxItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Checkbox" />
 
       <Text weight="regular" size="large">
@@ -174,7 +174,7 @@ function CheckboxItem() {
         <Checkbox label="Checkbox toggle" toggle />
         <Checkbox disabled checked label="Checked" labelPosition="start" />
       </>
-    </div>
+    </Box>
   )
 }
 
@@ -191,7 +191,7 @@ function DropdownItem() {
     'Robin Counts',
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Dropdown" />
 
       <Text weight="regular" size="large">
@@ -213,7 +213,7 @@ function DropdownItem() {
         noResultsMessage="We couldn't find any matches."
         a11ySelectedItemsMessage="Press Delete or Backspace to remove"
       />
-    </div>
+    </Box>
   )
 }
 
@@ -240,7 +240,7 @@ function FormItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Form" />
 
       <Text weight="regular" size="large">
@@ -262,13 +262,13 @@ function FormItem() {
           <FormButton content="Submit" />
         </Form>
       </Flex>
-    </div>
+    </Box>
   )
 }
 
 function InputItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Input" />
 
       <Text weight="regular" size="large">
@@ -277,7 +277,7 @@ function InputItem() {
       <Collapse>
         <Code code={ InputCode } />
       </Collapse>
-      <div>
+      <Box>
         Some text inline with the{' '}
         <Input 
           inline 
@@ -298,8 +298,8 @@ function InputItem() {
               backgroundColor: 'red',
             },
           }} /> and more text.
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 
@@ -344,7 +344,7 @@ function ListItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="List" />
 
       <Text weight="regular" size="large">
@@ -364,7 +364,7 @@ function ListItem() {
         }}
         items={items}
       />
-    </div>
+    </Box>
   )
 }
 
@@ -413,7 +413,7 @@ function MenuItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Menu" />
 
       <Text weight="regular" size="large">
@@ -423,14 +423,14 @@ function MenuItem() {
         <Code code={ MenuCode } />
       </Collapse>
       <Menu defaultActiveIndex={0} items={items} vertical />
-    </div>
+    </Box>
   )
 }
 
 function RadioGroupItem() {
   const [selectedValue, setselectedValue] = useState('pink');
   return (
-    <div>
+    <Box>
       <Header as="h4" content="RadioGroup" />
 
       <Text weight="regular" size="large">
@@ -460,13 +460,13 @@ function RadioGroupItem() {
           }
         />
       </Box>
-    </div>
+    </Box>
   )
 }
 
 function SegmentItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Segment" />
 
       <Text weight="regular" size="large">
@@ -482,7 +482,7 @@ function SegmentItem() {
           ))
         }
       />
-    </div>
+    </Box>
   )
 }
 
@@ -531,7 +531,7 @@ function TreeItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Tree" />
 
       <Text weight="regular" size="large">
@@ -546,13 +546,13 @@ function TreeItem() {
         items={items}
         accessibility={treeAsListboxBehavior}
       />
-    </div>
+    </Box>
   )
 }
 
 export default function Layouts() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Layout" />
       <ul id="LayoutList">
         <li><Button onClick={ () => ScrollToAnchor('AccordionItem') }>Accordion</Button></li>
@@ -568,18 +568,18 @@ export default function Layouts() {
         <li><Button onClick={ () => ScrollToAnchor('SegmentItem') }>Segment</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('TreeItem') }>Tree</Button></li>
       </ul>
-      <div id="AccordionItem"><AccordionItem /></div>
-      <div id="BoxItem"><BoxItem /></div>
-      <div id="BreadcrumbItem"><BreadcrumbItem /></div>
-      <div id="CheckboxItem"><CheckboxItem /></div>
-      <div id="DropdownItem"><DropdownItem /></div>
-      <div id="FormItem"><FormItem /></div>
-      <div id="InputItem"><InputItem /></div>
-      <div id="ListItem"><ListItem /></div>
-      <div id="MenuItem"><MenuItem /></div>
-      <div id="RadioGroupItem"><RadioGroupItem /></div>
-      <div id="SegmentItem"><SegmentItem /></div>
-      <div id="TreeItem"><TreeItem /></div>
-    </div>
+      <Box id="AccordionItem"><AccordionItem /></Box>
+      <Box id="BoxItem"><BoxItem /></Box>
+      <Box id="BreadcrumbItem"><BreadcrumbItem /></Box>
+      <Box id="CheckboxItem"><CheckboxItem /></Box>
+      <Box id="DropdownItem"><DropdownItem /></Box>
+      <Box id="FormItem"><FormItem /></Box>
+      <Box id="InputItem"><InputItem /></Box>
+      <Box id="ListItem"><ListItem /></Box>
+      <Box id="MenuItem"><MenuItem /></Box>
+      <Box id="RadioGroupItem"><RadioGroupItem /></Box>
+      <Box id="SegmentItem"><SegmentItem /></Box>
+      <Box id="TreeItem"><TreeItem /></Box>
+    </Box>
   )
 }

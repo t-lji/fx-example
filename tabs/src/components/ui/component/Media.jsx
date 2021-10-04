@@ -2,6 +2,7 @@ import React from "react";
 import { 
   Animation,
   Avatar,
+  Box, 
   Button, 
   Card,
   Carousel,
@@ -44,7 +45,7 @@ function AnimationItem() {
     iterationCount: 'infinite',
   }
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Animation" />
 
       <Text weight="regular" size="large">
@@ -65,13 +66,13 @@ function AnimationItem() {
           <MentionIcon circular bordered />
         </Animation>
       </Provider>
-    </div>
+    </Box>
   )
 }
 
 function AvatarItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Avatar" />
 
       <Text weight="regular" size="large">
@@ -87,13 +88,13 @@ function AvatarItem() {
           title: 'Busy',
         }}
       />
-    </div>
+    </Box>
   )
 }
 
 function CardItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Card" />
 
       <Text weight="regular" size="large">
@@ -136,7 +137,7 @@ function CardItem() {
           </Card.Footer>
         </Card>
       </Flex>
-    </div>
+    </Box>
   )
 }
 
@@ -226,7 +227,7 @@ function CarouselItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Carousel" />
 
       <Text weight="regular" size="large">
@@ -252,13 +253,13 @@ function CarouselItem() {
         items={carouselItems}
         getItemPositionText={(index, size) => `${index + 1} of ${size}`}
       />
-    </div>
+    </Box>
   )
 }
 
 function EmbedItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Embed" />
 
       <Text weight="regular" size="large">
@@ -286,13 +287,13 @@ function EmbedItem() {
         />
         <Text>(c) copyright 2020, Microsoft</Text>
       </Flex>
-    </div>
+    </Box>
   )
 }
 
 function ImageItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Image" />
 
       <Text weight="regular" size="large">
@@ -313,13 +314,13 @@ function ImageItem() {
           />
         )}
       />
-    </div>
+    </Box>
   )
 }
 
 function SkeletonItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Skeleton" />
 
       <Text weight="regular" size="large">
@@ -333,13 +334,13 @@ function SkeletonItem() {
         <Skeleton.Line width="20%" />
         <Skeleton.Line width="50%" />
       </Skeleton>
-    </div>
+    </Box>
   )
 }
 
 function VideoItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Video" />
 
       <Text weight="regular" size="large">
@@ -356,13 +357,13 @@ function VideoItem() {
           width: '720px',
         }}
       />
-    </div>
+    </Box>
   )
 }
 
 export default function Media() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Media" />
       <ul id="MediaList">
         <li><Button onClick={ () => ScrollToAnchor('AnimationItem') }>Animation</Button></li>
@@ -374,14 +375,14 @@ export default function Media() {
         <li><Button onClick={ () => ScrollToAnchor('SkeletonItem') }>Skeleton</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('VideoItem') }>Video</Button></li>
       </ul>
-      <div id="AnimationItem"><AnimationItem /></div>
-      <div id="AvatarItem"><AvatarItem /></div>
-      <div id="CardItem"><CardItem /></div>
-      <div id="CarouselItem"><CarouselItem /></div>
-      <div id="EmbedItem"><EmbedItem /></div>
-      <div id="ImageItem"><ImageItem /></div>
-      <div id="SkeletonItem"><SkeletonItem /></div>
-      <div id="VideoItem"><VideoItem /></div>
-    </div>
+      <Box id="AnimationItem"><AnimationItem /></Box>
+      <Box id="AvatarItem"><AvatarItem /></Box>
+      <Box id="CardItem"><CardItem /></Box>
+      <Box id="CarouselItem"><CarouselItem /></Box>
+      <Box id="EmbedItem"><EmbedItem /></Box>
+      <Box id="ImageItem"><ImageItem /></Box>
+      <Box id="SkeletonItem"><SkeletonItem /></Box>
+      <Box id="VideoItem"><VideoItem /></Box>
+    </Box>
   )
 }

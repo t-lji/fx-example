@@ -138,7 +138,7 @@ export default function ChatCompact() {
     },
   ]
   return (
-    <div>
+    <Box>
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="Important and mention messages" />
@@ -149,6 +149,6 @@ export default function ChatCompact() {
         </Segment>
         <Segment><ChatTag items={items} density="compact" /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }

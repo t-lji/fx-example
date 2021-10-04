@@ -3,6 +3,7 @@ import {
   ArrowUpIcon, 
   ArrowDownIcon, 
   BookmarkIcon,
+  Box,
   Button, 
   Checkbox,
   Header, 
@@ -128,7 +129,7 @@ export default function AdvancedTable() {
   };
 
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Advanced Table" />
 
       <Header as="h3" content="Table example" />
@@ -140,6 +141,6 @@ export default function AdvancedTable() {
       aria-label={label}
       accessibility={gridNestedBehavior}
     />
-    </div>
+    </Box>
   );
 };

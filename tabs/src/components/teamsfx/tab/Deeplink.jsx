@@ -1,5 +1,5 @@
 import * as microsoftTeams from '@microsoft/teams-js';
-import { Button, Flex, Header, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Button, Flex, Header, Segment, Text } from '@fluentui/react-northstar';
 import DeepLinkCode from '!!raw-loader!../../../assets/code/tab/deepLink/DeepLinkCode.jsx'
 import DeepLinkDefinition from '!!raw-loader!../../../assets/code/tab/deepLink/DefinitionCode.txt'
 import Code from "../../util/CodeUtil"
@@ -22,7 +22,7 @@ function MoveToTab() {
 
 export default function DeepLink() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="DeepLink" />
 
       <Header as="h4" content="Execute deep link API" />
@@ -47,6 +47,6 @@ export default function DeepLink() {
           <Button onClick={ MoveToTab }>Move to UI</Button>
         </Segment>
       </Flex>
-    </div>
+    </Box>
   )
 }

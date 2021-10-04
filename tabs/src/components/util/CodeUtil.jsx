@@ -1,5 +1,5 @@
 import React from "react";
-import { AcceptIcon, Button, ClipboardCopiedToIcon, Provider, teamsTheme } from "@fluentui/react-northstar";
+import { AcceptIcon, Box, Button, ClipboardCopiedToIcon, Provider, teamsTheme } from "@fluentui/react-northstar";
 import copy from 'copy-to-clipboard';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { coy } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -26,7 +26,7 @@ export default function Code(props) {
   const code = props.language === 'json' ? JSON.stringify(props.code, null, '\t') : props.code;
 
   return (
-    <div>
+    <Box>
       <Button 
         icon={ isCopied ? <AcceptIcon /> : <ClipboardCopiedToIcon /> } 
         content="click to copy code" 
@@ -34,6 +34,6 @@ export default function Code(props) {
           setIsCopied(true) || setTimeout(() => { setIsCopied(false) }, 1000) : 
           alert('error, please copy with your mouse or keyboard') }} />
       <Highlight code={ code } language={ props.language } />
-    </div>
+    </Box>
   )
 }

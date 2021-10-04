@@ -1,14 +1,14 @@
-import { Header } from '@fluentui/react-northstar';
+import { Box, Header } from '@fluentui/react-northstar';
 import ProfileCard from "./ProfileCard"
 import WelcomeCard from "./WelcomeCard"
 
 export default function AdaptiveCard() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Adaptive Card" />
 
       <WelcomeCard />
       <ProfileCard />
-    </div>
+    </Box>
   )
 }

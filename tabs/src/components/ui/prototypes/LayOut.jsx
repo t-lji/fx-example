@@ -140,7 +140,7 @@ function AdvancedTable() {
   };
 
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Advanced Table" />
 
       <Collapse>
@@ -159,13 +159,13 @@ function AdvancedTable() {
           />
         </Segment>
       </Box>
-    </div>
+    </Box>
   );
 };
 
 function FormValidateFormik() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Form Validation" />
 
       <Collapse>
@@ -235,22 +235,22 @@ function FormValidateFormik() {
             </Flex>
           </Segment>
         </Box>
-      </div>
+      </Box>
   )
 }
 
 export default class LayOut extends React.Component {
   render() {
     return (
-      <div className="LayOut page">
+      <Box className="LayOut page">
         <Header as="h2" content="LayOut" />
         <ul id="LayOutList">
           <li><Button onClick={ () => ScrollToAnchor('AdvancedTable') }>Advanced Table</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('FormValidateFormik') }>Form Validation</Button></li>
         </ul>
-        <div id="AdvancedTable"><AdvancedTable /></div>
-        <div id="FormValidateFormik"><FormValidateFormik /></div>
-      </div>
+        <Box id="AdvancedTable"><AdvancedTable /></Box>
+        <Box id="FormValidateFormik"><FormValidateFormik /></Box>
+      </Box>
     )
   }
 }

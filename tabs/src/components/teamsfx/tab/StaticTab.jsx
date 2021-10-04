@@ -1,4 +1,4 @@
-import { Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
 import PersonalTabCode from '!!raw-loader!../../../assets/code/tab/staticTab/PersonalTabCode.jsx'
 import JsxLocation from '!!raw-loader!../../../assets/code/tab/staticTab/JsxLocation.txt'
 import ManifestLocation from '!!raw-loader!../../../assets/code/tab/staticTab/ManifestLocation.txt'
@@ -9,7 +9,7 @@ import { Collapse } from "../../util/PageUtil";
 
 export default function StaticTab() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Static Tab" />
       <Header as="h4" content="Add a personal tab" />
       <Flex column>
@@ -57,6 +57,6 @@ export default function StaticTab() {
           <Image src="pic/tab_example.png" />
         </Segment>
       </Flex>
-    </div>
+    </Box>
   )
 }

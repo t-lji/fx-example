@@ -1,5 +1,6 @@
 import { 
-  AddIcon, 
+  AddIcon,
+  Box, 
   Button, 
   CloseIcon, 
   EmailIcon, 
@@ -8,7 +9,7 @@ import {
   Label, 
   Provider } from '@fluentui/react-icons-northstar'
 
-<div>
+<Box>
   {/* Default theming */}
   <Header as="h3" content="Default theming" />
   <Button content="Button" />
@@ -27,7 +28,7 @@ import {
       },
     }}
   >
-    <div>
+    <Box>
       <Header as="h3" content="First nested theming" />
 
       <Button content="Button" />
@@ -46,7 +47,7 @@ import {
           },
         }}
       >
-        <div>
+        <Box>
           <Header as="h3" content="Second nested theming" />
 
           <Button content="Button" />
@@ -54,8 +55,8 @@ import {
           <Button icon={<EmailIcon />} content="Send email" secondary />
           <EmojiIcon size="larger" />
           <Label content="Label with icon" icon={<CloseIcon />} />
-        </div>
+        </Box>
       </Provider>
-    </div>
+    </Box>
   </Provider>
-</div>
+</Box>

@@ -1,4 +1,4 @@
-import { Button, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Button, Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
 import ProfileCardJson from '../../../assets/code/bot/adaptiveCard/profileCard/profileCardJson.json'
 import ProfileCommandJson from '../../../assets/code/bot/adaptiveCard/profileCard/profileCommandJson.json'
 import CommandUtilCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/profileCard/commandUtilCode.js'
@@ -16,7 +16,7 @@ import { Collapse } from "../../util/PageUtil";
 
 export default function ProfileCard() {
   return (
-    <div id="ProfileCard page">
+    <Box id="ProfileCard page">
       <Header as="h4" content="Profile Card" />
 
         <Flex column>
@@ -125,6 +125,6 @@ export default function ProfileCard() {
             <Image src="pic/profile_card.png" />
           </Segment>
         </Flex>
-    </div>
+    </Box>
   )
 }

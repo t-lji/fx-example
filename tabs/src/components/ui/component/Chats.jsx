@@ -1,5 +1,6 @@
 import React from "react";
 import { 
+  Box, 
   Button, 
   EmojiIcon, 
   Header, 
@@ -13,7 +14,7 @@ import { ScrollToAnchor } from "../../util/ScrollUtil";
 
 function ReactionItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Reaction" />
 
       <Text weight="regular" size="large">
@@ -37,18 +38,18 @@ function ReactionItem() {
           },
         ]}
       />
-    </div>
+    </Box>
   )
 }
 
 export default function Chats() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Chat" />
       <ul id="ChatList">
         <li><Button onClick={ () => ScrollToAnchor('ReactionItem') }>Reaction</Button></li>
       </ul>
-      <div id="ReactionItem"><ReactionItem /></div>
-    </div>
+      <Box id="ReactionItem"><ReactionItem /></Box>
+    </Box>
   )
 }

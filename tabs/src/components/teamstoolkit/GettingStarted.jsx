@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Image } from "@fluentui/react-northstar";
+import { Box, Button, Image } from "@fluentui/react-northstar";
 import CreateTableSQL from '!!raw-loader!../../assets/code/teamsToolkit/gettingStarted/createTableSQL.sql'
 import Code from "../util/CodeUtil"
 
 export default class GettingStarted extends React.Component {
   render() {
     return (
-    <div>
+    <Box>
       <h1>Getting Started</h1>
       <h2>Download Sample</h2>
       <Image src="pic/getting_start_download_sample.gif" />
@@ -40,7 +40,7 @@ export default class GettingStarted extends React.Component {
       <Image src="pic/getting_start_permission_page.png" />
       <h2>Enjoy your first app in Teams</h2>
       <Image src="pic/getting_start_result.gif" />
-    </div>
+    </Box>
     )
   }
 }

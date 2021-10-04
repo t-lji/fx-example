@@ -3,7 +3,7 @@ import { Box, Button, Dialog, Header, Segment } from '@fluentui/react-northstar'
 
 export default function NestedDialogs() {
   return (
-    <div>
+    <Box>
     <Header as="h4" content="Nested Dialogs" />
 
     <Box styles={{ marginTop: '20px' }}>
@@ -46,7 +46,7 @@ export default function NestedDialogs() {
         />
       </Segment>
     </Box>
-  </div>
+  </Box>
     
   );
 }

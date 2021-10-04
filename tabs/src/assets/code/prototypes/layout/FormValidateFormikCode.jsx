@@ -12,7 +12,7 @@ import { Formik } from 'formik';
 
 export default function FormValidateFormik() {
   return (
-    <div>
+    <Box>
       <Box styles={{ marginTop: '20px' }}>
           <Segment>
             <Header as="h3" content="List with context menu" />
@@ -77,6 +77,6 @@ export default function FormValidateFormik() {
             </Flex>
           </Segment>
         </Box>
-      </div>
+      </Box>
   )
 }

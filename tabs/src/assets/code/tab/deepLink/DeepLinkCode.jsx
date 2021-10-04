@@ -1,5 +1,5 @@
 import * as microsoftTeams from '@microsoft/teams-js';
-import { Button, Text } from '@fluentui/react-northstar';
+import { Box, Button, Text } from '@fluentui/react-northstar';
 
 function CreateNewMeeting() {
   microsoftTeams.initialize();
@@ -18,11 +18,11 @@ function MoveToTab() {
 
 export default function DeepLink() {
   return (
-    <div>
+    <Box>
       <Text weight="regular" size="large" content="1. Click on the button to view the a new meeting from deeplink:" />
       <Button onClick={ CreateNewMeeting }>Create New Meeting</Button>
       <Text weight="regular" size="large" content="2. Click on the button to UI tab from deeplink:" />
       <Button onClick={ MoveToTab }>Move to UI Tab</Button>
-    </div>
+    </Box>
   )
 }

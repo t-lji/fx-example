@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Box } from '@fluentui/react-northstar'
 import "./ScrollUtil.css";
 
 // scroll to the top
@@ -15,9 +16,9 @@ export function TopJumper() {
   }, [show])
 
   return show ? (
-    <div className="top-jumper" onClick={ () => window.scrollTo(0, 0) }>
+    <Box className="top-jumper" onClick={ () => window.scrollTo(0, 0) }>
       <span className="text"> </span>
-    </div>) : null;
+    </Box>) : null;
 }
 
 // scroll by the name

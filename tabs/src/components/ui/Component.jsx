@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Header } from '@fluentui/react-northstar'
+import { Box, Button, Header } from '@fluentui/react-northstar'
 import Buttons from './component/Buttons.jsx'
 import Chats from './component/Chats.jsx'
 import Layouts from './component/Layouts.jsx'
@@ -11,7 +11,7 @@ import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 export default class Component extends React.Component {
   render() {
     return (
-      <div className="Component page">
+      <Box className="Component page">
         <Header as="h2" content="Component" />
         <ul id="ComponentList">
           <li><Button onClick={ () => ScrollToAnchor('Buttons') }>Button</Button></li>
@@ -21,14 +21,14 @@ export default class Component extends React.Component {
           <li><Button onClick={ () => ScrollToAnchor('Other') }>Other</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('Text') }>Text</Button></li>
         </ul>
-        <div id="Buttons"><Buttons /></div>
-        <div id="Chats"><Chats /></div>
-        <div id="Layouts"><Layouts /></div>
-        <div id="Media"><Media /></div>
-        <div id="Other"><Other /></div>
-        <div id="Text"><Text /></div>
+        <Box id="Buttons"><Buttons /></Box>
+        <Box id="Chats"><Chats /></Box>
+        <Box id="Layouts"><Layouts /></Box>
+        <Box id="Media"><Media /></Box>
+        <Box id="Other"><Other /></Box>
+        <Box id="Text"><Text /></Box>
         <TopJumper />
-      </div>
+      </Box>
     )
   }
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Tab from "./teamsfx/Tab"
 import Bot from "./teamsfx/Bot"
 import MessagingExtension from "./teamsfx/MessagingExtension"
-import { Menu } from '@fluentui/react-northstar'
+import { Box, Menu } from '@fluentui/react-northstar'
 import "./App.css"
 
 function Catalogue() {
@@ -16,10 +16,10 @@ function Catalogue() {
     };
   });
   return (
-  <div className="page">
+  <Box className="page">
     <Menu defaultActiveIndex={0} items={items} underlined secondary />
-    <div>
-      <div>
+    <Box>
+      <Box>
         {selectedMenuItem === "Tab" && (
           <Tab />
         )}
@@ -29,9 +29,9 @@ function Catalogue() {
         {selectedMenuItem === "MessagingExtension" && (
           <MessagingExtension />
         )}
-      </div>
-    </div>
-  </div>
+      </Box>
+    </Box>
+  </Box>
   )
 }
 

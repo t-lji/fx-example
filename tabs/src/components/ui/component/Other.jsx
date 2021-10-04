@@ -3,6 +3,7 @@ import _ from 'lodash'
 import { 
   AcceptIcon,
   BanIcon,
+  Box, 
   Button, 
   CallPstnIcon,
   Divider, 
@@ -28,7 +29,7 @@ import { ScrollToAnchor } from "../../util/ScrollUtil";
 
 function DividerItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Divider" />
 
       <Text weight="regular" size="large">
@@ -44,13 +45,13 @@ function DividerItem() {
           ))
         }
       />
-    </div>
+    </Box>
   )
 }
 
 function LoaderItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Loader" />
 
       <Text weight="regular" size="large">
@@ -61,7 +62,7 @@ function LoaderItem() {
         <Code code={ LoaderCode } />
       </Collapse>
       <Loader size="large" label="At start / Large" labelPosition="start" />
-    </div>
+    </Box>
   )
 }
 
@@ -107,7 +108,7 @@ function SliderItem() {
     onChange: handleChange,
   }
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Slider" />
 
       <Text weight="regular" size="large">
@@ -140,13 +141,13 @@ function SliderItem() {
         />
         <Button onClick={ () => setVertical(!vertical) } content="Vertical/Horizonal" />
       </Flex>
-    </div>
+    </Box>
   )
 }
 
 function StatusItem() {
   return (
-    <div>
+    <Box>
       <Header as="h4" content="Status" />
 
       <Text weight="regular" size="large">
@@ -172,13 +173,13 @@ function StatusItem() {
           <Status state="unknown" title="unknown" icon={ <QuestionCircleIcon /> } /> <code>state="unknown"</code>
         </Flex>
       </Flex>
-    </div>
+    </Box>
   )
 }
 
 export default function Other() {
   return (
-    <div>
+    <Box>
       <Header as="h3" content="Other" />
       <ul id="OtherList">
         <li><Button onClick={ () => ScrollToAnchor('DividerItem') }>Divider</Button></li>
@@ -186,10 +187,10 @@ export default function Other() {
         <li><Button onClick={ () => ScrollToAnchor('SliderItem') }>Slider</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('StatusItem') }>Status</Button></li>
       </ul>
-      <div id="DividerItem"><DividerItem /></div>
-      <div id="LoaderItem"><LoaderItem /></div>
-      <div id="SliderItem"><SliderItem /></div>
-      <div id="StatusItem"><StatusItem /></div>
-    </div>
+      <Box id="DividerItem"><DividerItem /></Box>
+      <Box id="LoaderItem"><LoaderItem /></Box>
+      <Box id="SliderItem"><SliderItem /></Box>
+      <Box id="StatusItem"><StatusItem /></Box>
+    </Box>
   )
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ExpandIcon, CollapseIcon } from "@fluentui/react-northstar";
+import { Box, Button, ExpandIcon, CollapseIcon } from "@fluentui/react-northstar";
 
 function CollapseHelper(props) {
   const [isCollapsed, setIsCollapsed] = React.useState(true);
@@ -16,17 +16,17 @@ function CollapseHelper(props) {
     }
   };
   return (
-    <div className="Collapse">
+    <Box className="Collapse">
       <Button icon={ isCollapsed ? <ExpandIcon /> : <CollapseIcon /> }
         content={"click to " + (isCollapsed ? "show" : "hide") + " content" }
         onClick={ () => setIsCollapsed(!isCollapsed) }/>
-      <div
+      <Box
         className="collapse-content"
         style={ isCollapsed ? style.collapsed : style.expanded }
         aria-expanded={ isCollapsed }>
           { props.children }
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 
