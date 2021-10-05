@@ -9,7 +9,6 @@ import {
   MentionIcon,
   RedbangIcon,
   Segment, 
-  ShorthandCollection,
   Text } from '@fluentui/react-northstar'
 
 export default function ChatMessages() {

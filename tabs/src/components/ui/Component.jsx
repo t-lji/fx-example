@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Header } from '@fluentui/react-northstar'
+import { Box, Button, Flex, Header, SplitButton } from '@fluentui/react-northstar'
 import Buttons from './component/Buttons.jsx'
 import Chats from './component/Chats.jsx'
 import Layouts from './component/Layouts.jsx'
@@ -10,24 +10,63 @@ import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 
 export default class Component extends React.Component {
   render() {
+    const menu = [
+      {
+        key: 'Buttons',
+        content: 'Button',
+      },
+      {
+        key: 'Chats',
+        content: 'Chat',
+      },
+      {
+        key: 'Layouts',
+        content: 'Layout',
+      },
+      {
+        key: 'Media',
+        content: 'Media',
+      },
+      {
+        key: 'Other',
+        content: 'Other',
+      },
+      {
+        key: 'Text',
+        content: 'Text',
+      },
+    ]
     return (
       <Box className="Component page">
-        <Header as="h1" content="Component" />
-        <ul id="ComponentList">
-          <li><Button onClick={ () => ScrollToAnchor('Buttons') }>Button</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Chats') }>Chat</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Layouts') }>Layout</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Media') }>Media</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Other') }>Other</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Text') }>Text</Button></li>
-        </ul>
-        <Box id="Buttons"><Buttons /></Box>
-        <Box id="Chats"><Chats /></Box>
-        <Box id="Layouts"><Layouts /></Box>
-        <Box id="Media"><Media /></Box>
-        <Box id="Other"><Other /></Box>
-        <Box id="Text"><Text /></Box>
-        <TopJumper />
+        <Flex gap="gap.small">
+          <Box class="HeaderBox">
+            <Box class="HeaderContent">
+            <SplitButton
+              menu={ menu }
+              button={{
+                content: 'Component',
+                'aria-roledescription': 'splitbutton',
+                'aria-describedby': 'instruction-message-primary-button',
+              }}
+              primary
+              size="largest"
+              toggleButton={{
+                'aria-label': 'more options',
+              }}
+              onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+            />
+            </Box>
+          </Box>
+          <Box class="ContentBox">
+            <Box id="Buttons"><Buttons /></Box>
+            <Box id="Chats"><Chats /></Box>
+            <Box id="Layouts"><Layouts /></Box>
+            <Box id="Media"><Media /></Box>
+            <Box id="Other"><Other /></Box>
+            <Box id="Text"><Text /></Box>
+            <TopJumper />
+          </Box>
+        </Flex>
       </Box>
     )
   }

@@ -15,7 +15,8 @@ import {
   Menu,
   Provider,
   Segment,
-  Text } from '@fluentui/react-northstar'
+  SplitButton,
+  Text, } from '@fluentui/react-northstar'
 import "./Overall.css";
 import NestingThemesCode from '!!raw-loader!../../assets/code/layout/NestingThemesCode.jsx'
 import FlexGapCode from '!!raw-loader!../../assets/code/layout/FlexGapCode.jsx'
@@ -137,7 +138,7 @@ function Layout() {
         <Collapse><Code code={ FlexGapCode } /></Collapse>
           <Flex gap="gap.small">
             <Segment color="brand" content="ABCDEF" inverted />
-            <Segment color="green" content="GHIJKL" inverted />
+            <Segment color="grey" content="GHIJKL" inverted />
             <FlexItem push>
               <Segment color="red" content="MNOPQR" inverted />
             </FlexItem>
@@ -239,31 +240,61 @@ function Layout() {
 
 export default class Overall extends React.Component {
   render() {
+    const menu = [
+      {
+        key: 'Themes',
+        content: 'Themes',
+      },
+      {
+        key: 'NestingThemes',
+        content: 'Nesting Themes',
+      },
+      {
+        key: 'Layout',
+        content: 'Layout',
+      },
+    ]
     return (
       <Box className="Overall page">
-        <Header as="h1" content="Overall" />
-        <ul id="OverallList">
-          <li><Button onClick={ () => ScrollToAnchor('Themes') }>Themes</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('NestingThemes') }>Nesting Themes</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Layout') }>Layout</Button></li>
-        </ul>
-        <ComponentPrototype id="Themes" title="Themes" description="Show teams theme pictures">
-          <Themes />
-        </ComponentPrototype>
-        <ComponentPrototype id="NestingThemes" title="Nesting Themes" 
-          description="If you have areas of an application that require additional 
-          theming, you can achieve that using nested providers and overwrite the 
-          needed styles."
-        >
-          <NestingThemes />
-        </ComponentPrototype>
-        <ComponentPrototype id="Layout" title="Layout" 
-          description="Fluent UI has Flex and Grid components to handle layout 
-          aspects, they represent corresponding CSS layout modules ."
-        >
-          <Layout />
-        </ComponentPrototype>
-        <TopJumper />
+        <Flex gap="gap.small">
+          <Box class="HeaderBox">
+            <Box class="HeaderContent">
+            <SplitButton
+              menu={ menu }
+              button={{
+                content: 'Overall',
+                'aria-roledescription': 'splitbutton',
+                'aria-describedby': 'instruction-message-primary-button',
+              }}
+              primary
+              size="largest"
+              toggleButton={{
+                'aria-label': 'more options',
+              }}
+              onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+            />
+            </Box>
+          </Box>
+          <Box class="ContentBox">
+            <ComponentPrototype id="Themes" title="Themes" description="Show teams theme pictures">
+              <Themes />
+            </ComponentPrototype>
+            <ComponentPrototype id="NestingThemes" title="Nesting Themes" 
+              description="If you have areas of an application that require additional 
+              theming, you can achieve that using nested providers and overwrite the 
+              needed styles."
+            >
+              <NestingThemes />
+            </ComponentPrototype>
+            <ComponentPrototype id="Layout" title="Layout" 
+              description="Fluent UI has Flex and Grid components to handle layout 
+              aspects, they represent corresponding CSS layout modules ."
+            >
+              <Layout />
+            </ComponentPrototype>
+            <TopJumper />
+          </Box>
+        </Flex>
       </Box>
     )
   }

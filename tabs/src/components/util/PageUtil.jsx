@@ -48,8 +48,7 @@ export function ComponentPrototype(props) {
   const { description, title: header, children, styles, ...rest } = props; 
   return (
     <Box 
-      styles={{ 
-        border: '1px solid white', 
+      styles={{  
         marginTop: '20px',    
         marginBottom: '20px',    
         marginLeft: '20px', 

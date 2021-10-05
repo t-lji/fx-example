@@ -253,7 +253,7 @@ export default class LayOut extends React.Component {
       },
     ]
     return (
-      <ComponentPrototype title="LayOut">
+      <ComponentPrototype title="Layout">
         <SplitButton
           menu={ menu }
           button={{
