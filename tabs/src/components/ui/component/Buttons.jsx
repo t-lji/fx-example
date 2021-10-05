@@ -365,29 +365,27 @@ export default function Buttons() {
     },
   ]
   return (
-    <Box>
-      <ComponentPrototype title="Button">
-        <SplitButton
-          menu={ menu }
-          button={{
-            content: 'Go To',
-            'aria-roledescription': 'splitbutton',
-            'aria-describedby': 'instruction-message-primary-button',
-          }}
-          primary
-          toggleButton={{
-            'aria-label': 'more options',
-          }}
-          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
-        />
-        <AttachmentItem id="AttachmentItem" />
-        <DatepickerItem id="DatepickerItem" />
-        <DialogItem id="DialogItem" />
-        <MenuButtonItem id="MenuButtonItem" />
-        <PopupItem id="PopupItem" />
-        <SplitButtonItem id="SplitButtonItem" />
-        <TooltipItem id="TooltipItem" />
-      </ComponentPrototype>
-    </Box>
+    <ComponentPrototype title="Button">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <AttachmentItem id="AttachmentItem" />
+      <DatepickerItem id="DatepickerItem" />
+      <DialogItem id="DialogItem" />
+      <MenuButtonItem id="MenuButtonItem" />
+      <PopupItem id="PopupItem" />
+      <SplitButtonItem id="SplitButtonItem" />
+      <TooltipItem id="TooltipItem" />
+    </ComponentPrototype>
   )
 }

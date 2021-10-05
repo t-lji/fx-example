@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Header, Segment, Text, TextArea } from '@fluentui/react-northstar';
+import { Box, Button, Header, Segment, SplitButton, Text, TextArea } from '@fluentui/react-northstar';
 import TextareaAutosize from 'react-textarea-autosize';
 import TextAreaAutoResizeCode from '!!raw-loader!../../../assets/code/prototypes/texts/TextAreaAutoResizeCode.jsx'
 import Code from "../../util/CodeUtil"
@@ -26,15 +26,29 @@ function TextAreaAutoResize(props) {
 
 export default class Texts extends React.Component {
   render() {
+    const menu = [
+      {
+        key: 'TextAreaAutoResize',
+        content: 'Text Area Autosize',
+      },
+    ]
     return (
-      <Box className="Texts page">
-        <ul id="TextsList">
-          <li><Button onClick={ () => ScrollToAnchor('TextAreaAutoResize') }>Text Area Autosize</Button></li>
-        </ul>
-        <ComponentPrototype title="Text">
-          <TextAreaAutoResize id="TextAreaAutoResize" />
-        </ComponentPrototype>
-      </Box>
+      <ComponentPrototype title="Text">
+        <SplitButton
+          menu={ menu }
+          button={{
+            content: 'Go To',
+            'aria-roledescription': 'splitbutton',
+            'aria-describedby': 'instruction-message-primary-button',
+          }}
+          primary
+          toggleButton={{
+            'aria-label': 'more options',
+          }}
+          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+        />
+        <TextAreaAutoResize id="TextAreaAutoResize" />
+      </ComponentPrototype>
     )
   }
 }

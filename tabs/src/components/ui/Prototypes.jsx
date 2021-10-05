@@ -23,8 +23,8 @@ export default class Prototypes extends React.Component {
         <Box id="Chat"><Chat /></Box>
         <Box id="LayOut"><LayOut /></Box>
         <Box id="Texts"><Texts /></Box>
-        <Box id="Users"><Users /></Box>
         <Box id="ToolBars"><ToolBars /></Box>
+        <Box id="Users"><Users /></Box>
       <TopJumper />
     </Box>
     )

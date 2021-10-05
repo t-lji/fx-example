@@ -4,9 +4,10 @@ import {
   Button, 
   EmojiIcon, 
   Header, 
-  LikeIcon,  
-  Text, 
-  Reaction } from '@fluentui/react-northstar'
+  LikeIcon, 
+  Reaction,
+  SplitButton, 
+  Text, } from '@fluentui/react-northstar'
 import ReactionCode from '!!raw-loader!../../../assets/code/component/chat/ReactionCode.jsx'
 import Code from "../../util/CodeUtil"
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
@@ -43,14 +44,28 @@ function ReactionItem(props) {
 }
 
 export default function Chats() {
+  const menu = [
+    {
+      key: 'ReactionItem',
+      content: 'Reaction',
+    },
+  ]
   return (
-    <Box>
-      <ul id="ChatList">
-        <li><Button onClick={ () => ScrollToAnchor('ReactionItem') }>Reaction</Button></li>
-      </ul>
-      <ComponentPrototype title="Chat">
-        <ReactionItem id="ReactionItem" />
-      </ComponentPrototype>
-    </Box>
+    <ComponentPrototype title="Chat">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <ReactionItem id="ReactionItem" />
+    </ComponentPrototype>
   )
 }

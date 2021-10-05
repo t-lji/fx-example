@@ -15,6 +15,7 @@ import {
   MenuButton,
   MoreIcon,
   Segment,
+  SplitButton,
   Table, 
   Text } from '@fluentui/react-northstar';
 import { gridCellWithFocusableElementBehavior, gridNestedBehavior } from '@fluentui/accessibility';
@@ -241,17 +242,34 @@ function FormValidateFormik(props) {
 
 export default class LayOut extends React.Component {
   render() {
+    const menu = [
+      {
+        key: 'AdvancedTable',
+        content: 'Advanced Table',
+      },
+      {
+        key: 'FormValidateFormik',
+        content: 'Form Validation',
+      },
+    ]
     return (
-      <Box className="LayOut page">
-        <ul id="LayOutList">
-          <li><Button onClick={ () => ScrollToAnchor('AdvancedTable') }>Advanced Table</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('FormValidateFormik') }>Form Validation</Button></li>
-        </ul>
-        <ComponentPrototype title="LayOut">
-          <AdvancedTable id="AdvancedTable" />
-          <FormValidateFormik id="FormValidateFormik" />
-        </ComponentPrototype>
-      </Box>
+      <ComponentPrototype title="LayOut">
+        <SplitButton
+          menu={ menu }
+          button={{
+            content: 'Go To',
+            'aria-roledescription': 'splitbutton',
+            'aria-describedby': 'instruction-message-primary-button',
+          }}
+          primary
+          toggleButton={{
+            'aria-label': 'more options',
+          }}
+          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+        />
+        <AdvancedTable id="AdvancedTable" />
+        <FormValidateFormik id="FormValidateFormik" />
+      </ComponentPrototype>
     )
   }
 }

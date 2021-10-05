@@ -18,6 +18,7 @@ import {
   Pill, 
   QuoteIcon, 
   RemoveFormatIcon, 
+  SplitButton,
   Text as TextTag, 
   TextArea, 
   Toolbar, 
@@ -323,26 +324,58 @@ function ToolbarItem(props) {
 }
 
 export default function Text() {
+  const menu = [
+    {
+      key: 'AlertItem',
+      content: 'Alert',
+    },
+    {
+      key: 'HeaderItem',
+      content: 'Header',
+    },
+    {
+      key: 'LabelItem',
+      content: 'Label',
+    },
+    {
+      key: 'PillItem',
+      content: 'Pill',
+    },
+    {
+      key: 'TextItem',
+      content: 'Text',
+    },
+    {
+      key: 'TextAreaItem',
+      content: 'TextArea',
+    },
+    {
+      key: 'ToolbarItem',
+      content: 'Toolbar',
+    },
+  ]
   return (
-    <Box>
-      <ul id="TextList">
-        <li><Button onClick={ () => ScrollToAnchor('AlertItem') }>Alert</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('HeaderItem') }>Header</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('LabelItem') }>Label</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('PillItem') }>Pill</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('TextItem') }>Text</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('TextAreaItem') }>TextArea</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('ToolbarItem') }>Toolbar</Button></li>
-      </ul>
-      <ComponentPrototype title="Text">
-        <AlertItem id="AlertItem" />
-        <HeaderItem id="HeaderItem" />
-        <LabelItem id="LabelItem" />
-        <PillItem id="PillItem" />
-        <TextItem id="TextItem" />
-        <TextAreaItem id="TextAreaItem" />
-        <ToolbarItem id="ToolbarItem" />
-      </ComponentPrototype>
-    </Box>
+    <ComponentPrototype title="Text">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <AlertItem id="AlertItem" />
+      <HeaderItem id="HeaderItem" />
+      <LabelItem id="LabelItem" />
+      <PillItem id="PillItem" />
+      <TextItem id="TextItem" />
+      <TextAreaItem id="TextAreaItem" />
+      <ToolbarItem id="ToolbarItem" />
+    </ComponentPrototype>
   )
 }

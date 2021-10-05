@@ -16,7 +16,7 @@ import {
   RedbangIcon,
   RetryIcon,
   Segment, 
-  ShorthandCollection,
+  SplitButton,
   Text } from '@fluentui/react-northstar'
 import ChatMessagesCode from '!!raw-loader!../../../assets/code/prototypes/chat/ChatMessagesCode.jsx'
 import ChatCompactCode from '!!raw-loader!../../../assets/code/prototypes/chat/ChatCompactCode.jsx'
@@ -29,7 +29,7 @@ function ChatMessages(props) {
     image: 'pic/Microsoft.png',
     status: { color: 'green', icon: <AcceptIcon /> },
   }
-  const items: ShorthandCollection<ChatItemProps> = [
+  const items = [
     {
       message: (
         <ChatTag.Message
@@ -271,17 +271,34 @@ function ChatCompact(props) {
 
 export default class Chat extends React.Component {
   render() {
+    const menu = [
+      {
+        key: 'Chat messages',
+        content: 'Chat messages',
+      },
+      {
+        key: 'Compact chat messages',
+        content: 'Compact chat density',
+      },
+    ]
     return (
-      <Box className="Chat page">
-        <ul id="ChatList">
-          <li><Button onClick={ () => ScrollToAnchor('Chat messages') }>Chat messages</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Compact chat messages') }>Compact chat density</Button></li>
-        </ul>
-        <ComponentPrototype title="Chat">
-          <ChatMessages id="Chat messages" />
-          <ChatCompact id="Compact chat messages" />
-        </ComponentPrototype>
-      </Box>
+      <ComponentPrototype title="Chat">
+        <SplitButton
+          menu={ menu }
+          button={{
+            content: 'Go To',
+            'aria-roledescription': 'splitbutton',
+            'aria-describedby': 'instruction-message-primary-button',
+          }}
+          primary
+          toggleButton={{
+            'aria-label': 'more options',
+          }}
+          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+        />
+        <ChatMessages id="Chat messages" />
+        <ChatCompact id="Compact chat messages" />
+      </ComponentPrototype>
     )
   }
 }

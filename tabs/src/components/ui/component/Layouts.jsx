@@ -33,6 +33,7 @@ import {
   RadioGroup,
   SearchIcon,
   Segment,
+  SplitButton,
   Text,
   Tree,
   treeAsListboxBehavior,
@@ -551,36 +552,83 @@ function TreeItem(props) {
 }
 
 export default function Layouts() {
+  const menu = [
+    {
+      key: 'AccordionItem',
+      content: 'Accordion',
+    },
+    {
+      key: 'BoxItem',
+      content: 'Box',
+    },
+    {
+      key: 'BreadcrumbItem',
+      content: 'Breadcrumb',
+    },
+    {
+      key: 'CheckboxItem',
+      content: 'Checkbox',
+    },
+    {
+      key: 'DropdownItem',
+      content: 'Dropdown',
+    },
+    {
+      key: 'FormItem',
+      content: 'Form',
+    },
+    {
+      key: 'InputItem',
+      content: 'Input',
+    },
+    {
+      key: 'ListItem',
+      content: 'List',
+    },
+    {
+      key: 'MenuItem',
+      content: 'Menu',
+    },
+    {
+      key: 'RadioGroupItem',
+      content: 'RadioGroup',
+    },
+    {
+      key: 'SegmentItem',
+      content: 'Segment',
+    },
+    {
+      key: 'TreeItem',
+      content: 'Tree',
+    },
+  ]
   return (
-    <Box>
-      <ul id="LayoutList">
-        <li><Button onClick={ () => ScrollToAnchor('AccordionItem') }>Accordion</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('BoxItem') }>Box</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('BreadcrumbItem') }>Breadcrumb</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('CheckboxItem') }>Checkbox</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('DropdownItem') }>Dropdown</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('FormItem') }>Form</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('InputItem') }>Input</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('ListItem') }>List</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('MenuItem') }>Menu</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('RadioGroupItem') }>RadioGroup</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('SegmentItem') }>Segment</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('TreeItem') }>Tree</Button></li>
-      </ul>
-      <ComponentPrototype title="Layout">
-        <AccordionItem id="AccordionItem" />
-        <BoxItem id="BoxItem" />
-        <BreadcrumbItem id="BreadcrumbItem" />
-        <CheckboxItem id="CheckboxItem" />
-        <DropdownItem id="DropdownItem" />
-        <FormItem id="FormItem" />
-        <InputItem id="InputItem" />
-        <ListItem id="ListItem" />
-        <MenuItem id="MenuItem" />
-        <RadioGroupItem id="RadioGroupItem" />
-        <SegmentItem id="SegmentItem" />
-        <TreeItem id="TreeItem" />
-      </ComponentPrototype>
-    </Box>
+    <ComponentPrototype title="Layout">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <AccordionItem id="AccordionItem" />
+      <BoxItem id="BoxItem" />
+      <BreadcrumbItem id="BreadcrumbItem" />
+      <CheckboxItem id="CheckboxItem" />
+      <DropdownItem id="DropdownItem" />
+      <FormItem id="FormItem" />
+      <InputItem id="InputItem" />
+      <ListItem id="ListItem" />
+      <MenuItem id="MenuItem" />
+      <RadioGroupItem id="RadioGroupItem" />
+      <SegmentItem id="SegmentItem" />
+      <TreeItem id="TreeItem" />
+    </ComponentPrototype>
   )
 }

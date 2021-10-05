@@ -11,6 +11,7 @@ import {
   MenuButton, 
   MoreIcon, 
   Segment, 
+  SplitButton,
   Text } from '@fluentui/react-northstar';
 import ParticipantsListCode from '!!raw-loader!../../../assets/code/prototypes/users/ParticipantsListCode.jsx'
 import HexagonalAvatarCode from '!!raw-loader!../../../assets/code/prototypes/users/HexagonalAvatarCode.jsx'
@@ -159,17 +160,34 @@ function ParticipantsList(props) {
 
 export default class Users extends React.Component {
   render() {
+    const menu = [
+      {
+        key: 'HexagonalAvatar',
+        content: 'Hexagonal Avatar',
+      },
+      {
+        key: 'ParticipantsList',
+        content: 'Participants List',
+      },
+    ]
     return (
-      <Box className="Users page">
-        <ul id="UsersList">
-          <li><Button onClick={ () => ScrollToAnchor('HexagonalAvatar') }>Hexagonal Avatar</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('ParticipantsList') }>Participants List</Button></li>
-        </ul>
-        <ComponentPrototype title="Users">
-          <HexagonalAvatar id="HexagonalAvatar" />
-          <ParticipantsList id="ParticipantsList" />
-        </ComponentPrototype>
-      </Box>
+      <ComponentPrototype title="Users">
+        <SplitButton
+          menu={ menu }
+          button={{
+            content: 'Go To',
+            'aria-roledescription': 'splitbutton',
+            'aria-describedby': 'instruction-message-primary-button',
+          }}
+          primary
+          toggleButton={{
+            'aria-label': 'more options',
+          }}
+          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+        />
+        <HexagonalAvatar id="HexagonalAvatar" />
+        <ParticipantsList id="ParticipantsList" />
+      </ComponentPrototype>
     )
   }
 }

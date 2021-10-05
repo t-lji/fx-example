@@ -16,6 +16,7 @@ import {
   MoreIcon,
   Provider,
   Skeleton,  
+  SplitButton,
   StarIcon,
   Text,
   Video } from '@fluentui/react-northstar'
@@ -60,7 +61,6 @@ function AnimationItem(props) {
             spinner,
           },
         }}
-        styles={{ backgroundColor: "#eeeeee" }}
       >
         <Animation name="spinner" direction="alternate-reverse">
           <MentionIcon circular bordered />
@@ -362,28 +362,63 @@ function VideoItem(props) {
 }
 
 export default function Media() {
+  const menu = [
+    {
+      key: 'AnimationItem',
+      content: 'Animation',
+    },
+    {
+      key: 'AvatarItem',
+      content: 'Avatar',
+    },
+    {
+      key: 'CardItem',
+      content: 'Card',
+    },
+    {
+      key: 'CarouselItem',
+      content: 'Carousel',
+    },
+    {
+      key: 'EmbedItem',
+      content: 'Embed',
+    },
+    {
+      key: 'ImageItem',
+      content: 'Image',
+    },
+    {
+      key: 'SkeletonItem',
+      content: 'Skeleton',
+    },
+    {
+      key: 'VideoItem',
+      content: 'Video',
+    },
+  ]
   return (
-    <Box>
-      <ul id="MediaList">
-        <li><Button onClick={ () => ScrollToAnchor('AnimationItem') }>Animation</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('AvatarItem') }>Avatar</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('CardItem') }>Card</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('CarouselItem') }>Carousel</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('EmbedItem') }>Embed</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('ImageItem') }>Image</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('SkeletonItem') }>Skeleton</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('VideoItem') }>Video</Button></li>
-      </ul>
-      <ComponentPrototype title="Media">
-        <AnimationItem id="AnimationItem" />
-        <AvatarItem id="AvatarItem" />
-        <CardItem id="CardItem" />
-        <CarouselItem id="CarouselItem" />
-        <EmbedItem id="EmbedItem" />
-        <ImageItem id="ImageItem" />
-        <SkeletonItem id="SkeletonItem" />
-        <VideoItem id="VideoItem" />
-      </ComponentPrototype>
-    </Box>
+    <ComponentPrototype title="Media">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <AnimationItem id="AnimationItem" />
+      <AvatarItem id="AvatarItem" />
+      <CardItem id="CardItem" />
+      <CarouselItem id="CarouselItem" />
+      <EmbedItem id="EmbedItem" />
+      <ImageItem id="ImageItem" />
+      <SkeletonItem id="SkeletonItem" />
+      <VideoItem id="VideoItem" />
+    </ComponentPrototype>
   )
 }

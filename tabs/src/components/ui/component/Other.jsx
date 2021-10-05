@@ -16,6 +16,7 @@ import {
   OneDriveIcon,
   QuestionCircleIcon,
   Slider,
+  SplitButton,
   Status,
   Text, 
   ProviderConsumer, } from '@fluentui/react-northstar'
@@ -178,15 +179,40 @@ function StatusItem(props) {
 }
 
 export default function Other() {
+  const menu = [
+    {
+      key: 'DividerItem',
+      content: 'Divider',
+    },
+    {
+      key: 'LoaderItem',
+      content: 'Loader',
+    },
+    {
+      key: 'SliderItem',
+      content: 'Slider',
+    },
+    {
+      key: 'StatusItem',
+      content: 'Status',
+    },
+  ]
   return (
     <Box>
-      <ul id="OtherList">
-        <li><Button onClick={ () => ScrollToAnchor('DividerItem') }>Divider</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('LoaderItem') }>Loader</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('SliderItem') }>Slider</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('StatusItem') }>Status</Button></li>
-      </ul>
       <ComponentPrototype title="Other">
+        <SplitButton
+          menu={ menu }
+          button={{
+            content: 'Go To',
+            'aria-roledescription': 'splitbutton',
+            'aria-describedby': 'instruction-message-primary-button',
+          }}
+          primary
+          toggleButton={{
+            'aria-label': 'more options',
+          }}
+          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+        />
         <DividerItem id="DividerItem" />
         <LoaderItem id="LoaderItem" />
         <SliderItem id="SliderItem" />

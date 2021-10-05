@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Dialog, Header, Popup, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Button, Dialog, Header, Popup, Segment, SplitButton, Text } from '@fluentui/react-northstar';
 import NestedDialogsCode from '!!raw-loader!../../../assets/code/prototypes/toolbars/NestedDialogsCode.jsx'
 import Code from "../../util/CodeUtil"
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
@@ -39,12 +39,12 @@ function NestedDialogs(props) {
                 header="An inner dialog"
                 content={
                   <>
+                    <Popup content="You can have also Popups inside dialogs!" trigger={<Button content="Open a popup" />} position="below" />
+                    
                     <Text>
                       This <code>Dialog</code> is nested ヽ(^o^)ノ, if you will on an overlay only this <code>Dialog</code>{' '}
                       will be closed.
                     </Text>
-                    
-                    <Popup content="You can have also Popups inside dialogs!" trigger={<Button content="Open a popup" />} position="below" />
                   </>
                 }
                 trigger={<Button content="Open a dialog" />}
@@ -62,15 +62,29 @@ function NestedDialogs(props) {
 
 export default class ToolBars extends React.Component {
   render() {
+    const menu = [
+      {
+        key: 'NestedDialogs',
+        content: 'Nested Dialogs',
+      },
+    ]
     return (
-      <Box className="ToolBars page">
-        <ul id="ToolBarsList">
-          <li><Button onClick={ () => ScrollToAnchor('NestedDialogs') }>Nested Dialogs</Button></li>
-        </ul>
-        <ComponentPrototype title="ToolBars">
-          <NestedDialogs id="NestedDialogs" />
-        </ComponentPrototype>
-      </Box>
+      <ComponentPrototype title="ToolBars">
+        <SplitButton
+          menu={ menu }
+          button={{
+            content: 'Go To',
+            'aria-roledescription': 'splitbutton',
+            'aria-describedby': 'instruction-message-primary-button',
+          }}
+          primary
+          toggleButton={{
+            'aria-label': 'more options',
+          }}
+          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+        />
+        <NestedDialogs id="NestedDialogs" />
+      </ComponentPrototype>
     )
   }
 }
