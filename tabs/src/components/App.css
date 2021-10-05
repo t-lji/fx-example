@@ -19,7 +19,16 @@
 }
 
 .HeaderBox {
-width: 10%;
+    width: 10%;
+}
+
+.ContentBox {
+    width: 75%;
+}
+
+.StepContent {
+    margin-top: 10px;   
+    margin-bottom: 10px;
 }
 
 .center {

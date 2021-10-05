@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert, Box, Button, MoreIcon, Popup } from '@fluentui/react-northstar';
 
-function PopupItem(props) {
+export default function PopupItem(props) {
   const [alertFlag, setAlert] = React.useState(false);
   return (
     <Box>

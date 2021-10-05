@@ -4,7 +4,6 @@ import {
   Avatar,
   Box,
   Chat,
-  ChatItemProps,
   Header,
   MentionIcon,
   RedbangIcon,

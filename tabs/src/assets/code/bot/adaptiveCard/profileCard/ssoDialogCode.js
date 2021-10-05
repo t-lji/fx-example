@@ -69,13 +69,6 @@ class SSODialog extends ComponentDialog {
     if (dialogTurnResult.status === DialogTurnStatus.empty) {
       dialogTurnResult = await dialogContext.beginDialog(this.id);
     }
-
-    // Once got ssoToken, run operation that depends on ssoToken
-    if (dialogTurnResult.result?.ssoToken && this.operationWithSSO) {
-      await this.operationWithSSO(context, dialogTurnResult.result?.ssoToken);
-      this.resetSSOOperation();
-      await dialogContext.endDialog();
-    }
   }
 
   async ssoStep(stepContext) {

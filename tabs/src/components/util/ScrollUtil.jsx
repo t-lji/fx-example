@@ -18,7 +18,7 @@ export function TopJumper() {
     <Tooltip 
       style={{
         position: "fixed",
-        right: "11%",
+        right: "10%",
         bottom: "15%",
         width: "100px"
       }}
