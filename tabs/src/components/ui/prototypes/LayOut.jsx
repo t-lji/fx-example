@@ -22,10 +22,10 @@ import { Formik } from 'formik';
 import AdvancedTableCode from '!!raw-loader!../../../assets/code/prototypes/layout/AdvancedTableCode.jsx'
 import FormValidateFormikCode from '!!raw-loader!../../../assets/code/prototypes/layout/FormValidateFormikCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function AdvancedTable() {
+function AdvancedTable(props) {
   const stringCellComparator = (cell1, cell2) => {
     if (cell1 && cell2 && typeof cell1 === 'string' && typeof cell2 === 'string') {
       return cell1.localeCompare(cell2);
@@ -140,8 +140,8 @@ function AdvancedTable() {
   };
 
   return (
-    <Box>
-      <Header as="h4" content="Advanced Table" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Advanced Table" />
 
       <Collapse>
         <Code code={ AdvancedTableCode } />
@@ -149,7 +149,7 @@ function AdvancedTable() {
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="Table example" />
-          <p>Table with menu, checkboxes and Aria anouncements</p>
+          <Text>Table with menu, checkboxes and Aria anouncements</Text>
           <Table
             variables={{ cellContentOverflow: 'none' }}
             header={header}
@@ -163,10 +163,10 @@ function AdvancedTable() {
   );
 };
 
-function FormValidateFormik() {
+function FormValidateFormik(props) {
   return (
-    <Box>
-      <Header as="h4" content="Form Validation" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Form Validation" />
 
       <Collapse>
         <Code code={ FormValidateFormikCode } />
@@ -174,7 +174,7 @@ function FormValidateFormik() {
       <Box styles={{ marginTop: '20px' }}>
           <Segment>
             <Header as="h3" content="List with context menu" />
-            <p>Context menu can be opened by clicking on the more button or by right mouse button</p>
+            <Text>Context menu can be opened by clicking on the more button or by right mouse button</Text>
           </Segment>
           <Segment>
             <Flex>
@@ -243,13 +243,14 @@ export default class LayOut extends React.Component {
   render() {
     return (
       <Box className="LayOut page">
-        <Header as="h2" content="LayOut" />
         <ul id="LayOutList">
           <li><Button onClick={ () => ScrollToAnchor('AdvancedTable') }>Advanced Table</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('FormValidateFormik') }>Form Validation</Button></li>
         </ul>
-        <Box id="AdvancedTable"><AdvancedTable /></Box>
-        <Box id="FormValidateFormik"><FormValidateFormik /></Box>
+        <ComponentPrototype title="LayOut">
+          <AdvancedTable id="AdvancedTable" />
+          <FormValidateFormik id="FormValidateFormik" />
+        </ComponentPrototype>
       </Box>
     )
   }

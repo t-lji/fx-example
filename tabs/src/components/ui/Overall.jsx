@@ -14,7 +14,8 @@ import {
   Label,
   Menu,
   Provider,
-  Segment  } from '@fluentui/react-northstar'
+  Segment,
+  Text } from '@fluentui/react-northstar'
 import "./Overall.css";
 import NestingThemesCode from '!!raw-loader!../../assets/code/layout/NestingThemesCode.jsx'
 import FlexGapCode from '!!raw-loader!../../assets/code/layout/FlexGapCode.jsx'
@@ -23,10 +24,10 @@ import GridFourCode from '!!raw-loader!../../assets/code/layout/GridFourCode.jsx
 import GridTwoCode from '!!raw-loader!../../assets/code/layout/GridTwoCode.jsx'
 import Code from "../util/CodeUtil"
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
-import { Collapse } from "../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../util/PageUtil";
 
 // show teams theme picture
-function Theme() {
+function Themes() {
   const steps = ["Default", "Dark", "High contrast"];
   const [selectedMenuItem, setSelectedMenuItem] = useState("Default");
   const items = steps.map((step) => {
@@ -37,9 +38,7 @@ function Theme() {
     };
   });
   return (
-    <Box className="Theme page">
-      <Header as="h4" content="Themes" />
-
+    <Box className="Theme page" styles={{ marginBottom: '40px' }}>
       <Menu defaultActiveIndex={0} items={items} underlined secondary />
       <Box>
         <Box>
@@ -64,11 +63,14 @@ function Theme() {
   )
 }
 
-function NestingThemesNode() {
+function NestingThemes() {
   return (
-    <Box>
+    <Box styles={{ marginBottom: '40px' }}>
+      <Collapse><Code code={ NestingThemesCode } /></Collapse>
+
+      <Header as="h3" content="Nesting Themes" />
+
       {/* Default theming */}
-      <Header as="h4" content="Default theming" />
       <Button content="Button" />
       <Button icon={<AddIcon />} iconOnly primary />
       <Button icon={<EmailIcon />} content="Send email" secondary />
@@ -86,7 +88,7 @@ function NestingThemesNode() {
         }}
       >
         <Box>
-          <Header as="h4" content="First nested theming" />
+          <Header as="h3" content="First nested theming" />
 
           <Button content="Button" />
           <Button icon={<AddIcon />} iconOnly primary />
@@ -105,7 +107,7 @@ function NestingThemesNode() {
             }}
           >
             <Box>
-              <Header as="h4" content="Second nested theming" />
+              <Header as="h3" content="Second nested theming" />
 
               <Button content="Button" />
               <Button icon={<AddIcon />} iconOnly primary />
@@ -120,24 +122,17 @@ function NestingThemesNode() {
   )
 }
 
-function NestingThemes() {
-  return (
-    <Box>
-      <Header as="h3" content="Nesting Themes" />
-
-      <Collapse><Code code={ NestingThemesCode } /></Collapse>
-      <NestingThemesNode />
-    </Box>
-  )
-}
-
 function Layout() {
   return (
     <Box>
-      <Header as="h3" content="Layout" />
-        
-      <Box>
-        <Header as="h4" content="Flex" />
+      <Box styles={{ marginBottom: '40px' }}>
+        <Header as="h3" content="Flex" />
+
+        <Text>
+          <code>Flex</code> is for either columns or rows. This means that if you are 
+          laying out items in one direction (for example buttons inside a header),
+          then you should use Flex.
+        </Text>
 
         <Collapse><Code code={ FlexGapCode } /></Collapse>
           <Flex gap="gap.small">
@@ -156,8 +151,13 @@ function Layout() {
           </Flex>
       </Box>
 
-      <Box>
-        <Header as="h4" content="Grid" />
+      <Box styles={{ marginBottom: '40px' }}>
+        <Header as="h3" content="Grid" />
+
+        <Text>
+        <code>Grid</code> is for lining things up in columns and rows, it implements Grid 
+          layout module.
+        </Text>
 
         <Collapse><Code code={ GridFourCode } /></Collapse>
         <Grid columns="repeat(4, 1fr)" rows="50px 150px 50px">
@@ -241,15 +241,28 @@ export default class Overall extends React.Component {
   render() {
     return (
       <Box className="Overall page">
-        <Header as="h2" content="Overall" />
+        <Header as="h1" content="Overall" />
         <ul id="OverallList">
           <li><Button onClick={ () => ScrollToAnchor('Themes') }>Themes</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('NestingThemes') }>Nesting Themes</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('Layout') }>Layout</Button></li>
         </ul>
-        <Box id="Themes"><Theme /></Box>
-        <Box id="NestingThemes"><NestingThemes /></Box>
-        <Box id="Layout"><Layout /></Box>
+        <ComponentPrototype id="Themes" title="Themes" description="Show teams theme pictures">
+          <Themes />
+        </ComponentPrototype>
+        <ComponentPrototype id="NestingThemes" title="Nesting Themes" 
+          description="If you have areas of an application that require additional 
+          theming, you can achieve that using nested providers and overwrite the 
+          needed styles."
+        >
+          <NestingThemes />
+        </ComponentPrototype>
+        <ComponentPrototype id="Layout" title="Layout" 
+          description="Fluent UI has Flex and Grid components to handle layout 
+          aspects, they represent corresponding CSS layout modules ."
+        >
+          <Layout />
+        </ComponentPrototype>
         <TopJumper />
       </Box>
     )

@@ -7,13 +7,15 @@ import { coy } from "react-syntax-highlighter/dist/esm/styles/prism";
 // provide code highlighting
 function Highlight(props) {
   return (
-    <Provider theme={teamsTheme} styles={{ backgroundColor: "#eeeeee" }}>
+    <Provider theme={teamsTheme} styles={{ border: '1px solid black' }}>
       <SyntaxHighlighter 
         language={ props.language === 'json' ? 'json' : 'jsx' }
         showLineNumbers={true}
         style={ coy }
         wrapLines={true}
-        wrapLongLines={true}>
+        wrapLongLines={true}
+        customStyle={{ border: '1px solid white' }}
+      >
           {props.code.replace(/^\s+|\s+$/g, '')}
       </SyntaxHighlighter>
     </Provider>

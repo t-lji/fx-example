@@ -50,7 +50,7 @@ export default function HexagonalAvatar() {
 
   return (
     <Box>
-      <Header as="h4" content="Hexagonal Avatar" />
+      <Header as="h3" content="Hexagonal Avatar" />
 
       {/* Make sure that this is rendered only once in the application tree. */}
       {ReactDOM.createPortal(

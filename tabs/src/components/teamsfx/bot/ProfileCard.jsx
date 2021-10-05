@@ -12,33 +12,33 @@ import TeamsBotSsoPromptCode from '!!raw-loader!../../../assets/code/bot/adaptiv
 import createMicrosoftGraphClientCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/SDK/createMicrosoftGraphClientCode.js'
 import OnBehalfOfUserCredentialCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/SDK/onBehalfOfUserCredential.js'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
 export default function ProfileCard() {
   return (
     <Box id="ProfileCard page">
-      <Header as="h4" content="Profile Card" />
+      <Header as="h3" content="Profile Card" />
 
         <Flex column>
-          <Header as="h4" content="Initialize Configuration API" />
+          <Header as="h3" content="Initialize Configuration API" />
           <Text content='Initialize configuration from environment variables or configuration object and set the global instance:' />
           <Collapse>
             <Code code={ LoadConfugurationCode } />
           </Collapse>
 
-          <Header as="h4" content="Constructor of TeamsBotSsoPrompt API" />
+          <Header as="h3" content="Constructor of TeamsBotSsoPrompt API" />
           <Text content='Creates a new prompt that leverage Teams Single Sign On (SSO) support for bot to automatically sign in user and help receive oauth token, asks the user to consent if needed:' />
           <Collapse>
             <Code code={ TeamsBotSsoPromptCode } />
           </Collapse>
 
-          <Header as="h4" content="Microsoft Graph Client API" />
+          <Header as="h3" content="Microsoft Graph Client API" />
           <Text content='Get Microsoft graph client:' />
           <Collapse>
             <Code code={ createMicrosoftGraphClientCode } />
           </Collapse>
 
-          <Header as="h4" content="Constructor of OnBehalfOfUserCredential API" />
+          <Header as="h3" content="Constructor of OnBehalfOfUserCredential API" />
           <Text content='Represent on-behalf-of flow to get user identity, and it is designed to be used in server side:' />
           <Collapse>
             <Code code={ OnBehalfOfUserCredentialCode } />

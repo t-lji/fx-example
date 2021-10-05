@@ -12,7 +12,7 @@ export default class Bot extends React.Component {
         <ul id="OverallList">
           <li><Button onClick={ () => ScrollToAnchor('Adaptive Card') }>Adaptive Card</Button></li>
         </ul>
-        <Box id="AdaptiveCard"><AdaptiveCard /></Box>
+        <AdaptiveCard id="AdaptiveCard" />
         <TopJumper />
       </Box>
     )

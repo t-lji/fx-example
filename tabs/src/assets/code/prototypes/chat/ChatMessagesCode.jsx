@@ -9,14 +9,15 @@ import {
   MentionIcon,
   RedbangIcon,
   Segment, 
-  ShorthandCollection } from '@fluentui/react-northstar'
+  ShorthandCollection,
+  Text } from '@fluentui/react-northstar'
 
 export default function ChatMessages() {
   const MicrosoftAvatar = {
     image: 'Microsoft.png',
     status: { color: 'green', icon: <AcceptIcon /> },
   }
-  const items: ShorthandCollection<ChatItemProps> = [
+  const items = [
     {
       message: (
         <ChatTag.Message
@@ -101,7 +102,7 @@ export default function ChatMessages() {
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="Important and mention messages" />
-          <p>Important and mention messages support in Teams theme.</p>
+          <Text>Important and mention messages support in Teams theme.</Text>
         </Segment>
         <Segment><ChatTag items={items} /></Segment>
       </Box>

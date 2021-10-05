@@ -30,15 +30,15 @@ import TextCode from '!!raw-loader!../../../assets/code/component/text/TextCode.
 import TextAreaCode from '!!raw-loader!../../../assets/code/component/text/TextAreaItemCode.jsx'
 import ToolbarCode from '!!raw-loader!../../../assets/code/component/text/ToolbarCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function AlertItem() {
+function AlertItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Alert" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Alert" />
 
-      <TextTag weight="regular" size="large">
+      <TextTag weight="regular">
         An Alert displays a brief, important message to attract a user's 
         attention without interrupting their current task.
       </TextTag>
@@ -55,12 +55,12 @@ function AlertItem() {
   )
 }
 
-function HeaderItem() {
+function HeaderItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Header" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Header" />
 
-      <TextTag weight="regular" size="large">
+      <TextTag weight="regular">
         A Header organises the content by declaring a content's topic.
       </TextTag>
       <Collapse>
@@ -79,12 +79,12 @@ function HeaderItem() {
   )
 }
 
-function LabelItem() {
+function LabelItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Label" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Label" />
 
-      <TextTag weight="regular" size="large">
+      <TextTag weight="regular">
         A Label allows user to classify content.
       </TextTag>
       <Collapse>
@@ -101,12 +101,12 @@ function LabelItem() {
   )
 }
 
-function PillItem() {
+function PillItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Pill" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Pill" />
 
-      <TextTag weight="regular" size="large">
+      <TextTag weight="regular">
         THIS COMPONENT IS UNSTABLE Pills should be used 
         when representing an input, as a way to filter content, 
         or to represent an attribute.
@@ -123,12 +123,12 @@ function PillItem() {
   )
 }
 
-function TextItem() {
+function TextItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Text" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Text" />
 
-      <TextTag weight="regular" size="large">
+      <TextTag weight="regular">
         A Text consistently styles and formats occurrences of text.
       </TextTag>
       <Collapse>
@@ -144,12 +144,12 @@ function TextItem() {
   )
 }
 
-function TextAreaItem() {
+function TextAreaItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="TextArea" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="TextArea" />
 
-      <TextTag weight="regular" size="large">
+      <TextTag weight="regular">
         A TextArea is a multi-line plan-text editing control.
       </TextTag>
       <Collapse>
@@ -165,7 +165,7 @@ function TextAreaItem() {
   )
 }
 
-function ToolbarItem() {
+function ToolbarItem(props) {
   const stateReducer = (prevState, action) => ({ ...prevState, [action]: !prevState[action] })
   const [state, dispatch] = React.useReducer(stateReducer, {
     bold: false,
@@ -175,10 +175,10 @@ function ToolbarItem() {
   })
 
   return (
-    <Box>
-      <Header as="h4" content="Toolbar" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Toolbar" />
 
-      <TextTag weight="regular" size="large">
+      <TextTag weight="regular">
         A Toolbar is a container for grouping a set of controls, 
         often action controls (e.g. buttons) or input controls (e.g. checkboxes).
       </TextTag>
@@ -325,23 +325,24 @@ function ToolbarItem() {
 export default function Text() {
   return (
     <Box>
-      <Header as="h3" content="Text" />
       <ul id="TextList">
-        <li><Button onClick={ () => ScrollToAnchor('Alert') }>Alert</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Header') }>Header</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Label') }>Label</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Pill') }>Pill</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Text') }>Text</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('TextArea') }>TextArea</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Toolbar') }>Toolbar</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('AlertItem') }>Alert</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('HeaderItem') }>Header</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('LabelItem') }>Label</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('PillItem') }>Pill</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('TextItem') }>Text</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('TextAreaItem') }>TextArea</Button></li>
+        <li><Button onClick={ () => ScrollToAnchor('ToolbarItem') }>Toolbar</Button></li>
       </ul>
-      <Box id="Alert"><AlertItem /></Box>
-      <Box id="Header"><HeaderItem /></Box>
-      <Box id="Label"><LabelItem /></Box>
-      <Box id="Pill"><PillItem /></Box>
-      <Box id="Text"><TextItem /></Box>
-      <Box id="TextArea"><TextAreaItem /></Box>
-      <Box id="Toolbar"><ToolbarItem /></Box>
+      <ComponentPrototype title="Text">
+        <AlertItem id="AlertItem" />
+        <HeaderItem id="HeaderItem" />
+        <LabelItem id="LabelItem" />
+        <PillItem id="PillItem" />
+        <TextItem id="TextItem" />
+        <TextAreaItem id="TextAreaItem" />
+        <ToolbarItem id="ToolbarItem" />
+      </ComponentPrototype>
     </Box>
   )
 }

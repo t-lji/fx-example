@@ -9,15 +9,15 @@ import {
   Reaction } from '@fluentui/react-northstar'
 import ReactionCode from '!!raw-loader!../../../assets/code/component/chat/ReactionCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function ReactionItem() {
+function ReactionItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Reaction" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Reaction" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A Reaction indicates user's emotion or perception. Used to display 
         user's reaction for entity in Chat (e.g. message).
       </Text>
@@ -45,11 +45,12 @@ function ReactionItem() {
 export default function Chats() {
   return (
     <Box>
-      <Header as="h3" content="Chat" />
       <ul id="ChatList">
         <li><Button onClick={ () => ScrollToAnchor('ReactionItem') }>Reaction</Button></li>
       </ul>
-      <Box id="ReactionItem"><ReactionItem /></Box>
+      <ComponentPrototype title="Chat">
+        <ReactionItem id="ReactionItem" />
+      </ComponentPrototype>
     </Box>
   )
 }

@@ -5,7 +5,7 @@ import {
   ChannelShareIcon,
   SplitButton } from '@fluentui/react-northstar'
 
-export default function SplitButtonItem() {
+export default function SplitButtonItem(props) {
   return (
     <Box>
       <>

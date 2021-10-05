@@ -15,10 +15,10 @@ import {
 import ParticipantsListCode from '!!raw-loader!../../../assets/code/prototypes/users/ParticipantsListCode.jsx'
 import HexagonalAvatarCode from '!!raw-loader!../../../assets/code/prototypes/users/HexagonalAvatarCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function HexagonalAvatar() {
+function HexagonalAvatar(props) {
   const CustomAvatar = (props) => {
     const { hexagonal, ...rest } = props;
   
@@ -65,8 +65,8 @@ function HexagonalAvatar() {
   };
 
   return (
-    <Box>
-      <Header as="h4" content="Hexagonal Avatar" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Hexagonal Avatar" />
 
       <Collapse>
         <Code code={ HexagonalAvatarCode } />
@@ -84,7 +84,7 @@ function HexagonalAvatar() {
         'bot-hexagon-clip-path',
       )}
       <Flex column padding="padding.medium" gap="gap.medium">
-        <Box>
+        <Box id={ props.id } styles={{ marginBottom: '40px' }}>
           <Text content="Hexagonal Avatar" />
           &emsp;
           <CustomAvatar
@@ -93,7 +93,7 @@ function HexagonalAvatar() {
             status={statusProps}
           />
         </Box>
-        <Box>
+        <Box id={ props.id } styles={{ marginBottom: '40px' }}>
           <Text content="Regular Avatar" />
           &emsp;
           <CustomAvatar
@@ -106,7 +106,7 @@ function HexagonalAvatar() {
   )
 }
 
-function ParticipantsList() {
+function ParticipantsList(props) {
   const menu = ['Open', 'Remove from list'];
 
   const ActiveBarItem = props => (
@@ -140,8 +140,8 @@ function ParticipantsList() {
   ];
 
   return (
-    <Box>
-      <Header as="h4" content="Participants List" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Participants List" />
 
       <Collapse>
         <Code code={ ParticipantsListCode } />
@@ -149,7 +149,7 @@ function ParticipantsList() {
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="List with context menu" />
-          <p>Context menu can be opened by clicking on the more button or by right mouse button</p>
+          <Text>Context menu can be opened by clicking on the more button or by right mouse button</Text>
         </Segment>
         <Segment><List navigable items={items3} horizontal /></Segment>
       </Box>
@@ -161,13 +161,14 @@ export default class Users extends React.Component {
   render() {
     return (
       <Box className="Users page">
-        <Header as="h2" content="Users" />
         <ul id="UsersList">
           <li><Button onClick={ () => ScrollToAnchor('HexagonalAvatar') }>Hexagonal Avatar</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('ParticipantsList') }>Participants List</Button></li>
         </ul>
-        <Box id="HexagonalAvatar"><HexagonalAvatar /></Box>
-        <Box id="ParticipantsList"><ParticipantsList /></Box>
+        <ComponentPrototype title="Users">
+          <HexagonalAvatar id="HexagonalAvatar" />
+          <ParticipantsList id="ParticipantsList" />
+        </ComponentPrototype>
       </Box>
     )
   }

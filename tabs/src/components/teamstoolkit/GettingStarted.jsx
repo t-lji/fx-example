@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Image } from "@fluentui/react-northstar";
+import { Box, Button, Image, Text } from "@fluentui/react-northstar";
 import CreateTableSQL from '!!raw-loader!../../assets/code/teamsToolkit/gettingStarted/createTableSQL.sql'
 import Code from "../util/CodeUtil"
 
@@ -15,18 +15,18 @@ export default class GettingStarted extends React.Component {
       <h2>Deploy to the Cloud</h2>
       <Image src="pic/getting_start_deploy.gif" />
       <h2>Find your database</h2>
-      <p>Open <strong>.fx/env.default.json</strong> file, you could get the database name in <strong>databaseName</strong> setting</p>
-      <p>In <Button onClick={ event => { window.open("https://ms.portal.azure.com/", "_blank"); } }>Azure portal</Button>, find the database and use query editor</p>
+      <Text>Open <strong>.fx/env.default.json</strong> file, you could get the database name in <strong>databaseName</strong> setting</Text>
+      <Text>In <Button onClick={ event => { window.open("https://ms.portal.azure.com/", "_blank"); } }>Azure portal</Button>, find the database and use query editor</Text>
       <Image src="pic/getting_start_all_resources.png" />
       <h2>Log in your database</h2>
-      <p>Use your Login and Password in step 2</p>
+      <Text>Use your Login and Password in step 2</Text>
       <Image src="pic/getting_start_all_resources_login.png" />
       <h2>Create database in Azure</h2>
-      <p>With below query to create a table</p>
+      <Text>With below query to create a table</Text>
       <Code code={ CreateTableSQL }></Code>
       <Image src="pic/getting_start_all_resources_create_table.png" />
       <h2>Run your app</h2>
-      <p>Open Debug View <strong>(Ctrl+Shift+D)</strong>, select <strong>Launch Remote (Edge)</strong>, then Click <strong>start</strong> or Press <strong>F5</strong></p>
+      <Text>Open Debug View <strong>(Ctrl+Shift+D)</strong>, select <strong>Launch Remote (Edge)</strong>, then Click <strong>start</strong> or Press <strong>F5</strong></Text>
       <Image src="pic/getting_start_run.png" />
       <h2>Select scope of your app</h2>
       <Image src="pic/getting_start_select_scope.png" />

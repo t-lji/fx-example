@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image } from "@fluentui/react-northstar";
+import { Box, Image, Text } from "@fluentui/react-northstar";
 
 class Project extends React.Component {
   render() {
@@ -13,9 +13,9 @@ class Project extends React.Component {
       <h2>Deploy to the Cloud</h2>
       <Image src="pic/deploy_to_the_cloud.gif" />
       <h2>Local Debug</h2>
-      <p>Or just press <strong>F5</strong></p>
+      <Text>Or just press <strong>F5</strong></Text>
       <Image src="pic/local_dubug.gif" />
-      <p>Local Dubug Page</p>
+      <Text>Local Dubug Page</Text>
       <Image src="pic/local_dubug_web_page.gif" />
       <h2>Add Capabilities</h2>
       <Image src="pic/add_capabilities.gif" />

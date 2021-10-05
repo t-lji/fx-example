@@ -5,13 +5,13 @@ import ManifestLocation from '!!raw-loader!../../../assets/code/tab/staticTab/Ma
 import ManifestJson from '../../../assets/code/tab/staticTab/ManifestJson.json'
 import PersonalTabRouteCode from '!!raw-loader!../../../assets/code/tab/staticTab/PersonalTabRouteCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
 export default function StaticTab() {
   return (
     <Box>
       <Header as="h3" content="Static Tab" />
-      <Header as="h4" content="Add a personal tab" />
+      <Header as="h3" content="Add a personal tab" />
       <Flex column>
         <Segment inverted>
           <Text weight="regular" size="large" content='To add a personal tab to this application, create a content page, and update existing files' />

@@ -12,7 +12,7 @@ export default class Prototypes extends React.Component {
   render() {
     return (
       <Box className="Prototypes page">
-        <Header as="h2" content="Prototypes" />
+        <Header as="h1" content="Prototypes" />
         <ul id="PrototypesList">
           <li><Button onClick={ () => ScrollToAnchor('Chat') }>Chat</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('LayOut') }>LayOut</Button></li>

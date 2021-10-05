@@ -1,6 +1,6 @@
 import { Tree, treeAsListboxBehavior } from '@fluentui/react-northstar'
 
-export default function TreeItem() {
+export default function TreeItem(props) {
   const items = [
     {
       id: 'tree-as-list-item-1',

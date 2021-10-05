@@ -142,10 +142,10 @@ export default function ChatCompact() {
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="Important and mention messages" />
-          <p>Compact chat messages have the author floating in the content</p>
-          <p>Chat messages can show edited and translated status, sent and read 
+          <Text>Compact chat messages have the author floating in the content</Text>
+          <Text>Chat messages can show edited and translated status, sent and read 
             receipt status, have badges for importance and at-mentions, display 
-            an error state if sending failed</p>
+            an error state if sending failed</Text>
         </Segment>
         <Segment><ChatTag items={items} density="compact" /></Segment>
       </Box>

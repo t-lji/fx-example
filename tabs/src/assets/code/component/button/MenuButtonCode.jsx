@@ -7,7 +7,7 @@ import {
   Flex,
   MenuButton } from '@fluentui/react-northstar'
 
-export default function MenuButtonItem() {
+export default function MenuButtonItem(props) {
   const [alertFlag, setAlert] = useState(false);
   const showAlert = () => {
     setAlert(true) || setTimeout(() => { setAlert(false) }, 2000)

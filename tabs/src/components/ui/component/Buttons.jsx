@@ -30,20 +30,20 @@ import MenuButtonCode from '!!raw-loader!../../../assets/code/component/button/M
 import SplitButtonCode from '!!raw-loader!../../../assets/code/component/button/SplitButtonCode.jsx'
 import TooltipCode from '!!raw-loader!../../../assets/code/component/button/TooltipCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function AttachmentItem() {
+function AttachmentItem(props) {
   const handleClick = message => e => {
     alert(`'${message}' was clicked`)
     e.stopPropagation()
   }
 
   return (
-    <Box>
-      <Header as="h4" content="Attachment" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Attachment" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         An Attachment represents a file or media attachment, 
         which may contain some metadata or actions.
       </Text>
@@ -67,12 +67,12 @@ function AttachmentItem() {
   )
 }
 
-function DatepickerItem() {
+function DatepickerItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Datepicker" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Datepicker" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A Datepicker is a control which is used to display dates grid and allow 
         user to select them.
       </Text>
@@ -91,12 +91,12 @@ function DatepickerItem() {
   )
 }
 
-function DialogItem() {
+function DialogItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Dialog" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Dialog" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A Dialog displays important information on top of a page which requires 
         a user's attention, confirmation, or interaction. Dialogs are purposefully 
         interruptive, so they should be used sparingly.
@@ -128,7 +128,7 @@ function DialogItem() {
   )
 }
 
-function MenuButtonItem() {
+function MenuButtonItem(props) {
   const [alertFlag, setAlert] = useState(false);
   const showAlert = () => {
     setAlert(true) || setTimeout(() => { setAlert(false) }, 2000)
@@ -145,10 +145,10 @@ function MenuButtonItem() {
     },
   ]
   return (
-    <Box>
-      <Header as="h4" content="MenuButton" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="MenuButton" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A MenuButton displays a menu connected to trigger element.
       </Text>
       <Collapse>
@@ -195,12 +195,12 @@ function MenuButtonItem() {
   )
 }
 
-function SplitButtonItem() {
+function SplitButtonItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="SplitButton" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="SplitButton" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A SplitButton enables users to take one of several related actions, one 
         being dominant and rest being displayed in a menu.
       </Text>
@@ -247,13 +247,13 @@ function SplitButtonItem() {
   )
 }
 
-function TooltipItem() {
+function TooltipItem(props) {
   const [target, setTarget] = useState(null)
   return (
-    <Box>
-      <Header as="h4" content="Tooltip" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Tooltip" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A Tooltip displays additional non-modal information on top of its target 
         element. Tooltip doesn't receive focus and cannot contain focusable elements.
       </Text>
@@ -298,7 +298,6 @@ function TooltipItem() {
 export default function Buttons() {
   return (
     <Box>
-      <Header as="h3" content="Button" />
       <ul id="ButtonList">
         <li><Button onClick={ () => ScrollToAnchor('AttachmentItem') }>Attachment</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('DatepickerItem') }>Datepicker</Button></li>
@@ -307,12 +306,14 @@ export default function Buttons() {
         <li><Button onClick={ () => ScrollToAnchor('SplitButtonItem') }>SplitButton</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('TooltipItem') }>Tooltip</Button></li>
       </ul>
-      <Box id="AttachmentItem"><AttachmentItem /></Box>
-      <Box id="DatepickerItem"><DatepickerItem /></Box>
-      <Box id="DialogItem"><DialogItem /></Box>
-      <Box id="MenuButtonItem"><MenuButtonItem /></Box>
-      <Box id="SplitButtonItem"><SplitButtonItem /></Box>
-      <Box id="TooltipItem"><TooltipItem /></Box>
+      <ComponentPrototype title="Button">
+        <AttachmentItem id="AttachmentItem" />
+        <DatepickerItem id="DatepickerItem" />
+        <DialogItem id="DialogItem" />
+        <MenuButtonItem id="MenuButtonItem" />
+        <SplitButtonItem id="SplitButtonItem" />
+        <TooltipItem id="TooltipItem" />
+      </ComponentPrototype>
     </Box>
   )
 }

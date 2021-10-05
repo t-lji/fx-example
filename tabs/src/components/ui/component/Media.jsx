@@ -28,10 +28,10 @@ import ImageCode from '!!raw-loader!../../../assets/code/component/media/ImageCo
 import SkeletonCode from '!!raw-loader!../../../assets/code/component/media/SkeletonCode.jsx'
 import VideoCode from '!!raw-loader!../../../assets/code/component/media/VideoCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function AnimationItem() {
+function AnimationItem(props) {
   const spinner = {
     keyframe: {
       from: {
@@ -45,10 +45,10 @@ function AnimationItem() {
     iterationCount: 'infinite',
   }
   return (
-    <Box>
-      <Header as="h4" content="Animation" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Animation" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Animation provides animation effects to rendered elements.
       </Text>
       <Collapse>
@@ -70,12 +70,12 @@ function AnimationItem() {
   )
 }
 
-function AvatarItem() {
+function AvatarItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Avatar" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Avatar" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Avatar is a graphical representation of a user.
       </Text>
       <Collapse>
@@ -92,12 +92,12 @@ function AvatarItem() {
   )
 }
 
-function CardItem() {
+function CardItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Card" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Card" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Card is used to display data in sematically grouped way.
       </Text>
       <Collapse>
@@ -141,7 +141,7 @@ function CardItem() {
   )
 }
 
-function CarouselItem() {
+function CarouselItem(props) {
   const imageAltTags = {
     allan: 'Portrait of Allan',
     carole: 'Portrait of Carole',
@@ -227,10 +227,10 @@ function CarouselItem() {
     },
   ]
   return (
-    <Box>
-      <Header as="h4" content="Carousel" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Carousel" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Carousel displays data organised as a gallery.
       </Text>
       <Collapse>
@@ -257,12 +257,12 @@ function CarouselItem() {
   )
 }
 
-function EmbedItem() {
+function EmbedItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Embed" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Embed" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Embed displays content from external websites, like a post from external social network.
       </Text>
       <Collapse>
@@ -291,12 +291,12 @@ function EmbedItem() {
   )
 }
 
-function ImageItem() {
+function ImageItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Image" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Image" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Image is a graphic representation of something.
       </Text>
       <Collapse>
@@ -318,12 +318,12 @@ function ImageItem() {
   )
 }
 
-function SkeletonItem() {
+function SkeletonItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Skeleton" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Skeleton" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Skeleton is a component to be placed while the content is loading.
       </Text>
       <Collapse>
@@ -338,12 +338,12 @@ function SkeletonItem() {
   )
 }
 
-function VideoItem() {
+function VideoItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Video" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Video" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Video provides ability to embed video content.
       </Text>
       <Collapse>
@@ -364,7 +364,6 @@ function VideoItem() {
 export default function Media() {
   return (
     <Box>
-      <Header as="h3" content="Media" />
       <ul id="MediaList">
         <li><Button onClick={ () => ScrollToAnchor('AnimationItem') }>Animation</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('AvatarItem') }>Avatar</Button></li>
@@ -375,14 +374,16 @@ export default function Media() {
         <li><Button onClick={ () => ScrollToAnchor('SkeletonItem') }>Skeleton</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('VideoItem') }>Video</Button></li>
       </ul>
-      <Box id="AnimationItem"><AnimationItem /></Box>
-      <Box id="AvatarItem"><AvatarItem /></Box>
-      <Box id="CardItem"><CardItem /></Box>
-      <Box id="CarouselItem"><CarouselItem /></Box>
-      <Box id="EmbedItem"><EmbedItem /></Box>
-      <Box id="ImageItem"><ImageItem /></Box>
-      <Box id="SkeletonItem"><SkeletonItem /></Box>
-      <Box id="VideoItem"><VideoItem /></Box>
+      <ComponentPrototype title="Media">
+        <AnimationItem id="AnimationItem" />
+        <AvatarItem id="AvatarItem" />
+        <CardItem id="CardItem" />
+        <CarouselItem id="CarouselItem" />
+        <EmbedItem id="EmbedItem" />
+        <ImageItem id="ImageItem" />
+        <SkeletonItem id="SkeletonItem" />
+        <VideoItem id="VideoItem" />
+      </ComponentPrototype>
     </Box>
   )
 }

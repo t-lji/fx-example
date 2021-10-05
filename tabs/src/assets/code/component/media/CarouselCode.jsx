@@ -1,6 +1,6 @@
 import { Carousel, Image } from '@fluentui/react-northstar'
 
-export default function CarouselItem() {
+export default function CarouselItem(props) {
   const imageAltTags = {
     allan: 'Portrait of Allan',
     carole: 'Portrait of Carole',

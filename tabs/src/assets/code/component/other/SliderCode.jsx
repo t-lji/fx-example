@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Input, Flex, MicIcon, MicOffIcon, Slider } from '@fluentui/react-northstar'
 
-export default function SliderItem() {
+export default function SliderItem(props) {
   const stateReducer = (state, action) => {
     switch (action.type) {
       case 'toggle_mute':

@@ -12,7 +12,7 @@ export default class Component extends React.Component {
   render() {
     return (
       <Box className="Component page">
-        <Header as="h2" content="Component" />
+        <Header as="h1" content="Component" />
         <ul id="ComponentList">
           <li><Button onClick={ () => ScrollToAnchor('Buttons') }>Button</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('Chats') }>Chat</Button></li>

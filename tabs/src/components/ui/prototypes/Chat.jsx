@@ -21,10 +21,10 @@ import {
 import ChatMessagesCode from '!!raw-loader!../../../assets/code/prototypes/chat/ChatMessagesCode.jsx'
 import ChatCompactCode from '!!raw-loader!../../../assets/code/prototypes/chat/ChatCompactCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function ChatMessages() {
+function ChatMessages(props) {
   const MicrosoftAvatar = {
     image: 'pic/Microsoft.png',
     status: { color: 'green', icon: <AcceptIcon /> },
@@ -109,8 +109,8 @@ function ChatMessages() {
   ]
 
   return (
-    <Box>
-      <Header as="h4" content="Chat messages" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Chat messages" />
 
       <Collapse>
         <Code code={ ChatMessagesCode } />
@@ -118,7 +118,7 @@ function ChatMessages() {
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="Important and mention messages" />
-          <p>Important and mention messages support in Teams theme</p>
+          <Text>Important and mention messages support in Teams theme</Text>
         </Segment>
         <Segment><ChatTag items={items} /></Segment>
       </Box>
@@ -126,7 +126,7 @@ function ChatMessages() {
   )
 }
 
-function ChatCompact() {
+function ChatCompact(props) {
   const error = (
     <Flex space="between" vAlign="center">
       <Flex gap="gap.small" vAlign="center">
@@ -248,8 +248,9 @@ function ChatCompact() {
     },
   ]
   return (
-    <Box>
-      <Header as="h4" content="Compact chat density" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      
+      <Header as="h3" content="Compact chat density" />
 
       <Collapse>
         <Code code={ ChatCompactCode } />
@@ -257,10 +258,10 @@ function ChatCompact() {
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="Compact chat messages" />
-          <p>Compact chat messages have the author floating in the content</p>
-          <p>Chat messages can show edited and translated status, sent and read 
+          <Text>Compact chat messages have the author floating in the content</Text>
+          <Text>Chat messages can show edited and translated status, sent and read 
             receipt status, have badges for importance and at-mentions, display 
-            an error state if sending failed</p>
+            an error state if sending failed</Text>
         </Segment>
         <Segment><ChatTag items={items} density="compact" /></Segment>
       </Box>
@@ -272,13 +273,14 @@ export default class Chat extends React.Component {
   render() {
     return (
       <Box className="Chat page">
-        <Header as="h2" content="Chat" />
         <ul id="ChatList">
           <li><Button onClick={ () => ScrollToAnchor('Chat messages') }>Chat messages</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('Compact chat messages') }>Compact chat density</Button></li>
         </ul>
-        <Box id="Chat messages"><ChatMessages /></Box>
-        <Box id="Compact chat messages"><ChatCompact /></Box>
+        <ComponentPrototype title="Chat">
+          <ChatMessages id="Chat messages" />
+          <ChatCompact id="Compact chat messages" />
+        </ComponentPrototype>
       </Box>
     )
   }

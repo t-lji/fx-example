@@ -10,7 +10,7 @@ import { Collapse } from "../util/PageUtil.jsx";
 function InitializeCode() {
   return (
     <Box>
-      <Header as="h4" content="Initializes the library" />
+      <Header as="h3" content="Initializes the library" />
       <Text content='This must be called before any other SDK calls but after the frame is loaded successfully.' />
       <Collapse>
         <Code code={ InitializeDefinitionCode } />

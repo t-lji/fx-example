@@ -3,7 +3,7 @@ import { Box, Button, Flex, Header, Segment, Text } from '@fluentui/react-norths
 import DeepLinkCode from '!!raw-loader!../../../assets/code/tab/deepLink/DeepLinkCode.jsx'
 import DeepLinkDefinition from '!!raw-loader!../../../assets/code/tab/deepLink/DefinitionCode.txt'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
 function CreateNewMeeting() {
   microsoftTeams.initialize();
@@ -25,7 +25,7 @@ export default function DeepLink() {
     <Box>
       <Header as="h3" content="DeepLink" />
 
-      <Header as="h4" content="Execute deep link API" />
+      <Header as="h3" content="Execute deep link API" />
       <Text content='You can deeplink to content in Teams from your tab. This is useful if your tab needs to link to other content in Teams, such as to a channel, message, another tab or even to open a scheduling dialog. To trigger a deeplink from your tab you should call:' />
       <Code code={ DeepLinkDefinition } />
       <Collapse>

@@ -2,12 +2,12 @@ import { Box, Flex, Header, Image, Segment, Text } from '@fluentui/react-northst
 import LinkUnfurlingJson from '../../../assets/code/messageExtension/linkUnfurling/linkUnfurlingJson.json';
 import LinkUnfurlingCode from '!!raw-loader!../../../assets/code/messageExtension/linkUnfurling/linkUnfurlingCode.js';
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
 export default function LinkUnfurling() {
   return (
     <Box id="welcomeCard page">
-      <Header as="h4" content="Link Unfurling" />
+      <Header as="h3" content="Link Unfurling" />
 
       <Flex column>
         <Segment inverted>

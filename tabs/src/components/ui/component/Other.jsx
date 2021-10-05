@@ -24,15 +24,15 @@ import LoaderCode from '!!raw-loader!../../../assets/code/component/other/Loader
 import SliderCode from '!!raw-loader!../../../assets/code/component/other/SliderCode.jsx'
 import StatusCode from '!!raw-loader!../../../assets/code/component/other/StatusCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function DividerItem() {
+function DividerItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Divider" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Divider" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Divider visually segments content.
       </Text>
       <Collapse>
@@ -49,12 +49,12 @@ function DividerItem() {
   )
 }
 
-function LoaderItem() {
+function LoaderItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Loader" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Loader" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A loader alerts a user that content is being loaded or processed and 
         they should wait for the activity to complete.
       </Text>
@@ -66,7 +66,7 @@ function LoaderItem() {
   )
 }
 
-function SliderItem() {
+function SliderItem(props) {
   const stateReducer = (state, action) => {
     switch (action.type) {
       case 'toggle_mute':
@@ -108,10 +108,10 @@ function SliderItem() {
     onChange: handleChange,
   }
   return (
-    <Box>
-      <Header as="h4" content="Slider" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Slider" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Slider represents an input that allows user to choose a value from within a specific range.
       </Text>
       <Collapse>
@@ -145,12 +145,12 @@ function SliderItem() {
   )
 }
 
-function StatusItem() {
+function StatusItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Status" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Status" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Status represents someone's or something's state.
       </Text>
       <Collapse>
@@ -180,17 +180,18 @@ function StatusItem() {
 export default function Other() {
   return (
     <Box>
-      <Header as="h3" content="Other" />
       <ul id="OtherList">
         <li><Button onClick={ () => ScrollToAnchor('DividerItem') }>Divider</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('LoaderItem') }>Loader</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('SliderItem') }>Slider</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('StatusItem') }>Status</Button></li>
       </ul>
-      <Box id="DividerItem"><DividerItem /></Box>
-      <Box id="LoaderItem"><LoaderItem /></Box>
-      <Box id="SliderItem"><SliderItem /></Box>
-      <Box id="StatusItem"><StatusItem /></Box>
+      <ComponentPrototype title="Other">
+        <DividerItem id="DividerItem" />
+        <LoaderItem id="LoaderItem" />
+        <SliderItem id="SliderItem" />
+        <StatusItem id="StatusItem" />
+      </ComponentPrototype>
     </Box>
   )
 }

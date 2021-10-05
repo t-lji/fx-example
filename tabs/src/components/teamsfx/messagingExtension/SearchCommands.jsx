@@ -2,12 +2,12 @@ import { Box, Flex, Header, Image, Segment, Text } from '@fluentui/react-northst
 import searchCommandsJson from '../../../assets/code/messageExtension/searchCommands/searchCommandsJson.json';
 import searchCommandsCode from '!!raw-loader!../../../assets/code/messageExtension/searchCommands/searchCommandsCode.js';
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
 export default function SearchCommands() {
   return (
     <Box id="SearchCommands page">
-      <Header as="h4" content="Search Commands" />
+      <Header as="h3" content="Search Commands" />
 
       <Flex column>
         <Segment inverted>

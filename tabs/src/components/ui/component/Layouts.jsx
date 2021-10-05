@@ -50,10 +50,10 @@ import RadioGroupCode from '!!raw-loader!../../../assets/code/component/layout/R
 import SegmentCode from '!!raw-loader!../../../assets/code/component/layout/SegmentCode.jsx'
 import TreeCode from '!!raw-loader!../../../assets/code/component/layout/TreeCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function AccordionItem() {
+function AccordionItem(props) {
   const panels = [
     {
       key: 'default',
@@ -88,10 +88,10 @@ function AccordionItem() {
     },
   ]
   return (
-    <Box>
-      <Header as="h4" content="Accordion" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Accordion" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Accordion represents stacked set of content sections, with action 
         elements to toggle the display of these sections.
       </Text>
@@ -103,12 +103,12 @@ function AccordionItem() {
   )
 }
 
-function BoxItem() {
+function BoxItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Box" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Box" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Box is a basic component, commonly used for slots in other Fluent UI 
         components. By default it just renders a 'Box'.
       </Text>
@@ -131,12 +131,12 @@ function BoxItem() {
   )
 }
 
-function BreadcrumbItem() {
+function BreadcrumbItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Breadcrumb" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Breadcrumb" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         Breadcrumb is a a component that indicates the path of the current page.
       </Text>
       <Collapse>
@@ -159,12 +159,12 @@ function BreadcrumbItem() {
   )
 }
 
-function CheckboxItem() {
+function CheckboxItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Checkbox" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Checkbox" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Checkbox allows a user to make a choice between two mutually exclusive options.
       </Text>
       <Collapse>
@@ -178,7 +178,7 @@ function CheckboxItem() {
   )
 }
 
-function DropdownItem() {
+function DropdownItem(props) {
   const inputItems = [
     'Robert Tolbert',
     'Wanda Howard',
@@ -191,10 +191,10 @@ function DropdownItem() {
     'Robin Counts',
   ]
   return (
-    <Box>
-      <Header as="h4" content="Dropdown" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Dropdown" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Dropdown allows user to select one or more values from a list of options. 
         Can be created with search and multi-selection capabilities.
       </Text>
@@ -217,7 +217,7 @@ function DropdownItem() {
   )
 }
 
-function FormItem() {
+function FormItem(props) {
   const items = [
     {
       name: 'pizza',
@@ -240,10 +240,10 @@ function FormItem() {
     },
   ]
   return (
-    <Box>
-      <Header as="h4" content="Form" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Form" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Form is used to collect, oprionally validate, and submit the user input, 
         in a structured way.
       </Text>
@@ -266,18 +266,18 @@ function FormItem() {
   )
 }
 
-function InputItem() {
+function InputItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Input" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Input" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Input is a field used to elicit an input from a user.
       </Text>
       <Collapse>
         <Code code={ InputCode } />
       </Collapse>
-      <Box>
+      <Box id={ props.id } styles={{ marginBottom: '40px' }}>
         Some text inline with the{' '}
         <Input 
           inline 
@@ -303,7 +303,7 @@ function InputItem() {
   )
 }
 
-function ListItem() {
+function ListItem(props) {
   const [selectedListIndex, setSelectedListItem] = useState(-1);
   const items = [
     {
@@ -344,10 +344,10 @@ function ListItem() {
     },
   ]
   return (
-    <Box>
-      <Header as="h4" content="List" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="List" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A List displays a group of related sequential items.
       </Text>
       <Collapse>
@@ -368,7 +368,7 @@ function ListItem() {
   )
 }
 
-function MenuItem() {
+function MenuItem(props) {
   const items = [
     {
       icon: (
@@ -413,10 +413,10 @@ function MenuItem() {
     },
   ]
   return (
-    <Box>
-      <Header as="h4" content="Menu" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Menu" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Menu is a component that offers a grouped list of choices to the user.
       </Text>
       <Collapse>
@@ -427,20 +427,20 @@ function MenuItem() {
   )
 }
 
-function RadioGroupItem() {
+function RadioGroupItem(props) {
   const [selectedValue, setselectedValue] = useState('pink');
   return (
-    <Box>
-      <Header as="h4" content="RadioGroup" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="RadioGroup" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A RadioGroup allows user to select a value from a small set of mutually 
         exclusive options.
       </Text>
       <Collapse>
         <Code code={ RadioGroupCode } />
       </Collapse>
-      <Box>
+      <Box id={ props.id } styles={{ marginBottom: '40px' }}>
         The selected value is: {selectedValue}
         <Divider />
         <RadioGroup
@@ -464,12 +464,12 @@ function RadioGroupItem() {
   )
 }
 
-function SegmentItem() {
+function SegmentItem(props) {
   return (
-    <Box>
-      <Header as="h4" content="Segment" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Segment" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Segment visually groups related content.
       </Text>
       <Collapse>
@@ -486,7 +486,7 @@ function SegmentItem() {
   )
 }
 
-function TreeItem() {
+function TreeItem(props) {
   const items = [
     {
       id: 'tree-as-list-item-1',
@@ -531,10 +531,10 @@ function TreeItem() {
     },
   ]
   return (
-    <Box>
-      <Header as="h4" content="Tree" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Tree" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Tree displays data organised in tree hierarchy.
       </Text>
       <Collapse>
@@ -553,7 +553,6 @@ function TreeItem() {
 export default function Layouts() {
   return (
     <Box>
-      <Header as="h3" content="Layout" />
       <ul id="LayoutList">
         <li><Button onClick={ () => ScrollToAnchor('AccordionItem') }>Accordion</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('BoxItem') }>Box</Button></li>
@@ -568,18 +567,20 @@ export default function Layouts() {
         <li><Button onClick={ () => ScrollToAnchor('SegmentItem') }>Segment</Button></li>
         <li><Button onClick={ () => ScrollToAnchor('TreeItem') }>Tree</Button></li>
       </ul>
-      <Box id="AccordionItem"><AccordionItem /></Box>
-      <Box id="BoxItem"><BoxItem /></Box>
-      <Box id="BreadcrumbItem"><BreadcrumbItem /></Box>
-      <Box id="CheckboxItem"><CheckboxItem /></Box>
-      <Box id="DropdownItem"><DropdownItem /></Box>
-      <Box id="FormItem"><FormItem /></Box>
-      <Box id="InputItem"><InputItem /></Box>
-      <Box id="ListItem"><ListItem /></Box>
-      <Box id="MenuItem"><MenuItem /></Box>
-      <Box id="RadioGroupItem"><RadioGroupItem /></Box>
-      <Box id="SegmentItem"><SegmentItem /></Box>
-      <Box id="TreeItem"><TreeItem /></Box>
+      <ComponentPrototype title="Layout">
+        <AccordionItem id="AccordionItem" />
+        <BoxItem id="BoxItem" />
+        <BreadcrumbItem id="BreadcrumbItem" />
+        <CheckboxItem id="CheckboxItem" />
+        <DropdownItem id="DropdownItem" />
+        <FormItem id="FormItem" />
+        <InputItem id="InputItem" />
+        <ListItem id="ListItem" />
+        <MenuItem id="MenuItem" />
+        <RadioGroupItem id="RadioGroupItem" />
+        <SegmentItem id="SegmentItem" />
+        <TreeItem id="TreeItem" />
+      </ComponentPrototype>
     </Box>
   )
 }

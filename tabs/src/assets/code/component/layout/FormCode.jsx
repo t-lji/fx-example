@@ -11,7 +11,7 @@ import {
   FormTextArea,
 } from '@fluentui/react-northstar'
 
-export default function SplitButtonItem() {
+export default function SplitButtonItem(props) {
   const items = [
     {
       name: 'pizza',

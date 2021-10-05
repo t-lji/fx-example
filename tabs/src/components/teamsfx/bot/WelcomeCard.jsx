@@ -4,12 +4,12 @@ import WelcomeCommandJson from '../../../assets/code/bot/adaptiveCard/welcomeCar
 import WelcomeMessageCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeMessageCode.js'
 import WelcomeMemberAddedCode from '!!raw-loader!../../../assets/code/bot/adaptiveCard/welcomeCard/welcomeMemberAddedCode.js'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
 export default function WelcomeCard() {
   return (
     <Box id="welcomeCard page">
-      <Header as="h4" content="Welcome Card" />
+      <Header as="h3" content="Welcome Card" />
         <Flex column>
           <Segment inverted>
             <Text weight="regular" size="large" content='To add a welcome adaptive card to your application' />

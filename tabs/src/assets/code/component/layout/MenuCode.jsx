@@ -1,6 +1,6 @@
 import { BookmarkIcon, CalendarIcon, Menu, WordIcon } from '@fluentui/react-icons-northstar'
 
-export default function MenuItem() {
+export default function MenuItem(props) {
   const items = [
     {
       icon: (

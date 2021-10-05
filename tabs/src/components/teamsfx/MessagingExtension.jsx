@@ -16,9 +16,9 @@ export default class MessagingExtension extends React.Component {
           <li><Button onClick={ () => ScrollToAnchor('SearchCommands') }>Search Commands</Button></li>
           <li><Button onClick={ () => ScrollToAnchor('LinkUnfurling') }>Link Unfurling</Button></li>
         </ul>
-        <Box id="ActionCommands"><ActionCommands /></Box>
-        <Box id="SearchCommands"><SearchCommands /></Box>
-        <Box id="LinkUnfurling"><LinkUnfurling /></Box>
+        <ActionCommands id="ActionCommands" />
+        <SearchCommands id="SearchCommands" />
+        <LinkUnfurling id="LinkUnfurling" />
         <TopJumper />
       </Box>
     )

@@ -130,10 +130,10 @@ export default function AdvancedTable() {
 
   return (
     <Box>
-      <Header as="h4" content="Advanced Table" />
+      <Header as="h3" content="Advanced Table" />
 
       <Header as="h3" content="Table example" />
-      <p>Table with menu, checkboxes and Aria anouncements</p>
+      <Text>Table with menu, checkboxes and Aria anouncements</Text>
       <Table
       variables={{ cellContentOverflow: 'none' }}
       header={header}
