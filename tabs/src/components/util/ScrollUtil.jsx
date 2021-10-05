@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box } from '@fluentui/react-northstar'
-import "./ScrollUtil.css";
+import { Box, Button, Tooltip, TriangleUpIcon } from '@fluentui/react-northstar'
 
 // scroll to the top
 export function TopJumper() {
@@ -16,9 +15,22 @@ export function TopJumper() {
   }, [show])
 
   return show ? (
-    <Box className="top-jumper" onClick={ () => window.scrollTo(0, 0) }>
-      <span className="text"> </span>
-    </Box>) : null;
+    <Tooltip 
+      style={{
+        position: "fixed",
+        right: "11%",
+        bottom: "15%",
+        width: "100px"
+      }}
+      trigger={ <Button 
+        icon={ <TriangleUpIcon size="large"/> }
+        onClick={ () => window.scrollTo(0, 0) } 
+        primary 
+        />} 
+      content="Back To Top" 
+      position="below"
+    />
+    ) : null;
 }
 
 // scroll by the name
