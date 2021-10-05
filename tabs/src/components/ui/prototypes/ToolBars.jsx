@@ -60,31 +60,29 @@ function NestedDialogs(props) {
   );
 }
 
-export default class ToolBars extends React.Component {
-  render() {
-    const menu = [
-      {
-        key: 'NestedDialogs',
-        content: 'Nested Dialogs',
-      },
-    ]
-    return (
-      <ComponentPrototype title="ToolBars">
-        <SplitButton
-          menu={ menu }
-          button={{
-            content: 'Go To',
-            'aria-roledescription': 'splitbutton',
-            'aria-describedby': 'instruction-message-primary-button',
-          }}
-          primary
-          toggleButton={{
-            'aria-label': 'more options',
-          }}
-          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
-        />
-        <NestedDialogs id="NestedDialogs" />
-      </ComponentPrototype>
-    )
-  }
+export default function ToolBars() {
+  const menu = [
+    {
+      key: 'NestedDialogs',
+      content: 'Nested Dialogs',
+    },
+  ]
+  return (
+    <ComponentPrototype title="ToolBar">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <NestedDialogs id="NestedDialogs" />
+    </ComponentPrototype>
+  )
 }

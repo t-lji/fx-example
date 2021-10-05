@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Tab from "./teamsfx/Tab"
 import Bot from "./teamsfx/Bot"
 import MessagingExtension from "./teamsfx/MessagingExtension"
@@ -7,7 +7,7 @@ import "./App.css"
 
 function Catalogue() {
   const steps = ["Tab", "Bot", "MessagingExtension"];
-  const [selectedMenuItem, setSelectedMenuItem] = useState("Tab");
+  const [selectedMenuItem, setSelectedMenuItem] = React.useState("Tab");
   const items = steps.map((step) => {
     return {
       key: step,

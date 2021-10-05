@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Button, Divider, Grid, Ref, Text, Tooltip, QnaIcon } from '@fluentui/react-northstar'
 
 export default function TooltipItem(props) {
-  const [target, setTarget] = useState(null)
+  const [target, setTarget] = React.useState(null)
   return (
     <Box>
       <Grid columns="auto 1fr">

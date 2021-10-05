@@ -4,8 +4,7 @@ import {
   Avatar,
   Box,
   Button,
-  Chat as ChatTag,
-  ChatItemProps,
+  Chat,
   Divider,
   EditIcon,
   ExclamationTriangleIcon,
@@ -32,7 +31,7 @@ function ChatMessages(props) {
   const items = [
     {
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="This is important message"
           author="John Doe"
           timestamp="Yesterday, 10:15 PM"
@@ -48,7 +47,7 @@ function ChatMessages(props) {
     {
       gutter: <Avatar {...MicrosoftAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="This is another important message (see how the borders radius respect the grouped ones)"
           author="Microsoft"
           timestamp="Yesterday, 10:15 PM"
@@ -62,7 +61,7 @@ function ChatMessages(props) {
     {
       gutter: <Avatar {...MicrosoftAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="This is mention message @John"
           author="Microsoft"
           timestamp="Yesterday, 10:15 PM"
@@ -76,7 +75,7 @@ function ChatMessages(props) {
     {
       gutter: <Avatar {...MicrosoftAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="This is another mention message @John with custom color"
           author="Microsoft"
           timestamp="Yesterday, 10:15 PM"
@@ -92,7 +91,7 @@ function ChatMessages(props) {
     },
     {
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="The color for the important messages can also be changed!"
           author="Microsoft"
           timestamp="Yesterday, 10:16 PM"
@@ -120,7 +119,7 @@ function ChatMessages(props) {
           <Header as="h3" content="Important and mention messages" />
           <Text>Important and mention messages support in Teams theme</Text>
         </Segment>
-        <Segment><ChatTag items={items} /></Segment>
+        <Segment><Chat items={items} /></Segment>
       </Box>
     </Box>
   )
@@ -151,18 +150,18 @@ function ChatCompact(props) {
   const items = [
     {
       gutter: <Avatar {...robertAvatar} />,
-      message: <ChatTag.Message content="Hello" author="Robert" timestamp="10:15 PM" mine />,
+      message: <Chat.Message content="Hello" author="Robert" timestamp="10:15 PM" mine />,
       attached: 'top',
       key: 'message-id-1',
     },
     {
-      message: <ChatTag.Message header={ error } content="I'm back!" author="Robert" timestamp="10:15 PM" mine />,
+      message: <Chat.Message header={ error } content="I'm back!" author="Robert" timestamp="10:15 PM" mine />,
       attached: true,
       key: 'message-id-2',
     },
     {
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="What do you think about goodFood.com?"
           author="Robert"
           details={<EditIcon outline />}
@@ -176,7 +175,7 @@ function ChatCompact(props) {
     {
       gutter: <Avatar {...robinAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content={
             <>
               {'Hi '}
@@ -198,13 +197,13 @@ function ChatCompact(props) {
       key: 'message-id-4',
     },
     {
-      message: <ChatTag.Message content="Looks good!" author="Robin" timestamp="10:21 PM" />,
+      message: <Chat.Message content="Looks good!" author="Robin" timestamp="10:21 PM" />,
       attached: true,
       key: 'message-id-5',
     },
     {
       message: (
-        <ChatTag.Message content="I also like great-food.com." author="Robin" timestamp="10:25 PM" />
+        <Chat.Message content="I also like great-food.com." author="Robin" timestamp="10:25 PM" />
       ),
       attached: 'bottom',
       key: 'message-id-6',
@@ -212,7 +211,7 @@ function ChatCompact(props) {
     {
       gutter: <Avatar {...robertAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="Would you like to grab lunch there?"
           author="Robert"
           timestamp="10:30 PM"
@@ -223,7 +222,7 @@ function ChatCompact(props) {
     },
     {
       gutter: <Avatar {...robinAvatar} />,
-      message: <ChatTag.Message content="Sure! Let's try it." author="Robin" timestamp="10:32 PM" />,
+      message: <Chat.Message content="Sure! Let's try it." author="Robin" timestamp="10:32 PM" />,
       key: 'message-id-8',
     },
     {
@@ -233,7 +232,7 @@ function ChatCompact(props) {
     {
       gutter: <Avatar {...robertAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="Ok, let's go."
           author="Robert"
           timestamp="11:15 PM"
@@ -263,42 +262,40 @@ function ChatCompact(props) {
             receipt status, have badges for importance and at-mentions, display 
             an error state if sending failed</Text>
         </Segment>
-        <Segment><ChatTag items={items} density="compact" /></Segment>
+        <Segment><Chat items={items} density="compact" /></Segment>
       </Box>
     </Box>
   )
 }
 
-export default class Chat extends React.Component {
-  render() {
-    const menu = [
-      {
-        key: 'Chat messages',
-        content: 'Chat messages',
-      },
-      {
-        key: 'Compact chat messages',
-        content: 'Compact chat density',
-      },
-    ]
-    return (
-      <ComponentPrototype title="Chat">
-        <SplitButton
-          menu={ menu }
-          button={{
-            content: 'Go To',
-            'aria-roledescription': 'splitbutton',
-            'aria-describedby': 'instruction-message-primary-button',
-          }}
-          primary
-          toggleButton={{
-            'aria-label': 'more options',
-          }}
-          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
-        />
-        <ChatMessages id="Chat messages" />
-        <ChatCompact id="Compact chat messages" />
-      </ComponentPrototype>
-    )
-  }
+export default function Chats() {
+  const menu = [
+    {
+      key: 'Chat messages',
+      content: 'Chat messages',
+    },
+    {
+      key: 'Compact chat messages',
+      content: 'Compact chat density',
+    },
+  ]
+  return (
+    <ComponentPrototype title="Chat">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <ChatMessages id="Chat messages" />
+      <ChatCompact id="Compact chat messages" />
+    </ComponentPrototype>
+  )
 }

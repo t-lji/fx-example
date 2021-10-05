@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   Alert,
   Attachment, 
@@ -131,7 +131,7 @@ function DialogItem(props) {
 }
 
 function MenuButtonItem(props) {
-  const [alertFlag, setAlert] = useState(false);
+  const [alertFlag, setAlert] = React.useState(false);
   const showAlert = () => {
     setAlert(true) || setTimeout(() => { setAlert(false) }, 2000)
   }
@@ -198,7 +198,7 @@ function MenuButtonItem(props) {
 }
 
 function PopupItem(props) {
-  const [alertFlag, setAlert] = useState(false);
+  const [alertFlag, setAlert] = React.useState(false);
   return (
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="Popup" />
@@ -286,7 +286,7 @@ function SplitButtonItem(props) {
 }
 
 function TooltipItem(props) {
-  const [target, setTarget] = useState(null)
+  const [target, setTarget] = React.useState(null)
   return (
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="Tooltip" />

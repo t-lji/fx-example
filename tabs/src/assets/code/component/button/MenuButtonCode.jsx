@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   Alert,
   Box, 
@@ -8,7 +8,7 @@ import {
   MenuButton } from '@fluentui/react-northstar'
 
 export default function MenuButtonItem(props) {
-  const [alertFlag, setAlert] = useState(false);
+  const [alertFlag, setAlert] = React.useState(false);
   const showAlert = () => {
     setAlert(true) || setTimeout(() => { setAlert(false) }, 2000)
   }

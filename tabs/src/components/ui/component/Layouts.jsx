@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import _ from 'lodash'
 import { 
   Accordion, 
@@ -305,7 +305,7 @@ function InputItem(props) {
 }
 
 function ListItem(props) {
-  const [selectedListIndex, setSelectedListItem] = useState(-1);
+  const [selectedListIndex, setSelectedListItem] = React.useState(-1);
   const items = [
     {
       key: 'robert',
@@ -429,7 +429,7 @@ function MenuItem(props) {
 }
 
 function RadioGroupItem(props) {
-  const [selectedValue, setselectedValue] = useState('pink');
+  const [selectedValue, setselectedValue] = React.useState('pink');
   return (
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="RadioGroup" />

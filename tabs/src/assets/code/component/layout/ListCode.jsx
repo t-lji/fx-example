@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { List, Image } from '@fluentui/react-northstar'
 
 export default function ListItem(props) {
-  const [selectedListIndex, setSelectedListItem] = useState(-1);
+  const [selectedListIndex, setSelectedListItem] = React.useState(-1);
   const items = [
     {
       key: 'robert',

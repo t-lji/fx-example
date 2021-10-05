@@ -240,36 +240,34 @@ function FormValidateFormik(props) {
   )
 }
 
-export default class LayOut extends React.Component {
-  render() {
-    const menu = [
-      {
-        key: 'AdvancedTable',
-        content: 'Advanced Table',
-      },
-      {
-        key: 'FormValidateFormik',
-        content: 'Form Validation',
-      },
-    ]
-    return (
-      <ComponentPrototype title="Layout">
-        <SplitButton
-          menu={ menu }
-          button={{
-            content: 'Go To',
-            'aria-roledescription': 'splitbutton',
-            'aria-describedby': 'instruction-message-primary-button',
-          }}
-          primary
-          toggleButton={{
-            'aria-label': 'more options',
-          }}
-          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
-        />
-        <AdvancedTable id="AdvancedTable" />
-        <FormValidateFormik id="FormValidateFormik" />
-      </ComponentPrototype>
-    )
-  }
+export default function LayOut() {
+  const menu = [
+    {
+      key: 'AdvancedTable',
+      content: 'Advanced Table',
+    },
+    {
+      key: 'FormValidateFormik',
+      content: 'Form Validation',
+    },
+  ]
+  return (
+    <ComponentPrototype title="Layout">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <AdvancedTable id="AdvancedTable" />
+      <FormValidateFormik id="FormValidateFormik" />
+    </ComponentPrototype>
+  )
 }

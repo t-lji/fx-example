@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   AddIcon, 
   Box,
@@ -30,7 +30,7 @@ import { Collapse, ComponentPrototype } from "../util/PageUtil";
 // show teams theme picture
 function Themes() {
   const steps = ["Default", "Dark", "High contrast"];
-  const [selectedMenuItem, setSelectedMenuItem] = useState("Default");
+  const [selectedMenuItem, setSelectedMenuItem] = React.useState("Default");
   const items = steps.map((step) => {
     return {
       key: step,
@@ -238,64 +238,62 @@ function Layout() {
   )
 }
 
-export default class Overall extends React.Component {
-  render() {
-    const menu = [
-      {
-        key: 'Themes',
-        content: 'Themes',
-      },
-      {
-        key: 'NestingThemes',
-        content: 'Nesting Themes',
-      },
-      {
-        key: 'Layout',
-        content: 'Layout',
-      },
-    ]
-    return (
-      <Box className="Overall page">
-        <Flex gap="gap.small">
-          <Box class="HeaderBox">
-            <Box class="HeaderContent">
-            <SplitButton
-              menu={ menu }
-              button={{
-                content: 'Overall',
-                'aria-roledescription': 'splitbutton',
-                'aria-describedby': 'instruction-message-primary-button',
-              }}
-              primary
-              size="largest"
-              toggleButton={{
-                'aria-label': 'more options',
-              }}
-              onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
-            />
-            </Box>
+export default function Overall() {
+  const menu = [
+    {
+      key: 'Themes',
+      content: 'Themes',
+    },
+    {
+      key: 'NestingThemes',
+      content: 'Nesting Themes',
+    },
+    {
+      key: 'Layout',
+      content: 'Layout',
+    },
+  ]
+  return (
+    <Box className="Overall page">
+      <Flex gap="gap.small">
+        <Box class="HeaderBox">
+          <Box class="HeaderContent">
+          <SplitButton
+            menu={ menu }
+            button={{
+              content: 'Overall',
+              'aria-roledescription': 'splitbutton',
+              'aria-describedby': 'instruction-message-primary-button',
+            }}
+            primary
+            size="largest"
+            toggleButton={{
+              'aria-label': 'more options',
+            }}
+            onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+          />
           </Box>
-          <Box class="ContentBox">
-            <ComponentPrototype id="Themes" title="Themes" description="Show teams theme pictures">
-              <Themes />
-            </ComponentPrototype>
-            <ComponentPrototype id="NestingThemes" title="Nesting Themes" 
-              description="If you have areas of an application that require additional 
-              theming, you can achieve that using nested providers and overwrite the 
-              needed styles."
-            >
-              <NestingThemes />
-            </ComponentPrototype>
-            <ComponentPrototype id="Layout" title="Layout" 
-              description="Fluent UI has Flex and Grid components to handle layout 
-              aspects, they represent corresponding CSS layout modules ."
-            >
-              <Layout />
-            </ComponentPrototype>
-            <TopJumper />
-          </Box>
-        </Flex>
-      </Box>
-    )
-  }
+        </Box>
+        <Box class="ContentBox">
+          <ComponentPrototype id="Themes" title="Themes" description="Show teams theme pictures">
+            <Themes />
+          </ComponentPrototype>
+          <ComponentPrototype id="NestingThemes" title="Nesting Themes" 
+            description="If you have areas of an application that require additional 
+            theming, you can achieve that using nested providers and overwrite the 
+            needed styles."
+          >
+            <NestingThemes />
+          </ComponentPrototype>
+          <ComponentPrototype id="Layout" title="Layout" 
+            description="Fluent UI has Flex and Grid components to handle layout 
+            aspects, they represent corresponding CSS layout modules ."
+          >
+            <Layout />
+          </ComponentPrototype>
+          <TopJumper />
+        </Box>
+      </Flex>
+    </Box>
+  )
 }

@@ -4,7 +4,6 @@ import {
   AcceptIcon, 
   Avatar, 
   Box, 
-  Button, 
   Flex, 
   Header, 
   List, 
@@ -158,36 +157,34 @@ function ParticipantsList(props) {
   )
 }
 
-export default class Users extends React.Component {
-  render() {
-    const menu = [
-      {
-        key: 'HexagonalAvatar',
-        content: 'Hexagonal Avatar',
-      },
-      {
-        key: 'ParticipantsList',
-        content: 'Participants List',
-      },
-    ]
-    return (
-      <ComponentPrototype title="Users">
-        <SplitButton
-          menu={ menu }
-          button={{
-            content: 'Go To',
-            'aria-roledescription': 'splitbutton',
-            'aria-describedby': 'instruction-message-primary-button',
-          }}
-          primary
-          toggleButton={{
-            'aria-label': 'more options',
-          }}
-          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
-        />
-        <HexagonalAvatar id="HexagonalAvatar" />
-        <ParticipantsList id="ParticipantsList" />
-      </ComponentPrototype>
-    )
-  }
+export default function Users() {
+  const menu = [
+    {
+      key: 'HexagonalAvatar',
+      content: 'Hexagonal Avatar',
+    },
+    {
+      key: 'ParticipantsList',
+      content: 'Participants List',
+    },
+  ]
+  return (
+    <ComponentPrototype title="Users">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <HexagonalAvatar id="HexagonalAvatar" />
+      <ParticipantsList id="ParticipantsList" />
+    </ComponentPrototype>
+  )
 }

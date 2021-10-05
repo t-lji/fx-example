@@ -4,7 +4,6 @@ import {
   Alert, 
   BoldIcon,
   Box, 
-  Button, 
   CodeSnippetIcon, 
   FontSizeIcon, 
   IndentIcon, 
@@ -19,7 +18,7 @@ import {
   QuoteIcon, 
   RemoveFormatIcon, 
   SplitButton,
-  Text as TextTag, 
+  Text, 
   TextArea, 
   Toolbar, 
   UnderlineIcon } from '@fluentui/react-northstar'
@@ -39,10 +38,10 @@ function AlertItem(props) {
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="Alert" />
 
-      <TextTag weight="regular">
+      <Text weight="regular">
         An Alert displays a brief, important message to attract a user's 
         attention without interrupting their current task.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ AlertCode } />
       </Collapse>
@@ -61,9 +60,9 @@ function HeaderItem(props) {
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="Header" />
 
-      <TextTag weight="regular">
+      <Text weight="regular">
         A Header organises the content by declaring a content's topic.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ HeaderCode } />
       </Collapse>
@@ -85,9 +84,9 @@ function LabelItem(props) {
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="Label" />
 
-      <TextTag weight="regular">
+      <Text weight="regular">
         A Label allows user to classify content.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ LabelCode } />
       </Collapse>
@@ -107,11 +106,11 @@ function PillItem(props) {
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="Pill" />
 
-      <TextTag weight="regular">
+      <Text weight="regular">
         THIS COMPONENT IS UNSTABLE Pills should be used 
         when representing an input, as a way to filter content, 
         or to represent an attribute.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ PillCode } />
       </Collapse>
@@ -129,13 +128,13 @@ function TextItem(props) {
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="Text" />
 
-      <TextTag weight="regular">
+      <Text weight="regular">
         A Text consistently styles and formats occurrences of text.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ TextCode } />
       </Collapse>
-      <TextTag 
+      <Text 
         disabled 
         content="Text Content"
         weight="semibold"
@@ -150,9 +149,9 @@ function TextAreaItem(props) {
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="TextArea" />
 
-      <TextTag weight="regular">
+      <Text weight="regular">
         A TextArea is a multi-line plan-text editing control.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ TextAreaCode } />
       </Collapse>
@@ -179,10 +178,10 @@ function ToolbarItem(props) {
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
       <Header as="h3" content="Toolbar" />
 
-      <TextTag weight="regular">
+      <Text weight="regular">
         A Toolbar is a container for grouping a set of controls, 
         often action controls (e.g. buttons) or input controls (e.g. checkboxes).
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ ToolbarCode } />
       </Collapse>
@@ -323,7 +322,7 @@ function ToolbarItem(props) {
   )
 }
 
-export default function Text() {
+export default function Texts() {
   const menu = [
     {
       key: 'AlertItem',

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Box, Button, Tooltip, TriangleUpIcon } from '@fluentui/react-northstar'
+import React from "react";
+import { Button, Tooltip, TriangleUpIcon } from '@fluentui/react-northstar'
 
 // scroll to the top
 export function TopJumper() {
-  const [show, switchShow] = useState(false);
+  const [show, switchShow] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const listener = () => {
       switchShow(window.scrollY > 150)
     };

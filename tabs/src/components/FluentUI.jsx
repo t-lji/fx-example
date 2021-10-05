@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Overall from "./ui/Overall"
 import Component from "./ui/Component"
 import Prototypes from "./ui/Prototypes"
@@ -7,7 +7,7 @@ import "./App.css";
 
 function Catalogue() {
   const steps = ["Overall", "Component", "Prototypes"];
-  const [selectedMenuItem, setSelectedMenuItem] = useState("Overall");
+  const [selectedMenuItem, setSelectedMenuItem] = React.useState("Overall");
   const items = steps.map((step) => {
     return {
       key: step,

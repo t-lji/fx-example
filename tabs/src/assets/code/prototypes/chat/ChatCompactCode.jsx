@@ -4,7 +4,7 @@ import {
   Avatar,
   Box,
   Button,
-  Chat as ChatTag,
+  Chat,
   Divider,
   EditIcon,
   ExclamationTriangleIcon,
@@ -41,18 +41,18 @@ export default function ChatCompact() {
   const items = [
     {
       gutter: <Avatar {...robertAvatar} />,
-      message: <ChatTag.Message content="Hello" author="Robert" timestamp="10:15 PM" mine />,
+      message: <Chat.Message content="Hello" author="Robert" timestamp="10:15 PM" mine />,
       attached: 'top',
       key: 'message-id-1',
     },
     {
-      message: <ChatTag.Message header={ error } content="I'm back!" author="Robert" timestamp="10:15 PM" mine />,
+      message: <Chat.Message header={ error } content="I'm back!" author="Robert" timestamp="10:15 PM" mine />,
       attached: true,
       key: 'message-id-2',
     },
     {
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="What do you think about goodFood.com?"
           author="Robert"
           details={<EditIcon outline />}
@@ -66,7 +66,7 @@ export default function ChatCompact() {
     {
       gutter: <Avatar {...robinAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content={
             <>
               {'Hi '}
@@ -88,13 +88,13 @@ export default function ChatCompact() {
       key: 'message-id-4',
     },
     {
-      message: <ChatTag.Message content="Looks good!" author="Robin" timestamp="10:21 PM" />,
+      message: <Chat.Message content="Looks good!" author="Robin" timestamp="10:21 PM" />,
       attached: true,
       key: 'message-id-5',
     },
     {
       message: (
-        <ChatTag.Message content="I also like great-food.com." author="Robin" timestamp="10:25 PM" />
+        <Chat.Message content="I also like great-food.com." author="Robin" timestamp="10:25 PM" />
       ),
       attached: 'bottom',
       key: 'message-id-6',
@@ -102,7 +102,7 @@ export default function ChatCompact() {
     {
       gutter: <Avatar {...robertAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="Would you like to grab lunch there?"
           author="Robert"
           timestamp="10:30 PM"
@@ -113,7 +113,7 @@ export default function ChatCompact() {
     },
     {
       gutter: <Avatar {...robinAvatar} />,
-      message: <ChatTag.Message content="Sure! Let's try it." author="Robin" timestamp="10:32 PM" />,
+      message: <Chat.Message content="Sure! Let's try it." author="Robin" timestamp="10:32 PM" />,
       key: 'message-id-8',
     },
     {
@@ -123,7 +123,7 @@ export default function ChatCompact() {
     {
       gutter: <Avatar {...robertAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="Ok, let's go."
           author="Robert"
           timestamp="11:15 PM"
@@ -147,7 +147,7 @@ export default function ChatCompact() {
             receipt status, have badges for importance and at-mentions, display 
             an error state if sending failed</Text>
         </Segment>
-        <Segment><ChatTag items={items} density="compact" /></Segment>
+        <Segment><Chat items={items} density="compact" /></Segment>
       </Box>
     </Box>
   )
