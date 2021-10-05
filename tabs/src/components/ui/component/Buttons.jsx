@@ -17,6 +17,7 @@ import {
   Header, 
   MenuButton,
   MoreIcon, 
+  Popup,
   QnaIcon,
   Ref,
   SplitButton,
@@ -27,6 +28,7 @@ import AttachmentCode from '!!raw-loader!../../../assets/code/component/button/A
 import DatepickerCode from '!!raw-loader!../../../assets/code/component/button/DatepickerCode.jsx'
 import DialogCode from '!!raw-loader!../../../assets/code/component/button/DialogCode.jsx'
 import MenuButtonCode from '!!raw-loader!../../../assets/code/component/button/MenuButtonCode.jsx'
+import PopupCode from '!!raw-loader!../../../assets/code/component/button/PopupCode.jsx'
 import SplitButtonCode from '!!raw-loader!../../../assets/code/component/button/SplitButtonCode.jsx'
 import TooltipCode from '!!raw-loader!../../../assets/code/component/button/TooltipCode.jsx'
 import Code from "../../util/CodeUtil"
@@ -195,6 +197,42 @@ function MenuButtonItem(props) {
   )
 }
 
+function PopupItem(props) {
+  const [alertFlag, setAlert] = useState(false);
+  return (
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Popup" />
+
+      <Text weight="regular">
+        A Popup displays a non-modal, often rich content, on top of its target element.
+      </Text>
+      <Collapse>
+        <Code code={ PopupCode } />
+      </Collapse>
+      <Popup
+        trigger={
+          <Button
+            icon={<MoreIcon />}
+            content="Context + Hover"
+            aria-label="Right click or hover button"
+            onClick={ () => { 
+              setAlert(true)
+              setTimeout(
+                () => setAlert(false),
+                4000,
+              )}
+            }
+          />
+        }
+        content="Hello from popup on hover!"
+        on={['context', 'hover']}
+        position="below"
+      />
+      {alertFlag && <Alert warning content="Click!" />}
+    </Box>
+  )
+}
+
 function SplitButtonItem(props) {
   return (
     <Box id={ props.id } styles={{ marginBottom: '40px' }}>
@@ -296,21 +334,57 @@ function TooltipItem(props) {
 }
 
 export default function Buttons() {
+  const menu = [
+    {
+      key: 'AttachmentItem',
+      content: 'Attachment',
+    },
+    {
+      key: 'DatepickerItem',
+      content: 'Datepicker',
+    },
+    {
+      key: 'DialogItem',
+      content: 'Dialog',
+    },
+    {
+      key: 'MenuButtonItem',
+      content: 'MenuButton',
+    },
+    {
+      key: 'PopupItem',
+      content: 'Popup',
+    },
+    {
+      key: 'SplitButtonItem',
+      content: 'SplitButton',
+    },
+    {
+      key: 'TooltipItem',
+      content: 'Tooltip',
+    },
+  ]
   return (
     <Box>
-      <ul id="ButtonList">
-        <li><Button onClick={ () => ScrollToAnchor('AttachmentItem') }>Attachment</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('DatepickerItem') }>Datepicker</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('DialogItem') }>Dialog</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('MenuButtonItem') }>MenuButton</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('SplitButtonItem') }>SplitButton</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('TooltipItem') }>Tooltip</Button></li>
-      </ul>
       <ComponentPrototype title="Button">
+        <SplitButton
+          menu={ menu }
+          button={{
+            content: 'Go To',
+            'aria-roledescription': 'splitbutton',
+            'aria-describedby': 'instruction-message-primary-button',
+          }}
+          primary
+          toggleButton={{
+            'aria-label': 'more options',
+          }}
+          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+        />
         <AttachmentItem id="AttachmentItem" />
         <DatepickerItem id="DatepickerItem" />
         <DialogItem id="DialogItem" />
         <MenuButtonItem id="MenuButtonItem" />
+        <PopupItem id="PopupItem" />
         <SplitButtonItem id="SplitButtonItem" />
         <TooltipItem id="TooltipItem" />
       </ComponentPrototype>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Dialog, Header, Segment, Text } from '@fluentui/react-northstar';
+import { Box, Button, Dialog, Header, Popup, Segment, Text } from '@fluentui/react-northstar';
 
 export default function NestedDialogs() {
   return (
@@ -36,6 +36,8 @@ export default function NestedDialogs() {
                       This <code>Dialog</code> is nested ヽ(^o^)ノ, if you will on an overlay only this <code>Dialog</code>{' '}
                       will be closed.
                     </Text>
+
+                    <Popup content="You can have also Popups inside dialogs!" trigger={<Button content="Open a popup" />} position="below" />
                   </>
                 }
                 trigger={<Button content="Open a dialog" />}
