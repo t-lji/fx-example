@@ -6,10 +6,9 @@ import WelcomeMemberAddedCode from '!!raw-loader!../../../assets/code/bot/adapti
 import Code from "../../util/CodeUtil"
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
-export default function WelcomeCard(props) {
+export default function WelcomeCard() {
   return (
     <ComponentPrototype 
-      id={ props.id }
       title="Welcome Card"
       description="To add a welcome adaptive card to your application"
     >

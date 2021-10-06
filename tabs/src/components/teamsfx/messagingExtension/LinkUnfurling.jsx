@@ -4,10 +4,9 @@ import LinkUnfurlingCode from '!!raw-loader!../../../assets/code/messageExtensio
 import Code from "../../util/CodeUtil"
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
-export default function LinkUnfurling(props) {
+export default function LinkUnfurling() {
   return(
     <ComponentPrototype 
-      id="LinkUnfurling"
       title="Link Unfurling"
       description="With link unfurling your app can register to receive an invoke 
       activity when URLs with a particular domain are pasted into the compose 

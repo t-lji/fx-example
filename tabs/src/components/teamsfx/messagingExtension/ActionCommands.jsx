@@ -4,10 +4,9 @@ import ActionCommandsBotCode from '!!raw-loader!../../../assets/code/messageExte
 import Code from "../../util/CodeUtil";
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
-export default function ActionCommands(props) {
+export default function ActionCommands() {
   return (
-    <ComponentPrototype 
-      id="ActionCommands"
+    <ComponentPrototype
       title="Action Commands"
       description="Action commands allow you to present your users with a modal 
       popup called a task module in Teams. The task module collects or displays

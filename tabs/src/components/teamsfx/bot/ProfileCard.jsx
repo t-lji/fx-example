@@ -14,10 +14,9 @@ import OnBehalfOfUserCredentialCode from '!!raw-loader!../../../assets/code/bot/
 import Code from "../../util/CodeUtil"
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
-export default function ProfileCard(props) {
+export default function ProfileCard() {
   return (
     <ComponentPrototype 
-      id={ props.id }
       title="Profile Card"
       description="To add a personal profile adaptive card to your application"
     >

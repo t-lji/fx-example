@@ -1,4 +1,4 @@
-import { SplitButton } from '@fluentui/react-northstar';
+import { Box, SplitButton } from '@fluentui/react-northstar';
 import ProfileCard from "./ProfileCard"
 import WelcomeCard from "./WelcomeCard"
 import { ComponentPrototype } from "../../util/PageUtil.jsx";
@@ -31,8 +31,10 @@ export default function AdaptiveCard() {
         }}
         onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
       />
-      <WelcomeCard id="WelcomeCard" />
-      <ProfileCard id="ProfileCard" />
+      <Box class="ContentBox">
+        <Box id="WelcomeCard"><WelcomeCard /></Box>
+        <Box id="ProfileCard"><ProfileCard /></Box>
+      </Box>
     </ComponentPrototype>
   )
 }

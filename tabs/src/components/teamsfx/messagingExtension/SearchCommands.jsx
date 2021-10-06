@@ -4,10 +4,9 @@ import searchCommandsCode from '!!raw-loader!../../../assets/code/messageExtensi
 import Code from "../../util/CodeUtil"
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
-export default function SearchCommands(props) {
+export default function SearchCommands() {
   return(
     <ComponentPrototype 
-      id="SearchCommands"
       title="Search Commands"
       description="Messaging extension search commands allow users to search 
       external systems and insert the results of that search into a message in 
