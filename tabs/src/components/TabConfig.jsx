@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from '@fluentui/react-northstar'
+import { Box, Header } from '@fluentui/react-northstar'
 import "./App.css";
 import * as microsoftTeams from "@microsoft/teams-js";
 
@@ -40,7 +40,7 @@ class TabConfig extends React.Component {
 
     return (
       <Box>
-        <h1>Tab Configuration</h1>
+        <Header as="h1">Tab Configuration</Header>
         <Box>
           This is where you will add your tab configuration options the user can choose when the tab
           is added to your team/group chat.

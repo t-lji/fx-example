@@ -52,7 +52,7 @@ export default function SearchCommands() {
         </Flex>
         <Flex>
           <Text weight="regular" size="large" 
-            content='5. You can search for some npm package:' 
+            content='5. You can search for some npm packages:' 
           />
         </Flex>
         <Flex class="StepContent">
