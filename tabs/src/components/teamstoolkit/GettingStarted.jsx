@@ -87,6 +87,40 @@ export default class GettingStarted extends React.Component {
               title="Getting Started"
               description="Get Started with your first Teams App!"
             >
+              <ComponentPrototype 
+                title="Prerequisites" 
+                description="Get started with Microsoft Teams app development:"
+              >
+                <Button 
+                  onClick={ event => { window.open("https://nodejs.org/en/download/", "_blank"); } }
+                  content="Node.js"
+                />
+                <Button 
+                  onClick={ event => { window.open("https://www.microsoft.com/en-us/edge?r=1", "_blank"); } }
+                  content="Microsoft Edge browser"
+                />
+                <Button 
+                  onClick={ event => { window.open("https://docs.microsoft.com/en-us/microsoftteams/platform/toolkit/visual-studio-code-overview", "_blank"); } }
+                  content="Teams Toolkit"
+                />
+                <Button 
+                  onClick={ event => { window.open("https://docs.microsoft.com/en-us/dotnet/core/install/", "_blank"); } }
+                  content=".NET SDK"
+                />
+                <Button 
+                  onClick={ event => { window.open("https://ngrok.com/download"); } }
+                  content="ngrok"
+                />
+                <Flex class="StepContent">
+                  <Text weight="regular" size="large" 
+                      content='Sign in to your Microsoft 365 and Azure accounts 
+                      in Teams Toolkit. You must have access to two accounts'
+                  />
+                </Flex>
+                <Flex class="StepContent">
+                  <Image src="pic/account-commands.png" />
+                </Flex>
+              </ComponentPrototype>
               <Flex column>
                 <Flex>
                   <Text weight="regular" size="large" 
@@ -122,17 +156,16 @@ export default class GettingStarted extends React.Component {
                   />
                 </Flex>
                 <Flex class="StepContent">
-                  <Text>Open <strong>.fx/env.default.json</strong> file, you could 
-                    get the database name in <strong>databaseName</strong> setting
+                  <Text>Open <code>.fx/env.default.json</code> file, you could 
+                    get the database name in <code>databaseName</code> setting
                   </Text>
                 </Flex>
                 <Flex class="StepContent">
-                  <Text>In  
+                  <Text>Find the database and use query editor in  
                     <Button 
                       onClick={ event => { window.open("https://ms.portal.azure.com/", "_blank"); } }
                       content="Azure portal"
                     />
-                    , find the database and use query editor
                   </Text>
                 </Flex>
                 <Flex class="StepContent">
@@ -174,8 +207,8 @@ export default class GettingStarted extends React.Component {
                 </Flex>
                 <Flex class="StepContent">
                   <Text>Open Debug View (<code>Ctrl+Shift+D</code>), select 
-                    <strong>Launch Remote (Edge)</strong>, then Click 
-                    <strong> start</strong> or Press <code>F5</code>.
+                    <strong> Launch Remote (Edge)</strong>, then Click 
+                    <code> start Debugging</code> or Press <code>F5</code>.
                   </Text>
                 </Flex>
                 <Flex class="StepContent">
