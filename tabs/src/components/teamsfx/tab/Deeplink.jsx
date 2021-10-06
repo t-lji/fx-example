@@ -6,15 +6,14 @@ import Code from "../../util/CodeUtil"
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
 function CreateNewMeeting() {
-  microsoftTeams.initialize();
   const url = 'https://teams.microsoft.com/l/meeting/new?subject=New%20meeting%20&content=DeepLink%3A%20New%20meeting';
   microsoftTeams.executeDeepLink(url);
 }
 
 function MoveToTab() {
-  microsoftTeams.initialize();
-  const appId = 'd68b7709-73bf-4add-a370-e89c78d7224e';
-  var encodedWebUrl = encodeURI('https://localhost:3000/#/ui');
+  const environment = window.location.hostname === 'localhost' ? 'local' : 'azure';
+  const appId = environment === 'local' ? '2c6dea84-4c28-4ff6-a5af-8e1fda23b676' : '57cddbcf-b672-4a59-9862-0c75f2f2e837';
+  var encodedWebUrl = encodeURI(environment === 'local' ? 'https://localhost:3000/#/ui' : 'https://fxexamplefe80bac1.z13.web.core.windows.net/#/ui');
   var encodedContext = encodeURI('{ "subEntityId": "ui" "subEntityLabel": "ui", subEntityWebUrl: "https://localhost:3000/#/ui"}');
   var url = 'https://teams.microsoft.com/l/entity/' + appId + '/ui?webUrl=' + encodedWebUrl + '&context=' + encodedContext;
   microsoftTeams.executeDeepLink(url);

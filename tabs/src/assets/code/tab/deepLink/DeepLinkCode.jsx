@@ -2,13 +2,11 @@ import * as microsoftTeams from '@microsoft/teams-js';
 import { Box, Button, Text } from '@fluentui/react-northstar';
 
 function CreateNewMeeting() {
-  microsoftTeams.initialize();
   const url = 'https://teams.microsoft.com/l/meeting/new?subject=New%20meeting%20&content=DeepLink%3A%20New%20meeting';
   microsoftTeams.executeDeepLink(url);
 }
 
 function MoveToTab() {
-  microsoftTeams.initialize();
   const appId = 'd68b7709-73bf-4add-a370-e89c78d7224e';
   var encodedWebUrl = encodeURI('https://localhost:3000/#/ui');
   var encodedContext = encodeURI('{ "subEntityId": "ui" "subEntityLabel": "ui", subEntityWebUrl: "https://localhost:3000/#/ui"}');
