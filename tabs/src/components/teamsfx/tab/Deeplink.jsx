@@ -2,6 +2,8 @@ import * as microsoftTeams from '@microsoft/teams-js';
 import { Button, Flex, Text } from '@fluentui/react-northstar';
 import DeepLinkCode from '!!raw-loader!../../../assets/code/tab/deepLink/DeepLinkCode.jsx'
 import DeepLinkDefinition from '!!raw-loader!../../../assets/code/tab/deepLink/DefinitionCode.txt'
+import EnvCode from '!!raw-loader!../../../assets/code/tab/deepLink/envCode.txt'
+import LocalEnvCode from '!!raw-loader!../../../assets/code/tab/deepLink/localEnvCode.txt'
 import Code from "../../util/CodeUtil"
 import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
@@ -11,10 +13,9 @@ function CreateNewMeeting() {
 }
 
 function MoveToTab() {
-  const environment = window.location.hostname === 'localhost' ? 'local' : 'azure';
-  const appId = environment === 'local' ? '2c6dea84-4c28-4ff6-a5af-8e1fda23b676' : '57cddbcf-b672-4a59-9862-0c75f2f2e837';
-  var encodedWebUrl = encodeURI(environment === 'local' ? 'https://localhost:3000/#/ui' : 'https://fxexamplefe80bac1.z13.web.core.windows.net/#/ui');
-  var encodedContext = encodeURI('{ "subEntityId": "ui" "subEntityLabel": "ui", subEntityWebUrl: "https://localhost:3000/#/ui"}');
+  const appId = process.env.REACT_APP_APP_ID;
+  var encodedWebUrl = encodeURI(process.env.REACT_APP_WEB_SITE + '/#/ui');
+  var encodedContext = encodeURI('{ "subEntityId": "ui" "subEntityLabel": "ui", subEntityWebUrl: ' + encodedWebUrl + '}');
   var url = 'https://teams.microsoft.com/l/entity/' + appId + '/ui?webUrl=' + encodedWebUrl + '&context=' + encodedContext;
   microsoftTeams.executeDeepLink(url);
 }
@@ -52,7 +53,19 @@ export default function DeepLink() {
       <Flex column>
         <Flex>
           <Text weight="regular" size="large" 
-            content="2. Click on the button to UI tab from deeplink:" 
+            content='2. Append code below to the ".fx/local.env" and "tabs/.env" 
+            in your project:' 
+          />
+        </Flex>
+        <Flex class="StepContent"><Text><code>tabs/.env</code></Text></Flex>
+        <Flex class="StepContent"><Code code={ EnvCode } /></Flex>
+        <Flex class="StepContent"><Text><code>.fx/local.env</code></Text></Flex>
+        <Flex class="StepContent"><Code code={ LocalEnvCode } /></Flex>
+      </Flex>
+      <Flex column>
+        <Flex>
+          <Text weight="regular" size="large" 
+            content="3. Click on the button to UI tab from deeplink:" 
           />
         </Flex>
         <Flex class="StepContent"><Button onClick={ MoveToTab }>Move to UI</Button></Flex>

@@ -7,9 +7,9 @@ function CreateNewMeeting() {
 }
 
 function MoveToTab() {
-  const appId = 'd68b7709-73bf-4add-a370-e89c78d7224e';
-  var encodedWebUrl = encodeURI('https://localhost:3000/#/ui');
-  var encodedContext = encodeURI('{ "subEntityId": "ui" "subEntityLabel": "ui", subEntityWebUrl: "https://localhost:3000/#/ui"}');
+  const appId = process.env.REACT_APP_APP_ID;
+  var encodedWebUrl = encodeURI(process.env.REACT_APP_WEB_SITE + '/#/ui');
+  var encodedContext = encodeURI('{ "subEntityId": "ui" "subEntityLabel": "ui", subEntityWebUrl: ' + encodedWebUrl + '}');
   var url = 'https://teams.microsoft.com/l/entity/' + appId + '/ui?webUrl=' + encodedWebUrl + '&context=' + encodedContext;
   microsoftTeams.executeDeepLink(url);
 }
