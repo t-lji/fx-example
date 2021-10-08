@@ -138,14 +138,14 @@ function BreadcrumbItem(props) {
       <Header as="h3" content="Breadcrumb" />
 
       <Text weight="regular" >
-        Breadcrumb is a a component that indicates the path of the current page.
+        Breadcrumb is a component that indicates the path of the current page.
       </Text>
       <Collapse>
         <Code code={ BreadcrumbCode } />
       </Collapse>
       <Breadcrumb aria-label="breadcrumb" size="large">
         <Breadcrumb.Item>
-          <Breadcrumb.Link href="#/toolkit">Home</Breadcrumb.Link>
+          <Breadcrumb.Link href="#/fx">Teams Fx</Breadcrumb.Link>
         </Breadcrumb.Item>
         <Breadcrumb.Divider>
           <ChevronEndMediumIcon size="large" />
