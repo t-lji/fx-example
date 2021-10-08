@@ -45,17 +45,17 @@ export default function DeepLink() {
         </Flex>
         <Flex>
           <Text weight="regular" size="large" 
-            content="1. Click on the button to view the a new meeting from deeplink:" 
+            content="1. Click on the button to view a new meeting from deeplink:" 
           />
         </Flex>
         <Flex class="StepContent"><Button onClick={ CreateNewMeeting } >Create New Meeting</Button></Flex>
       </Flex>
       <Flex column>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='2. Append code below to the ".fx/local.env" and "tabs/.env" 
-            in your project:' 
-          />
+          <Text weight="regular" size="large"> 
+            2. Append code below to the <code>.fx/local.env</code> and <code>tabs/.env</code>
+            in your project:
+          </Text>
         </Flex>
         <Flex class="StepContent"><Text><code>tabs/.env</code></Text></Flex>
         <Flex class="StepContent"><Code code={ EnvCode } /></Flex>
@@ -65,7 +65,7 @@ export default function DeepLink() {
       <Flex column>
         <Flex>
           <Text weight="regular" size="large" 
-            content="3. Click on the button to UI tab from deeplink:" 
+            content="3. Click on the button to the UI tab from deeplink:" 
           />
         </Flex>
         <Flex class="StepContent"><Button onClick={ MoveToTab }>Move to UI</Button></Flex>

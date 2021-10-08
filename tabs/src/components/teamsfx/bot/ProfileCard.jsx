@@ -51,7 +51,7 @@ export default function ProfileCard() {
       <Flex column>
         <Flex>
           <Text weight="regular" size="large" 
-            content='1. Design your personal profile card in this site' 
+            content='1. Design your personal profile card on this site' 
           />
         </Flex>
         <Flex class="StepContent">
@@ -59,65 +59,67 @@ export default function ProfileCard() {
         </Flex>
         <Flex>
           <Text weight="regular" size="large" 
-            content='Or using an already completed personal profile card json:' 
+            content='Or use an already completed personal profile card json:' 
           />
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ ProfileCardJson } language='json' /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='2. Modify the "appPackage/manifest.source.json" your project:' 
-          />
-          </Flex>
+          <Text weight="regular" size="large"> 
+            2. Modify the <code>appPackage/manifest.source.json</code> in your project:
+          </Text>
+        </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ ProfileCommandJson } language='json' /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='3. Add "commandUtil.js" for managing all adaptive card:' 
-          />
+          <Text weight="regular" size="large"> 
+            3. Add <code>commandUtil.js</code> for managing all adaptive card:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ CommandUtilCode } /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='4. Add "cardUtil.js" for generating an adaptive card with data:' 
-          />
+          <Text weight="regular" size="large"> 
+            4. Add <code>cardUtil.js</code> for generating an adaptive card with data:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ CardUtilCode } /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='5. In order to use SSO to request Microsoft Graph API, add 
-            "ssoDialog.js":' 
-          />
+          <Text weight="regular" size="large"> 
+            5. In order to use SSO to request Microsoft Graph API, add 
+            <code>ssoDialog.js</code>:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ SSODialogCode } /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='6. Add "showUserProfile.js" for retrieving user information 
-            from Microsoft Graph:' 
-          />
+          <Text weight="regular" size="large"> 
+            6. Add <code>showUserProfile.js</code> for retrieving user information 
+            from Microsoft Graph:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ ShowUserProfileCode } /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='7. [optional] If you want to use DATE infomation, add 
-            "dateUtil.js":' 
-          />
+          <Text weight="regular" size="large"> 
+            7. [optional] If you want to use DATE infomation, add 
+            <code>dateUtil.js</code>:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ DateUtilCode } /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" content='8. Modify "teamsBot.js" as the entry point of your bot:' />
+          <Text weight="regular" size="large"> 
+            8. Modify <code>teamsBot.js</code>as the entry point of your bot:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ TeamsBotCode } /></Collapse>
@@ -138,19 +140,19 @@ export default function ProfileCard() {
           <Image src="pic/me_command.png" />
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='11. When you first add "me" command, the bot will request 
-            your SSO:' 
-          />
+          <Text weight="regular" size="large"> 
+            11. When you first add <code>me</code> command, the bot will request 
+            your SSO:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Image src="pic/sso-auth.png" />
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='12. After you choose "continue" and "Accept", Teams will 
-            get your SSO token automatically:' 
-          />
+          <Text weight="regular" size="large"> 
+            12. After you choose <code>continue</code> and <code>Accept</code>, 
+            Teams will get your SSO token automatically:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Image src="pic/sso-login.png" />

@@ -48,9 +48,9 @@ export default function ActionCommands() {
           <Collapse><Code code={ ActionCommandsJson } language='json' /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large"  
-            content='3. Modify the "teamsBot.js" to register your message extension:' 
-          />
+          <Text weight="regular" size="large"> 
+            3. Modify the <code>teamsBot.js</code> to register your message extension:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ ActionCommandsBotCode } /></Collapse>

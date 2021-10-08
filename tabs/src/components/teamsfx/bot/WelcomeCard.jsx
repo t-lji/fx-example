@@ -15,7 +15,7 @@ export default function WelcomeCard() {
       <Flex column>
         <Flex>
           <Text weight="regular" size="large" 
-            content='1. Design your welcome card in this site' 
+            content='1. Design your welcome card on this site' 
           />
         </Flex>
         <Flex class="StepContent">
@@ -27,7 +27,7 @@ export default function WelcomeCard() {
         </Flex>
         <Flex>
           <Text weight="regular" size="large" 
-            content='Or using an already completed json:' 
+            content='Or use an already completed json:' 
           />
         </Flex>
         <Flex class="StepContent">
@@ -36,10 +36,10 @@ export default function WelcomeCard() {
           </Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='2. Modify the "appPackage/manifest.source.json" your project, 
-            you can use your own order:' 
-          />
+          <Text weight="regular" size="large"> 
+            2. Modify the <code>appPackage/manifest.source.json</code> in your project, 
+            you can use your own order:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse>
@@ -47,21 +47,21 @@ export default function WelcomeCard() {
           </Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='3. Modify the "this.onMessage()" function in "teamsBot.js", 
-            order text should match the "manifest.source.json":' 
-          />
-          </Flex>
+          <Text weight="regular" size="large"> 
+            3. Modify the <code>this.onMessage()</code> function in <code>teamsBot.js</code>, 
+            order text should match the <code>manifest.source.json</code>
+          </Text>
+        </Flex>
         <Flex class="StepContent">
           <Collapse>
             <Code code={ WelcomeMessageCode } />
           </Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='4. If you want to send the welcome card automatically, 
-            modify this code in "teamsBot.js":' 
-          />
+          <Text weight="regular" size="large"> 
+            4. If you want to send the welcome card automatically, 
+            modify this code in <code>teamsBot.js</code>:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse>
@@ -92,10 +92,10 @@ export default function WelcomeCard() {
           <Image src="pic/welcome_card.png" />
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='8. When you first add your bot in your project, you and your 
-            bot will trigger twice "onMembersAdded()" function:' 
-          />
+          <Text weight="regular" size="large"> 
+            8. When you first add your bot in your project, you and your 
+            bot will trigger twice <code>onMembersAdded()</code> function:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Image src="pic/first_add_member.png" />

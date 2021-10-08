@@ -25,9 +25,9 @@ export default function LinkUnfurling() {
           <Collapse><Code code={ LinkUnfurlingJson } language='json' /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='2. Modify the "teamsBot.js" to register your message extension:' 
-          />
+          <Text weight="regular" size="large"> 
+            2. Modify the <code>teamsBot.js</code> to register your message extension:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ LinkUnfurlingCode } /></Collapse>

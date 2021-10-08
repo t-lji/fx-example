@@ -138,6 +138,9 @@ export default class GettingStarted extends React.Component {
                   />
                 </Flex>
                 <Flex class="StepContent">
+                  <Text error content='Remember your database ACCOUNT and PASSWORD!' />
+                </Flex>
+                <Flex class="StepContent">
                   <Image fluid src="pic/getting_start_provision.gif" />
                 </Flex>
                 <Flex>
@@ -196,7 +199,11 @@ export default class GettingStarted extends React.Component {
                 </Flex>
                 <Flex class="StepContent">
                   <Text>With below query to create a table</Text>
+                </Flex>
+                <Flex class="StepContent">
                   <Code code={ CreateTableSQL }></Code>
+                </Flex>
+                <Flex class="StepContent">
                   <Image fluid src="pic/getting_start_all_resources_create_table.png" />
                 </Flex>
                 <Flex>
@@ -252,7 +259,7 @@ export default class GettingStarted extends React.Component {
                 </Flex>
                 <Flex>
                   <Text weight="regular" size="large" 
-                    content='12. Accept permission for use your profile:' 
+                    content='12. Accept permission for using your profile:' 
                     id="Accept permission for use your profile"
                   />
                 </Flex>

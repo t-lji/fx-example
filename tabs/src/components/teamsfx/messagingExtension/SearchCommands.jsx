@@ -37,9 +37,9 @@ export default function SearchCommands() {
           <Collapse><Code code={ searchCommandsJson } language='json' /></Collapse>
         </Flex>
         <Flex>
-          <Text weight="regular" size="large" 
-            content='3. Modify the "teamsBot.js" to register your message extension:' 
-          />
+          <Text weight="regular" size="large"> 
+            3. Modify the <code>teamsBot.js</code> to register your message extension:
+          </Text>
         </Flex>
         <Flex class="StepContent">
           <Collapse><Code code={ searchCommandsCode } /></Collapse>
