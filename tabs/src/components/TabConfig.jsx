@@ -22,10 +22,10 @@ class TabConfig extends React.Component {
     microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
       const baseUrl = `https://${window.location.hostname}:${window.location.port}`;
       microsoftTeams.settings.setSettings({
-        suggestedDisplayName: "My Tab",
-        entityId: "Test",
-        contentUrl: baseUrl + "/index.html#/tab",
-        websiteUrl: baseUrl + "/index.html#/tab",
+        suggestedDisplayName: "Teams Toolkit",
+        entityId: "toolkit",
+        contentUrl: baseUrl + "/index.html#/toolkit",
+        websiteUrl: baseUrl + "/index.html#/toolkit",
       });
       saveEvent.notifySuccess();
     });

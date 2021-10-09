@@ -1,7 +1,7 @@
 import React from "react";
 // https://fluentsite.z22.web.core.windows.net/quick-start
 import { Provider, teamsTheme, Loader } from "@fluentui/react-northstar";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Redirect, Route } from "react-router-dom";
 import { useTeamsFx } from "./util/useTeamsFx";
 import Privacy from "./Privacy";
 import TermsOfUse from "./TermsOfUse";
@@ -21,6 +21,9 @@ export default function App() {
   return (
     <Provider theme={theme || teamsTheme} styles={{ backgroundColor: "#eeeeee" }}>
       <Router>
+        <Route exact path="/">
+          <Redirect to="/toolkit" />
+        </Route>
         {loading ? (
           <Loader style={{ margin: 100 }} />
         ) : (
