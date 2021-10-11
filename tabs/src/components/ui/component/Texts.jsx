@@ -3,7 +3,7 @@ import {
   AcceptIcon, 
   Alert, 
   BoldIcon,
-  Button, 
+  Box, 
   CodeSnippetIcon, 
   FontSizeIcon, 
   IndentIcon, 
@@ -17,7 +17,8 @@ import {
   Pill, 
   QuoteIcon, 
   RemoveFormatIcon, 
-  Text as TextTag, 
+  SplitButton,
+  Text, 
   TextArea, 
   Toolbar, 
   UnderlineIcon } from '@fluentui/react-northstar'
@@ -29,18 +30,18 @@ import TextCode from '!!raw-loader!../../../assets/code/component/text/TextCode.
 import TextAreaCode from '!!raw-loader!../../../assets/code/component/text/TextAreaItemCode.jsx'
 import ToolbarCode from '!!raw-loader!../../../assets/code/component/text/ToolbarCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function AlertItem() {
+function AlertItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Alert" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Alert" />
 
-      <TextTag weight="regular" size="large">
+      <Text weight="regular">
         An Alert displays a brief, important message to attract a user's 
         attention without interrupting their current task.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ AlertCode } />
       </Collapse>
@@ -50,18 +51,18 @@ function AlertItem() {
         content="Alert content" 
         visible
         success />
-    </div>
+    </Box>
   )
 }
 
-function HeaderItem() {
+function HeaderItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Header" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Header" />
 
-      <TextTag weight="regular" size="large">
+      <Text weight="regular">
         A Header organises the content by declaring a content's topic.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ HeaderCode } />
       </Collapse>
@@ -74,18 +75,18 @@ function HeaderItem() {
           color: 'orange'
         }}
         />
-    </div>
+    </Box>
   )
 }
 
-function LabelItem() {
+function LabelItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Label" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Label" />
 
-      <TextTag weight="regular" size="large">
+      <Text weight="regular">
         A Label allows user to classify content.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ LabelCode } />
       </Collapse>
@@ -96,20 +97,20 @@ function LabelItem() {
         image="pic/Microsoft.png"
         imagePosition="end"
         />
-    </div>
+    </Box>
   )
 }
 
-function PillItem() {
+function PillItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Pill" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Pill" />
 
-      <TextTag weight="regular" size="large">
+      <Text weight="regular">
         THIS COMPONENT IS UNSTABLE Pills should be used 
         when representing an input, as a way to filter content, 
         or to represent an attribute.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ PillCode } />
       </Collapse>
@@ -118,39 +119,39 @@ function PillItem() {
         appearance="outline"
         icon={ <AcceptIcon /> }
         />
-    </div>
+    </Box>
   )
 }
 
-function TextItem() {
+function TextItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Text" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Text" />
 
-      <TextTag weight="regular" size="large">
+      <Text weight="regular">
         A Text consistently styles and formats occurrences of text.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ TextCode } />
       </Collapse>
-      <TextTag 
+      <Text 
         disabled 
         content="Text Content"
         weight="semibold"
         size="larger"
       />
-    </div>
+    </Box>
   )
 }
 
-function TextAreaItem() {
+function TextAreaItem(props) {
   return (
-    <div>
-      <Header as="h4" content="TextArea" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="TextArea" />
 
-      <TextTag weight="regular" size="large">
+      <Text weight="regular">
         A TextArea is a multi-line plan-text editing control.
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ TextAreaCode } />
       </Collapse>
@@ -160,11 +161,11 @@ function TextAreaItem() {
         placeholder="No more than 10 characters can be here" 
         maxLength={ 10 }
       />
-    </div>
+    </Box>
   )
 }
 
-function ToolbarItem() {
+function ToolbarItem(props) {
   const stateReducer = (prevState, action) => ({ ...prevState, [action]: !prevState[action] })
   const [state, dispatch] = React.useReducer(stateReducer, {
     bold: false,
@@ -174,13 +175,13 @@ function ToolbarItem() {
   })
 
   return (
-    <div>
-      <Header as="h4" content="Toolbar" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Toolbar" />
 
-      <TextTag weight="regular" size="large">
+      <Text weight="regular">
         A Toolbar is a container for grouping a set of controls, 
         often action controls (e.g. buttons) or input controls (e.g. checkboxes).
-      </TextTag>
+      </Text>
       <Collapse>
         <Code code={ ToolbarCode } />
       </Collapse>
@@ -317,30 +318,63 @@ function ToolbarItem() {
           },
         ]}
       />
-    </div>
+    </Box>
   )
 }
 
-export default function Text() {
+export default function Texts() {
+  const menu = [
+    {
+      key: 'AlertItem',
+      content: 'Alert',
+    },
+    {
+      key: 'HeaderItem',
+      content: 'Header',
+    },
+    {
+      key: 'LabelItem',
+      content: 'Label',
+    },
+    {
+      key: 'PillItem',
+      content: 'Pill',
+    },
+    {
+      key: 'TextItem',
+      content: 'Text',
+    },
+    {
+      key: 'TextAreaItem',
+      content: 'TextArea',
+    },
+    {
+      key: 'ToolbarItem',
+      content: 'Toolbar',
+    },
+  ]
   return (
-    <div>
-      <Header as="h3" content="Text" />
-      <ul id="TextList">
-        <li><Button onClick={ () => ScrollToAnchor('Alert') }>Alert</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Header') }>Header</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Label') }>Label</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Pill') }>Pill</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Text') }>Text</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('TextArea') }>TextArea</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('Toolbar') }>Toolbar</Button></li>
-      </ul>
-      <div id="Alert"><AlertItem /></div>
-      <div id="Header"><HeaderItem /></div>
-      <div id="Label"><LabelItem /></div>
-      <div id="Pill"><PillItem /></div>
-      <div id="Text"><TextItem /></div>
-      <div id="TextArea"><TextAreaItem /></div>
-      <div id="Toolbar"><ToolbarItem /></div>
-    </div>
+    <ComponentPrototype title="Text">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <AlertItem id="AlertItem" />
+      <HeaderItem id="HeaderItem" />
+      <LabelItem id="LabelItem" />
+      <PillItem id="PillItem" />
+      <TextItem id="TextItem" />
+      <TextAreaItem id="TextAreaItem" />
+      <ToolbarItem id="ToolbarItem" />
+    </ComponentPrototype>
   )
 }

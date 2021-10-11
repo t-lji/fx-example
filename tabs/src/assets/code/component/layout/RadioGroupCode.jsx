@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Divider, RadioGroup } from '@fluentui/react-northstar'
 
-export default function RadioGroupItem() {
-  const [selectedValue, setselectedValue] = useState('pink');
+export default function RadioGroupItem(props) {
+  const [selectedValue, setselectedValue] = React.useState('pink');
   return (
     <Box>
       The selected value is: {selectedValue}

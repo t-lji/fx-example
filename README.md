@@ -14,6 +14,21 @@ At current stage, Teams App has a wealth of features and many applications. At p
 
 ## App
 
+### Teams Toolkit
+
+This part shows our Teams Extension (Teams Toolkit) features, I may show almost all the features in the form of GIF graph and give tips:
+
+1. GETTING STARTED: information about how to create an App by using a sample
+2. PROJECT: includes Create New Project, Add Capabilities, Deploy to the Cloud and so on. You can create your own App and publish it on the Azure or Teams just in Visual Studio Code.
+
+### TeamsFx
+
+This part shows our Teams App ability and how to use Microsoft Graph API in Teams, I may show some features in the form of GIF graph and give tips on @microsoft/teams-js and @microsoft/teamsfx SDK:
+
+1. Tab: includes Deeplink/Mobile tab[optional]/Static Tab - [README](./tabs/README.md)
+2. Bot: includes Adaptive Card - [README](./bot/README.md)
+3. Messaging Extension: includes Action Commands/Search Commands/Link Unfurling
+
 ### UI
 
 @fluentui/react-northstar - A themable React component library.
@@ -23,18 +38,3 @@ The UI components are derived from [@fluentui/react-northstar](https://fluentsit
 1. Overall: includes theming and layout aspects components
 2. Component: logically divided into multiple parts instead of sorting in alphabetical order
 3. Prototypes: includes complex or combined components
-
-### TeamsFx
-
-This part shows our Teams App ability and how Azure Function use in Teams, I may show some features in the form of GIF graph and give tips on TeamsFx SDK:
-
-1. Tab: includes Adaptive Card/Deeplink/Mobile tab[optional]/Static Tab - [README](./tabs/README.md)
-2. Bot: includes Q&A/Command Menu/Calls - [README](./bot/README.md)
-3. Messaging Extension: includes Action Commands/Search Commands/Link Unfurling
-
-### Teams Toolkit
-
-This part shows our Teams Extension (Teams Toolkit) features, I may show almost all the features in the form of GIF graph and give tips:
-
-1. GETTING STARTED: includes Quick Start/Samples/Documentation
-2. PROJECT: includes Create New Project, Add Capabilities, Deploy to the Cloud and so on. You can create your own App and publish it on the Azure or Teams just in Visual Studio Code.

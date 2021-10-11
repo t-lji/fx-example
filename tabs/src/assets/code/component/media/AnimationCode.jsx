@@ -1,6 +1,6 @@
 import { Animation, MentionIcon, Provider } from '@fluentui/react-northstar'
 
-export default function AnimationItem() {
+export default function AnimationItem(props) {
   const spinner = {
     keyframe: {
       from: {

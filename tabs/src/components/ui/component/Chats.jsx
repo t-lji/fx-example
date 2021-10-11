@@ -1,22 +1,23 @@
 import React from "react";
 import { 
-  Button, 
+  Box, 
   EmojiIcon, 
   Header, 
-  LikeIcon,  
-  Text, 
-  Reaction } from '@fluentui/react-northstar'
+  LikeIcon, 
+  Reaction,
+  SplitButton, 
+  Text, } from '@fluentui/react-northstar'
 import ReactionCode from '!!raw-loader!../../../assets/code/component/chat/ReactionCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function ReactionItem() {
+function ReactionItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Reaction" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Reaction" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A Reaction indicates user's emotion or perception. Used to display 
         user's reaction for entity in Chat (e.g. message).
       </Text>
@@ -37,18 +38,33 @@ function ReactionItem() {
           },
         ]}
       />
-    </div>
+    </Box>
   )
 }
 
 export default function Chats() {
+  const menu = [
+    {
+      key: 'ReactionItem',
+      content: 'Reaction',
+    },
+  ]
   return (
-    <div>
-      <Header as="h3" content="Chat" />
-      <ul id="ChatList">
-        <li><Button onClick={ () => ScrollToAnchor('ReactionItem') }>Reaction</Button></li>
-      </ul>
-      <div id="ReactionItem"><ReactionItem /></div>
-    </div>
+    <ComponentPrototype title="Chat">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <ReactionItem id="ReactionItem" />
+    </ComponentPrototype>
   )
 }

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Tab from "./teamsfx/Tab"
 import Bot from "./teamsfx/Bot"
 import MessagingExtension from "./teamsfx/MessagingExtension"
-import { Menu } from '@fluentui/react-northstar'
+import { Box, Menu } from '@fluentui/react-northstar'
 import "./App.css"
 
 function Catalogue() {
   const steps = ["Tab", "Bot", "MessagingExtension"];
-  const [selectedMenuItem, setSelectedMenuItem] = useState("Tab");
+  const [selectedMenuItem, setSelectedMenuItem] = React.useState("Tab");
   const items = steps.map((step) => {
     return {
       key: step,
@@ -16,10 +16,10 @@ function Catalogue() {
     };
   });
   return (
-  <div className="page">
+  <Box className="page">
     <Menu defaultActiveIndex={0} items={items} underlined secondary />
-    <div>
-      <div>
+    <Box>
+      <Box>
         {selectedMenuItem === "Tab" && (
           <Tab />
         )}
@@ -29,9 +29,9 @@ function Catalogue() {
         {selectedMenuItem === "MessagingExtension" && (
           <MessagingExtension />
         )}
-      </div>
-    </div>
-  </div>
+      </Box>
+    </Box>
+  </Box>
   )
 }
 

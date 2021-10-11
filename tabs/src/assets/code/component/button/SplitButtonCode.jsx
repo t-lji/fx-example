@@ -1,12 +1,13 @@
 import { 
+  Box, 
   ContactGroupIcon, 
   ChatIcon,
   ChannelShareIcon,
   SplitButton } from '@fluentui/react-northstar'
 
-export default function SplitButtonItem() {
+export default function SplitButtonItem(props) {
   return (
-    <div>
+    <Box>
       <>
         <SplitButton
           menu={[
@@ -43,6 +44,6 @@ export default function SplitButtonItem() {
           to open menu, press Alt + Arrow Down
         </span>
       </>
-    </div>
+    </Box>
   )
 }

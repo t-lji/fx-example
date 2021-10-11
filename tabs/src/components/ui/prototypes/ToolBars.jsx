@@ -1,21 +1,21 @@
 import React from "react";
-import { Box, Button, Dialog, Header, Segment } from '@fluentui/react-northstar';
+import { Box, Button, Dialog, Header, Popup, Segment, SplitButton, Text } from '@fluentui/react-northstar';
 import NestedDialogsCode from '!!raw-loader!../../../assets/code/prototypes/toolbars/NestedDialogsCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function NestedDialogs() {
+function NestedDialogs(props) {
   return (
-    <div>
-    <Header as="h4" content="Nested Dialogs" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+    <Header as="h3" content="Nested Dialogs" />
 
     <Collapse>
       <Code code={ NestedDialogsCode } />
     </Collapse>
     <Box styles={{ marginTop: '20px' }}>
       <Segment>
-        <p>An example with nested dialogs</p>
+        <Text>An example with nested dialogs</Text>
       </Segment>
       <Segment>
         <Dialog
@@ -23,9 +23,9 @@ function NestedDialogs() {
           header="An outer dialog"
           content={
             <>
-              <p>
+              <Text>
                 This <code>Dialog</code> contains another <code>Dialog</code> inside.
-              </p>
+              </Text>
               <blockquote>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -39,10 +39,12 @@ function NestedDialogs() {
                 header="An inner dialog"
                 content={
                   <>
-                    <p>
+                    <Popup content="You can have also Popups inside dialogs!" trigger={<Button content="Open a popup" />} position="below" />
+                    
+                    <Text>
                       This <code>Dialog</code> is nested ヽ(^o^)ノ, if you will on an overlay only this <code>Dialog</code>{' '}
                       will be closed.
-                    </p>
+                    </Text>
                   </>
                 }
                 trigger={<Button content="Open a dialog" />}
@@ -53,21 +55,34 @@ function NestedDialogs() {
         />
       </Segment>
     </Box>
-  </div>
+  </Box>
     
   );
 }
 
-export default class ToolBars extends React.Component {
-  render() {
-    return (
-      <div className="ToolBars page">
-        <Header as="h2" content="ToolBars" />
-        <ul id="ToolBarsList">
-          <li><Button onClick={ () => ScrollToAnchor('NestedDialogs') }>Nested Dialogs</Button></li>
-        </ul>
-        <div id="NestedDialogs"><NestedDialogs /></div>
-      </div>
-    )
-  }
+export default function ToolBars() {
+  const menu = [
+    {
+      key: 'NestedDialogs',
+      content: 'Nested Dialogs',
+    },
+  ]
+  return (
+    <ComponentPrototype title="ToolBar">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <NestedDialogs id="NestedDialogs" />
+    </ComponentPrototype>
+  )
 }

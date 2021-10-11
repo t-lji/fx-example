@@ -1,1 +1,1 @@
-/templates/appPackage/manifest.template.json
+/appPackage/manifest.source.json

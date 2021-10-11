@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { Button, Divider, Grid, Ref, Text, Tooltip, QnaIcon } from '@fluentui/react-northstar'
+import React from "react";
+import { Box, Button, Divider, Grid, Ref, Text, Tooltip, QnaIcon } from '@fluentui/react-northstar'
 
-export default function TooltipItem() {
-  const [target, setTarget] = useState(null)
+export default function TooltipItem(props) {
+  const [target, setTarget] = React.useState(null)
   return (
-    <div>
+    <Box>
       <Grid columns="auto 1fr">
       {/* CUSTOM DOM ELEMENT is used as target for Tooltip */}
       <Tooltip
@@ -21,7 +21,7 @@ export default function TooltipItem() {
         content="well, yes, I am just a garbish text ¯\_(ツ)_/¯"
         position="below"
       />
-        <div
+        <Box
           style={{
             marginLeft: 10,
           }}
@@ -34,8 +34,8 @@ export default function TooltipItem() {
               majesto, to the souls of York."
             </Text>
           </Ref>
-        </div>
+        </Box>
       </Grid>
-    </div>
+    </Box>
   )
 }

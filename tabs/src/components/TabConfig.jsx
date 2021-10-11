@@ -1,4 +1,5 @@
 import React from "react";
+import { Box, Header } from '@fluentui/react-northstar'
 import "./App.css";
 import * as microsoftTeams from "@microsoft/teams-js";
 
@@ -21,10 +22,10 @@ class TabConfig extends React.Component {
     microsoftTeams.settings.registerOnSaveHandler((saveEvent) => {
       const baseUrl = `https://${window.location.hostname}:${window.location.port}`;
       microsoftTeams.settings.setSettings({
-        suggestedDisplayName: "My Tab",
-        entityId: "Test",
-        contentUrl: baseUrl + "/index.html#/tab",
-        websiteUrl: baseUrl + "/index.html#/tab",
+        suggestedDisplayName: "Teams Toolkit",
+        entityId: "toolkit",
+        contentUrl: baseUrl + "/index.html#/toolkit",
+        websiteUrl: baseUrl + "/index.html#/toolkit",
       });
       saveEvent.notifySuccess();
     });
@@ -38,13 +39,13 @@ class TabConfig extends React.Component {
     microsoftTeams.settings.setValidityState(true);
 
     return (
-      <div>
-        <h1>Tab Configuration</h1>
-        <div>
+      <Box>
+        <Header as="h1">Tab Configuration</Header>
+        <Box>
           This is where you will add your tab configuration options the user can choose when the tab
           is added to your team/group chat.
-        </div>
-      </div>
+        </Box>
+      </Box>
     );
   }
 }

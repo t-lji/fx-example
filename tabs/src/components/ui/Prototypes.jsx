@@ -1,32 +1,66 @@
 import React from "react";
-import { Button, Header } from '@fluentui/react-northstar'
+import { Box, Flex, SplitButton } from '@fluentui/react-northstar'
 import "./Overall.css";
-import Chat from './prototypes/Chat.jsx'
-import LayOut from './prototypes/LayOut.jsx'
+import Chats from './prototypes/Chats.jsx'
+import Layouts from './prototypes/Layouts.jsx'
 import Texts from './prototypes/Texts.jsx'
 import Users from './prototypes/Users.jsx'
 import ToolBars from './prototypes/ToolBars.jsx'
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
 
-export default class Prototypes extends React.Component {
-  render() {
-    return (
-      <div className="Prototypes page">
-        <Header as="h2" content="Prototypes" />
-        <ul id="PrototypesList">
-          <li><Button onClick={ () => ScrollToAnchor('Chat') }>Chat</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('LayOut') }>LayOut</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Texts') }>Texts</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Users') }>Users</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('ToolBars') }>ToolBars</Button></li>
-        </ul>
-        <div id="Chat"><Chat /></div>
-        <div id="LayOut"><LayOut /></div>
-        <div id="Texts"><Texts /></div>
-        <div id="Users"><Users /></div>
-        <div id="ToolBars"><ToolBars /></div>
-      <TopJumper />
-    </div>
-    )
-  }
+export default function Prototypes() {
+  const menu = [
+    {
+      key: 'Chats',
+      content: 'Chat',
+    },
+    {
+      key: 'Layouts',
+      content: 'Layout',
+    },
+    {
+      key: 'Texts',
+      content: 'Text',
+    },
+    {
+      key: 'ToolBars',
+      content: 'ToolBar',
+    },
+    {
+      key: 'Users',
+      content: 'Users',
+    },
+  ]
+  return (
+    <Box className="Prototypes page">
+      <Flex gap="gap.small">
+        <Box class="HeaderBox">
+          <Box class="HeaderContent">
+          <SplitButton
+            menu={ menu }
+            button={{
+              content: 'Prototypes',
+              'aria-roledescription': 'splitbutton',
+              'aria-describedby': 'instruction-message-primary-button',
+            }}
+            primary
+            size="largest"
+            toggleButton={{
+              'aria-label': 'more options',
+            }}
+            onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+          />
+          </Box>
+        </Box>
+        <Box class="ContentBox">
+          <Box id="Chats"><Chats /></Box>
+          <Box id="Layouts"><Layouts /></Box>
+          <Box id="Texts"><Texts /></Box>
+          <Box id="ToolBars"><ToolBars /></Box>
+          <Box id="Users"><Users /></Box>
+          <TopJumper />
+        </Box>
+      </Flex>
+    </Box>
+  )
 }

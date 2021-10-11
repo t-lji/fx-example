@@ -35,16 +35,16 @@ export default function ParticipantsList() {
   ];
 
   return (
-    <div>
-      <Header as="h4" content="Participants List" />
+    <Box>
+      <Header as="h3" content="Participants List" />
 
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="List with context menu" />
-          <p>Context menu can be opened by clicking on the more button or by right mouse button</p>
+          <Text>Context menu can be opened by clicking on the more button or by right mouse button</Text>
         </Segment>
         <Segment><List navigable items={items3} horizontal /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }

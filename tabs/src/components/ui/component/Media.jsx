@@ -2,6 +2,7 @@ import React from "react";
 import { 
   Animation,
   Avatar,
+  Box, 
   Button, 
   Card,
   Carousel,
@@ -15,6 +16,7 @@ import {
   MoreIcon,
   Provider,
   Skeleton,  
+  SplitButton,
   StarIcon,
   Text,
   Video } from '@fluentui/react-northstar'
@@ -27,10 +29,10 @@ import ImageCode from '!!raw-loader!../../../assets/code/component/media/ImageCo
 import SkeletonCode from '!!raw-loader!../../../assets/code/component/media/SkeletonCode.jsx'
 import VideoCode from '!!raw-loader!../../../assets/code/component/media/VideoCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function AnimationItem() {
+function AnimationItem(props) {
   const spinner = {
     keyframe: {
       from: {
@@ -44,10 +46,10 @@ function AnimationItem() {
     iterationCount: 'infinite',
   }
   return (
-    <div>
-      <Header as="h4" content="Animation" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Animation" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Animation provides animation effects to rendered elements.
       </Text>
       <Collapse>
@@ -59,22 +61,21 @@ function AnimationItem() {
             spinner,
           },
         }}
-        styles={{ backgroundColor: "#eeeeee" }}
       >
         <Animation name="spinner" direction="alternate-reverse">
           <MentionIcon circular bordered />
         </Animation>
       </Provider>
-    </div>
+    </Box>
   )
 }
 
-function AvatarItem() {
+function AvatarItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Avatar" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Avatar" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Avatar is a graphical representation of a user.
       </Text>
       <Collapse>
@@ -87,16 +88,16 @@ function AvatarItem() {
           title: 'Busy',
         }}
       />
-    </div>
+    </Box>
   )
 }
 
-function CardItem() {
+function CardItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Card" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Card" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Card is used to display data in sematically grouped way.
       </Text>
       <Collapse>
@@ -136,11 +137,11 @@ function CardItem() {
           </Card.Footer>
         </Card>
       </Flex>
-    </div>
+    </Box>
   )
 }
 
-function CarouselItem() {
+function CarouselItem(props) {
   const imageAltTags = {
     allan: 'Portrait of Allan',
     carole: 'Portrait of Carole',
@@ -226,10 +227,10 @@ function CarouselItem() {
     },
   ]
   return (
-    <div>
-      <Header as="h4" content="Carousel" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Carousel" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Carousel displays data organised as a gallery.
       </Text>
       <Collapse>
@@ -252,16 +253,16 @@ function CarouselItem() {
         items={carouselItems}
         getItemPositionText={(index, size) => `${index + 1} of ${size}`}
       />
-    </div>
+    </Box>
   )
 }
 
-function EmbedItem() {
+function EmbedItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Embed" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Embed" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Embed displays content from external websites, like a post from external social network.
       </Text>
       <Collapse>
@@ -286,16 +287,16 @@ function EmbedItem() {
         />
         <Text>(c) copyright 2020, Microsoft</Text>
       </Flex>
-    </div>
+    </Box>
   )
 }
 
-function ImageItem() {
+function ImageItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Image" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Image" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         An Image is a graphic representation of something.
       </Text>
       <Collapse>
@@ -313,16 +314,16 @@ function ImageItem() {
           />
         )}
       />
-    </div>
+    </Box>
   )
 }
 
-function SkeletonItem() {
+function SkeletonItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Skeleton" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Skeleton" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Skeleton is a component to be placed while the content is loading.
       </Text>
       <Collapse>
@@ -333,16 +334,16 @@ function SkeletonItem() {
         <Skeleton.Line width="20%" />
         <Skeleton.Line width="50%" />
       </Skeleton>
-    </div>
+    </Box>
   )
 }
 
-function VideoItem() {
+function VideoItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Video" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Video" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Video provides ability to embed video content.
       </Text>
       <Collapse>
@@ -356,32 +357,68 @@ function VideoItem() {
           width: '720px',
         }}
       />
-    </div>
+    </Box>
   )
 }
 
 export default function Media() {
+  const menu = [
+    {
+      key: 'AnimationItem',
+      content: 'Animation',
+    },
+    {
+      key: 'AvatarItem',
+      content: 'Avatar',
+    },
+    {
+      key: 'CardItem',
+      content: 'Card',
+    },
+    {
+      key: 'CarouselItem',
+      content: 'Carousel',
+    },
+    {
+      key: 'EmbedItem',
+      content: 'Embed',
+    },
+    {
+      key: 'ImageItem',
+      content: 'Image',
+    },
+    {
+      key: 'SkeletonItem',
+      content: 'Skeleton',
+    },
+    {
+      key: 'VideoItem',
+      content: 'Video',
+    },
+  ]
   return (
-    <div>
-      <Header as="h3" content="Media" />
-      <ul id="MediaList">
-        <li><Button onClick={ () => ScrollToAnchor('AnimationItem') }>Animation</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('AvatarItem') }>Avatar</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('CardItem') }>Card</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('CarouselItem') }>Carousel</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('EmbedItem') }>Embed</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('ImageItem') }>Image</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('SkeletonItem') }>Skeleton</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('VideoItem') }>Video</Button></li>
-      </ul>
-      <div id="AnimationItem"><AnimationItem /></div>
-      <div id="AvatarItem"><AvatarItem /></div>
-      <div id="CardItem"><CardItem /></div>
-      <div id="CarouselItem"><CarouselItem /></div>
-      <div id="EmbedItem"><EmbedItem /></div>
-      <div id="ImageItem"><ImageItem /></div>
-      <div id="SkeletonItem"><SkeletonItem /></div>
-      <div id="VideoItem"><VideoItem /></div>
-    </div>
+    <ComponentPrototype title="Media">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <AnimationItem id="AnimationItem" />
+      <AvatarItem id="AvatarItem" />
+      <CardItem id="CardItem" />
+      <CarouselItem id="CarouselItem" />
+      <EmbedItem id="EmbedItem" />
+      <ImageItem id="ImageItem" />
+      <SkeletonItem id="SkeletonItem" />
+      <VideoItem id="VideoItem" />
+    </ComponentPrototype>
   )
 }

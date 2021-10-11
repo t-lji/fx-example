@@ -3,23 +3,22 @@ import {
   AcceptIcon,
   Avatar,
   Box,
-  Chat as ChatTag,
-  ChatItemProps,
+  Chat,
   Header,
   MentionIcon,
   RedbangIcon,
   Segment, 
-  ShorthandCollection } from '@fluentui/react-northstar'
+  Text } from '@fluentui/react-northstar'
 
 export default function ChatMessages() {
   const MicrosoftAvatar = {
     image: 'Microsoft.png',
     status: { color: 'green', icon: <AcceptIcon /> },
   }
-  const items: ShorthandCollection<ChatItemProps> = [
+  const items = [
     {
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="This is important message"
           author="John Doe"
           timestamp="Yesterday, 10:15 PM"
@@ -35,7 +34,7 @@ export default function ChatMessages() {
     {
       gutter: <Avatar {...MicrosoftAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="This is another important message (see how the borders radius respect the grouped ones)"
           author="Microsoft"
           timestamp="Yesterday, 10:15 PM"
@@ -49,7 +48,7 @@ export default function ChatMessages() {
     {
       gutter: <Avatar {...MicrosoftAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="This is mention message @John"
           author="Microsoft"
           timestamp="Yesterday, 10:15 PM"
@@ -63,7 +62,7 @@ export default function ChatMessages() {
     {
       gutter: <Avatar {...MicrosoftAvatar} />,
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="This is another mention message @John with custom color"
           author="Microsoft"
           timestamp="Yesterday, 10:15 PM"
@@ -79,7 +78,7 @@ export default function ChatMessages() {
     },
     {
       message: (
-        <ChatTag.Message
+        <Chat.Message
           content="The color for the important messages can also be changed!"
           author="Microsoft"
           timestamp="Yesterday, 10:16 PM"
@@ -97,14 +96,14 @@ export default function ChatMessages() {
   ]
 
   return (
-    <div>
+    <Box>
       <Box styles={{ marginTop: '20px' }}>
         <Segment>
           <Header as="h3" content="Important and mention messages" />
-          <p>Important and mention messages support in Teams theme.</p>
+          <Text>Important and mention messages support in Teams theme.</Text>
         </Segment>
-        <Segment><ChatTag items={items} /></Segment>
+        <Segment><Chat items={items} /></Segment>
       </Box>
-    </div>
+    </Box>
   )
 }

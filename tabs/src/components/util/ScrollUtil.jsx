@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import "./ScrollUtil.css";
+import React from "react";
+import { Button, Tooltip, TriangleUpIcon } from '@fluentui/react-northstar'
 
 // scroll to the top
 export function TopJumper() {
-  const [show, switchShow] = useState(false);
+  const [show, switchShow] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const listener = () => {
       switchShow(window.scrollY > 150)
     };
@@ -15,9 +15,22 @@ export function TopJumper() {
   }, [show])
 
   return show ? (
-    <div className="top-jumper" onClick={ () => window.scrollTo(0, 0) }>
-      <span className="text"> </span>
-    </div>) : null;
+    <Tooltip 
+      style={{
+        position: "fixed",
+        right: "10%",
+        bottom: "15%",
+        width: "100px"
+      }}
+      trigger={ <Button 
+        icon={ <TriangleUpIcon size="large"/> }
+        onClick={ () => window.scrollTo(0, 0) } 
+        primary 
+        />} 
+      content="Back To Top" 
+      position="below"
+    />
+    ) : null;
 }
 
 // scroll by the name

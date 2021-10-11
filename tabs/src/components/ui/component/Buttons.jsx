@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   Alert,
   Attachment, 
+  Box, 
   Button, 
   ChannelShareIcon,
   ChatIcon,
@@ -16,6 +17,7 @@ import {
   Header, 
   MenuButton,
   MoreIcon, 
+  Popup,
   QnaIcon,
   Ref,
   SplitButton,
@@ -26,23 +28,24 @@ import AttachmentCode from '!!raw-loader!../../../assets/code/component/button/A
 import DatepickerCode from '!!raw-loader!../../../assets/code/component/button/DatepickerCode.jsx'
 import DialogCode from '!!raw-loader!../../../assets/code/component/button/DialogCode.jsx'
 import MenuButtonCode from '!!raw-loader!../../../assets/code/component/button/MenuButtonCode.jsx'
+import PopupCode from '!!raw-loader!../../../assets/code/component/button/PopupCode.jsx'
 import SplitButtonCode from '!!raw-loader!../../../assets/code/component/button/SplitButtonCode.jsx'
 import TooltipCode from '!!raw-loader!../../../assets/code/component/button/TooltipCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function AttachmentItem() {
+function AttachmentItem(props) {
   const handleClick = message => e => {
     alert(`'${message}' was clicked`)
     e.stopPropagation()
   }
 
   return (
-    <div>
-      <Header as="h4" content="Attachment" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Attachment" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         An Attachment represents a file or media attachment, 
         which may contain some metadata or actions.
       </Text>
@@ -62,16 +65,16 @@ function AttachmentItem() {
         progress={33}
         onClick={handleClick('Attachment')}
       />
-    </div>
+    </Box>
   )
 }
 
-function DatepickerItem() {
+function DatepickerItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Datepicker" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Datepicker" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A Datepicker is a control which is used to display dates grid and allow 
         user to select them.
       </Text>
@@ -86,16 +89,16 @@ function DatepickerItem() {
         }}
         today={new Date()}
       />
-    </div>
+    </Box>
   )
 }
 
-function DialogItem() {
+function DialogItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Dialog" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Dialog" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A Dialog displays important information on top of a page which requires 
         a user's attention, confirmation, or interaction. Dialogs are purposefully 
         interruptive, so they should be used sparingly.
@@ -123,12 +126,12 @@ function DialogItem() {
         }}
         trigger={<Button content="Open a dialog" />}
       />
-    </div>
+    </Box>
   )
 }
 
-function MenuButtonItem() {
-  const [alertFlag, setAlert] = useState(false);
+function MenuButtonItem(props) {
+  const [alertFlag, setAlert] = React.useState(false);
   const showAlert = () => {
     setAlert(true) || setTimeout(() => { setAlert(false) }, 2000)
   }
@@ -144,10 +147,10 @@ function MenuButtonItem() {
     },
   ]
   return (
-    <div>
-      <Header as="h4" content="MenuButton" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="MenuButton" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A MenuButton displays a menu connected to trigger element.
       </Text>
       <Collapse>
@@ -190,16 +193,52 @@ function MenuButtonItem() {
           />
         )}
       </>
-    </div>
+    </Box>
   )
 }
 
-function SplitButtonItem() {
+function PopupItem(props) {
+  const [alertFlag, setAlert] = React.useState(false);
   return (
-    <div>
-      <Header as="h4" content="SplitButton" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Popup" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
+        A Popup displays a non-modal, often rich content, on top of its target element.
+      </Text>
+      <Collapse>
+        <Code code={ PopupCode } />
+      </Collapse>
+      <Popup
+        trigger={
+          <Button
+            icon={<MoreIcon />}
+            content="Context + Hover"
+            aria-label="Right click or hover button"
+            onClick={ () => { 
+              setAlert(true)
+              setTimeout(
+                () => setAlert(false),
+                4000,
+              )}
+            }
+          />
+        }
+        content="Hello from popup on hover!"
+        on={['context', 'hover']}
+        position="below"
+      />
+      {alertFlag && <Alert warning content="Click!" />}
+    </Box>
+  )
+}
+
+function SplitButtonItem(props) {
+  return (
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="SplitButton" />
+
+      <Text weight="regular">
         A SplitButton enables users to take one of several related actions, one 
         being dominant and rest being displayed in a menu.
       </Text>
@@ -242,17 +281,17 @@ function SplitButtonItem() {
           to open menu, press Alt + Arrow Down
         </span>
       </>
-    </div>
+    </Box>
   )
 }
 
-function TooltipItem() {
-  const [target, setTarget] = useState(null)
+function TooltipItem(props) {
+  const [target, setTarget] = React.useState(null)
   return (
-    <div>
-      <Header as="h4" content="Tooltip" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Tooltip" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular">
         A Tooltip displays additional non-modal information on top of its target 
         element. Tooltip doesn't receive focus and cannot contain focusable elements.
       </Text>
@@ -275,7 +314,7 @@ function TooltipItem() {
         content="well, yes, I am just a garbish text ¯\_(ツ)_/¯"
         position="below"
       />
-        <div
+        <Box
           style={{
             marginLeft: 10,
           }}
@@ -288,30 +327,65 @@ function TooltipItem() {
               majesto, to the souls of York."
             </Text>
           </Ref>
-        </div>
+        </Box>
       </Grid>
-    </div>
+    </Box>
   )
 }
 
 export default function Buttons() {
+  const menu = [
+    {
+      key: 'AttachmentItem',
+      content: 'Attachment',
+    },
+    {
+      key: 'DatepickerItem',
+      content: 'Datepicker',
+    },
+    {
+      key: 'DialogItem',
+      content: 'Dialog',
+    },
+    {
+      key: 'MenuButtonItem',
+      content: 'MenuButton',
+    },
+    {
+      key: 'PopupItem',
+      content: 'Popup',
+    },
+    {
+      key: 'SplitButtonItem',
+      content: 'SplitButton',
+    },
+    {
+      key: 'TooltipItem',
+      content: 'Tooltip',
+    },
+  ]
   return (
-    <div>
-      <Header as="h3" content="Button" />
-      <ul id="ButtonList">
-        <li><Button onClick={ () => ScrollToAnchor('AttachmentItem') }>Attachment</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('DatepickerItem') }>Datepicker</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('DialogItem') }>Dialog</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('MenuButtonItem') }>MenuButton</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('SplitButtonItem') }>SplitButton</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('TooltipItem') }>Tooltip</Button></li>
-      </ul>
-      <div id="AttachmentItem"><AttachmentItem /></div>
-      <div id="DatepickerItem"><DatepickerItem /></div>
-      <div id="DialogItem"><DialogItem /></div>
-      <div id="MenuButtonItem"><MenuButtonItem /></div>
-      <div id="SplitButtonItem"><SplitButtonItem /></div>
-      <div id="TooltipItem"><TooltipItem /></div>
-    </div>
+    <ComponentPrototype title="Button">
+      <SplitButton
+        menu={ menu }
+        button={{
+          content: 'Go To',
+          'aria-roledescription': 'splitbutton',
+          'aria-describedby': 'instruction-message-primary-button',
+        }}
+        primary
+        toggleButton={{
+          'aria-label': 'more options',
+        }}
+        onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+      />
+      <AttachmentItem id="AttachmentItem" />
+      <DatepickerItem id="DatepickerItem" />
+      <DialogItem id="DialogItem" />
+      <MenuButtonItem id="MenuButtonItem" />
+      <PopupItem id="PopupItem" />
+      <SplitButtonItem id="SplitButtonItem" />
+      <TooltipItem id="TooltipItem" />
+    </ComponentPrototype>
   )
 }

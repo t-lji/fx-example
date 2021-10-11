@@ -1,58 +1,72 @@
-import { Flex, Header, Image, Segment, Text } from '@fluentui/react-northstar';
+import { Flex, Image, Label, Text } from '@fluentui/react-northstar';
 import searchCommandsJson from '../../../assets/code/messageExtension/searchCommands/searchCommandsJson.json';
 import searchCommandsCode from '!!raw-loader!../../../assets/code/messageExtension/searchCommands/searchCommandsCode.js';
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 
 export default function SearchCommands() {
-  return (
-    <div id="SearchCommands page">
-      <Header as="h4" content="Search Commands" />
-
+  return(
+    <ComponentPrototype 
+      title="Search Commands"
+      description="Messaging extension search commands allow users to search 
+      external systems and insert the results of that search into a message in 
+      the form of a card."
+    >
       <Flex column>
-        <Segment inverted>
-          <Text weight="regular">Messaging extension search commands allow users to search 
-            external systems and insert the results of that search into a message in the form
-            of a card. 
-          </Text>
-        </Segment>
-        <Segment inverted>
-          <Text content='1. Select search command invoke locations:' />
-          <ui>
-            <li>commandBox: By @mentioning your app in the command box.</li>
+        <Flex>
+          <Text weight="regular" size="large" 
+            content='1. Select search command invoke locations:' 
+          />
+        </Flex>
+        <Flex class="StepContent">
+          <Label content="commandBox: By @mentioning your app in the command box."/>
+          <Flex class="StepContent">
             <Image src="pic/search_command_box.png" />
-            <li>compose: The buttons at the bottom of the compose message area.</li>
+          </Flex>
+          <Label content="compose: The buttons at the bottom of the compose message area."/>
+          <Flex class="StepContent">
             <Image src="pic/search_command_text.png" />
-          </ui>
-        </Segment>
-        <Segment inverted>
-          <Text content='2. Add the search command to your app manifest:' />
-          <Collapse>
-            <Code code={ searchCommandsJson } language='json' />
-          </Collapse>
-        </Segment>
-        <Segment inverted>
-          <Text content='3. Modify the "teamsBot.js" to register your message extension:' />
-          <Collapse>
-            <Code code={ searchCommandsCode } />
-          </Collapse>
-        </Segment>
-        <Segment inverted>
-          <Text content='4. Save your code and Restart your application or Deploy your application to Azure again.' />
-        </Segment>
-        <Segment inverted>
-          <Text content='5. You can search for some npm package:' />
-        </Segment>
-        <Segment inverted>
+          </Flex>
+        </Flex>
+        <Flex>
+          <Text weight="regular" size="large" 
+            content='2. Add the search command to your app manifest:' 
+          />
+        </Flex>
+        <Flex class="StepContent">
+          <Collapse><Code code={ searchCommandsJson } language='json' /></Collapse>
+        </Flex>
+        <Flex>
+          <Text weight="regular" size="large"> 
+            3. Modify the <code>teamsBot.js</code> to register your message extension:
+          </Text>
+        </Flex>
+        <Flex class="StepContent">
+          <Collapse><Code code={ searchCommandsCode } /></Collapse>
+        </Flex>
+        <Flex>
+          <Text weight="regular" size="large" 
+            content='4. Save your code and Restart your application or Deploy 
+            your application to Azure again.' 
+          />
+        </Flex>
+        <Flex>
+          <Text weight="regular" size="large" 
+            content='5. You can search for some npm packages:' 
+          />
+        </Flex>
+        <Flex class="StepContent">
           <Image src="pic/search_command_action.png" />
-        </Segment>
-        <Segment inverted>
-          <Text content='6. You will get a description of the npm package:' />
-        </Segment>
-        <Segment inverted>
+        </Flex>
+        <Flex>
+          <Text weight="regular" size="large" 
+            content='6. You will get a description of the npm package:' 
+          />
+        </Flex>
+        <Flex class="StepContent">
           <Image src="pic/search_command_result.png" />
-        </Segment>
+        </Flex>
       </Flex>
-    </div>
+    </ComponentPrototype> 
   )
 }

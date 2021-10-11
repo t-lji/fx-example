@@ -1,6 +1,6 @@
 import { Attachment, MoreIcon, TableIcon } from '@fluentui/react-northstar'
 
-export default function AttachmentItem() {
+export default function AttachmentItem(props) {
   const handleClick = message => e => {
     alert(`'${message}' was clicked`)
     e.stopPropagation()

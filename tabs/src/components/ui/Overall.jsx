@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   AddIcon, 
+  Box,
   Button, 
   CloseIcon, 
   EmailIcon, 
@@ -13,7 +14,9 @@ import {
   Label,
   Menu,
   Provider,
-  Segment  } from '@fluentui/react-northstar'
+  Segment,
+  SplitButton,
+  Text, } from '@fluentui/react-northstar'
 import "./Overall.css";
 import NestingThemesCode from '!!raw-loader!../../assets/code/layout/NestingThemesCode.jsx'
 import FlexGapCode from '!!raw-loader!../../assets/code/layout/FlexGapCode.jsx'
@@ -22,12 +25,12 @@ import GridFourCode from '!!raw-loader!../../assets/code/layout/GridFourCode.jsx
 import GridTwoCode from '!!raw-loader!../../assets/code/layout/GridTwoCode.jsx'
 import Code from "../util/CodeUtil"
 import { TopJumper, ScrollToAnchor } from "../util/ScrollUtil";
-import { Collapse } from "../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../util/PageUtil";
 
 // show teams theme picture
-function Theme() {
+function Themes() {
   const steps = ["Default", "Dark", "High contrast"];
-  const [selectedMenuItem, setSelectedMenuItem] = useState("Default");
+  const [selectedMenuItem, setSelectedMenuItem] = React.useState("Default");
   const items = steps.map((step) => {
     return {
       key: step,
@@ -36,38 +39,39 @@ function Theme() {
     };
   });
   return (
-    <div className="Theme page">
-      <Header as="h4" content="Themes" />
-
+    <Box className="Theme page" styles={{ marginBottom: '40px' }}>
       <Menu defaultActiveIndex={0} items={items} underlined secondary />
-      <div>
-        <div>
+      <Box>
+        <Box>
           {selectedMenuItem === "Default" && (
-            <div>
+            <Box>
               <Image src="pic/default_theme.png" />
-            </div>
+            </Box>
           )}
           {selectedMenuItem === "Dark" && (
-            <div>
+            <Box>
               <Image src="pic/dark_theme.png" />
-            </div>
+            </Box>
           )}
           {selectedMenuItem === "High contrast" && (
-            <div>
+            <Box>
               <Image src="pic/high_contrast_theme.png" />
-            </div>
+            </Box>
           )}
-        </div>
-      </div>
-    </div>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 
-function NestingThemesNode() {
+function NestingThemes() {
   return (
-    <div>
+    <Box styles={{ marginBottom: '40px' }}>
+      <Collapse><Code code={ NestingThemesCode } /></Collapse>
+
+      <Header as="h3" content="Nesting Themes" />
+
       {/* Default theming */}
-      <Header as="h4" content="Default theming" />
       <Button content="Button" />
       <Button icon={<AddIcon />} iconOnly primary />
       <Button icon={<EmailIcon />} content="Send email" secondary />
@@ -84,8 +88,8 @@ function NestingThemesNode() {
           },
         }}
       >
-        <div>
-          <Header as="h4" content="First nested theming" />
+        <Box>
+          <Header as="h3" content="First nested theming" />
 
           <Button content="Button" />
           <Button icon={<AddIcon />} iconOnly primary />
@@ -103,45 +107,38 @@ function NestingThemesNode() {
               },
             }}
           >
-            <div>
-              <Header as="h4" content="Second nested theming" />
+            <Box>
+              <Header as="h3" content="Second nested theming" />
 
               <Button content="Button" />
               <Button icon={<AddIcon />} iconOnly primary />
               <Button icon={<EmailIcon />} content="Send email" secondary />
               <EmojiIcon size="larger" />
               <Label content="Label with icon" icon={<CloseIcon />} />
-            </div>
+            </Box>
           </Provider>
-        </div>
+        </Box>
       </Provider>
-    </div>
-  )
-}
-
-function NestingThemes() {
-  return (
-    <div>
-      <Header as="h3" content="Nesting Themes" />
-
-      <Collapse><Code code={ NestingThemesCode } /></Collapse>
-      <NestingThemesNode />
-    </div>
+    </Box>
   )
 }
 
 function Layout() {
   return (
-    <div>
-      <Header as="h3" content="Layout" />
-        
-      <div>
-        <Header as="h4" content="Flex" />
+    <Box>
+      <Box styles={{ marginBottom: '40px' }}>
+        <Header as="h3" content="Flex" />
+
+        <Text>
+          <code>Flex</code> is for either columns or rows. This means that if you are 
+          laying out items in one direction (for example buttons inside a header),
+          then you should use Flex.
+        </Text>
 
         <Collapse><Code code={ FlexGapCode } /></Collapse>
           <Flex gap="gap.small">
             <Segment color="brand" content="ABCDEF" inverted />
-            <Segment color="green" content="GHIJKL" inverted />
+            <Segment color="grey" content="GHIJKL" inverted />
             <FlexItem push>
               <Segment color="red" content="MNOPQR" inverted />
             </FlexItem>
@@ -153,10 +150,15 @@ function Layout() {
             <Segment content="GHIJKL" />
             <Segment color="green" content="MNOPQR" inverted />
           </Flex>
-      </div>
+      </Box>
 
-      <div>
-        <Header as="h4" content="Grid" />
+      <Box styles={{ marginBottom: '40px' }}>
+        <Header as="h3" content="Grid" />
+
+        <Text>
+        <code>Grid</code> is for lining things up in columns and rows, it implements Grid 
+          layout module.
+        </Text>
 
         <Collapse><Code code={ GridFourCode } /></Collapse>
         <Grid columns="repeat(4, 1fr)" rows="50px 150px 50px">
@@ -231,26 +233,67 @@ function Layout() {
             }}
           />
         </Grid>
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 
-export default class Overall extends React.Component {
-  render() {
-    return (
-      <div className="Overall page">
-        <Header as="h2" content="Overall" />
-        <ul id="OverallList">
-          <li><Button onClick={ () => ScrollToAnchor('Themes') }>Themes</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('NestingThemes') }>Nesting Themes</Button></li>
-          <li><Button onClick={ () => ScrollToAnchor('Layout') }>Layout</Button></li>
-        </ul>
-        <div id="Themes"><Theme /></div>
-        <div id="NestingThemes"><NestingThemes /></div>
-        <div id="Layout"><Layout /></div>
-        <TopJumper />
-      </div>
-    )
-  }
+export default function Overall() {
+  const menu = [
+    {
+      key: 'Themes',
+      content: 'Themes',
+    },
+    {
+      key: 'NestingThemes',
+      content: 'Nesting Themes',
+    },
+    {
+      key: 'Layout',
+      content: 'Layout',
+    },
+  ]
+  return (
+    <Box className="Overall page">
+      <Flex gap="gap.small">
+        <Box class="HeaderBox">
+          <Box class="HeaderContent">
+          <SplitButton
+            menu={ menu }
+            button={{
+              content: 'Overall',
+              'aria-roledescription': 'splitbutton',
+              'aria-describedby': 'instruction-message-primary-button',
+            }}
+            primary
+            size="largest"
+            toggleButton={{
+              'aria-label': 'more options',
+            }}
+            onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+          />
+          </Box>
+        </Box>
+        <Box class="ContentBox">
+          <ComponentPrototype id="Themes" title="Themes" description="Show teams theme pictures">
+            <Themes />
+          </ComponentPrototype>
+          <ComponentPrototype id="NestingThemes" title="Nesting Themes" 
+            description="If you have areas of an application that require additional 
+            theming, you can achieve that using nested providers and overwrite the 
+            needed styles."
+          >
+            <NestingThemes />
+          </ComponentPrototype>
+          <ComponentPrototype id="Layout" title="Layout" 
+            description="Fluent UI has Flex and Grid components to handle layout 
+            aspects, they represent corresponding CSS layout modules ."
+          >
+            <Layout />
+          </ComponentPrototype>
+          <TopJumper />
+        </Box>
+      </Flex>
+    </Box>
+  )
 }

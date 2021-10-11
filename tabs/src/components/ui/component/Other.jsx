@@ -3,6 +3,7 @@ import _ from 'lodash'
 import { 
   AcceptIcon,
   BanIcon,
+  Box, 
   Button, 
   CallPstnIcon,
   Divider, 
@@ -15,6 +16,7 @@ import {
   OneDriveIcon,
   QuestionCircleIcon,
   Slider,
+  SplitButton,
   Status,
   Text, 
   ProviderConsumer, } from '@fluentui/react-northstar'
@@ -23,15 +25,15 @@ import LoaderCode from '!!raw-loader!../../../assets/code/component/other/Loader
 import SliderCode from '!!raw-loader!../../../assets/code/component/other/SliderCode.jsx'
 import StatusCode from '!!raw-loader!../../../assets/code/component/other/StatusCode.jsx'
 import Code from "../../util/CodeUtil"
-import { Collapse } from "../../util/PageUtil";
+import { Collapse, ComponentPrototype } from "../../util/PageUtil";
 import { ScrollToAnchor } from "../../util/ScrollUtil";
 
-function DividerItem() {
+function DividerItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Divider" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Divider" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Divider visually segments content.
       </Text>
       <Collapse>
@@ -44,16 +46,16 @@ function DividerItem() {
           ))
         }
       />
-    </div>
+    </Box>
   )
 }
 
-function LoaderItem() {
+function LoaderItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Loader" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Loader" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A loader alerts a user that content is being loaded or processed and 
         they should wait for the activity to complete.
       </Text>
@@ -61,11 +63,11 @@ function LoaderItem() {
         <Code code={ LoaderCode } />
       </Collapse>
       <Loader size="large" label="At start / Large" labelPosition="start" />
-    </div>
+    </Box>
   )
 }
 
-function SliderItem() {
+function SliderItem(props) {
   const stateReducer = (state, action) => {
     switch (action.type) {
       case 'toggle_mute':
@@ -107,10 +109,10 @@ function SliderItem() {
     onChange: handleChange,
   }
   return (
-    <div>
-      <Header as="h4" content="Slider" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Slider" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Slider represents an input that allows user to choose a value from within a specific range.
       </Text>
       <Collapse>
@@ -140,16 +142,16 @@ function SliderItem() {
         />
         <Button onClick={ () => setVertical(!vertical) } content="Vertical/Horizonal" />
       </Flex>
-    </div>
+    </Box>
   )
 }
 
-function StatusItem() {
+function StatusItem(props) {
   return (
-    <div>
-      <Header as="h4" content="Status" />
+    <Box id={ props.id } styles={{ marginBottom: '40px' }}>
+      <Header as="h3" content="Status" />
 
-      <Text weight="regular" size="large">
+      <Text weight="regular" >
         A Status represents someone's or something's state.
       </Text>
       <Collapse>
@@ -172,24 +174,50 @@ function StatusItem() {
           <Status state="unknown" title="unknown" icon={ <QuestionCircleIcon /> } /> <code>state="unknown"</code>
         </Flex>
       </Flex>
-    </div>
+    </Box>
   )
 }
 
 export default function Other() {
+  const menu = [
+    {
+      key: 'DividerItem',
+      content: 'Divider',
+    },
+    {
+      key: 'LoaderItem',
+      content: 'Loader',
+    },
+    {
+      key: 'SliderItem',
+      content: 'Slider',
+    },
+    {
+      key: 'StatusItem',
+      content: 'Status',
+    },
+  ]
   return (
-    <div>
-      <Header as="h3" content="Other" />
-      <ul id="OtherList">
-        <li><Button onClick={ () => ScrollToAnchor('DividerItem') }>Divider</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('LoaderItem') }>Loader</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('SliderItem') }>Slider</Button></li>
-        <li><Button onClick={ () => ScrollToAnchor('StatusItem') }>Status</Button></li>
-      </ul>
-      <div id="DividerItem"><DividerItem /></div>
-      <div id="LoaderItem"><LoaderItem /></div>
-      <div id="SliderItem"><SliderItem /></div>
-      <div id="StatusItem"><StatusItem /></div>
-    </div>
+    <Box>
+      <ComponentPrototype title="Other">
+        <SplitButton
+          menu={ menu }
+          button={{
+            content: 'Go To',
+            'aria-roledescription': 'splitbutton',
+            'aria-describedby': 'instruction-message-primary-button',
+          }}
+          primary
+          toggleButton={{
+            'aria-label': 'more options',
+          }}
+          onMenuItemClick= { (e, { index }) => ScrollToAnchor(menu[index].key) }
+        />
+        <DividerItem id="DividerItem" />
+        <LoaderItem id="LoaderItem" />
+        <SliderItem id="SliderItem" />
+        <StatusItem id="StatusItem" />
+      </ComponentPrototype>
+    </Box>
   )
 }

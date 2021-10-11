@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
   Alert,
+  Box, 
   Button, 
   ExpandIcon,
   Flex,
   MenuButton } from '@fluentui/react-northstar'
 
-export default function MenuButtonItem() {
-  const [alertFlag, setAlert] = useState(false);
+export default function MenuButtonItem(props) {
+  const [alertFlag, setAlert] = React.useState(false);
   const showAlert = () => {
     setAlert(true) || setTimeout(() => { setAlert(false) }, 2000)
   }
@@ -23,7 +24,7 @@ export default function MenuButtonItem() {
     },
   ]
   return (
-    <div>
+    <Box>
       <>
         <Flex gap="gap.smaller">
           <MenuButton
@@ -61,6 +62,6 @@ export default function MenuButtonItem() {
           />
         )}
       </>
-    </div>
+    </Box>
   )
 }

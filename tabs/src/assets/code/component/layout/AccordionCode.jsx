@@ -7,7 +7,7 @@ import {
   Layout,  
   Label } from '@fluentui/react-northstar'
 
-export default function AccordionItem() {
+export default function AccordionItem(props) {
   const panels = [
     {
       key: 'default',

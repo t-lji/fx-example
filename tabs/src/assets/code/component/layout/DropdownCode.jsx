@@ -1,6 +1,6 @@
 import { Dropdown } from '@fluentui/react-northstar'
 
-export default function DropdownItem() {
+export default function DropdownItem(props) {
   const inputItems = [
     'Robert Tolbert',
     'Wanda Howard',

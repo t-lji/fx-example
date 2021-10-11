@@ -1,6 +1,6 @@
 import React from "react";
 import * as ReactDOM from 'react-dom';
-import { AcceptIcon, Avatar, Flex, Header, Text } from '@fluentui/react-northstar';
+import { AcceptIcon, Avatar, Box, Flex, Header, Text } from '@fluentui/react-northstar';
 
 export default function HexagonalAvatar() {
   const CustomAvatar = (props) => {
@@ -49,8 +49,8 @@ export default function HexagonalAvatar() {
   };
 
   return (
-    <div>
-      <Header as="h4" content="Hexagonal Avatar" />
+    <Box>
+      <Header as="h3" content="Hexagonal Avatar" />
 
       {/* Make sure that this is rendered only once in the application tree. */}
       {ReactDOM.createPortal(
@@ -65,7 +65,7 @@ export default function HexagonalAvatar() {
         'bot-hexagon-clip-path',
       )}
       <Flex column padding="padding.medium" gap="gap.medium">
-        <div>
+        <Box>
           <Text content="Hexagonal Avatar" />
           &emsp;
           <CustomAvatar
@@ -73,16 +73,16 @@ export default function HexagonalAvatar() {
             image="https://fabricweb.azureedge.net/fabric-website/assets/images/avatar/RobertTolbert.jpg"
             status={statusProps}
           />
-        </div>
-        <div>
+        </Box>
+        <Box>
           <Text content="Regular Avatar" />
           &emsp;
           <CustomAvatar
             image="https://fabricweb.azureedge.net/fabric-website/assets/images/avatar/RobertTolbert.jpg"
             status={statusProps}
           />
-        </div>
+        </Box>
       </Flex>
-    </div>
+    </Box>
   )
 }

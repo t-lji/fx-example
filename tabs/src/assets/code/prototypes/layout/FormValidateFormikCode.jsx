@@ -7,16 +7,17 @@ import {
   FormButton,
   FormDropdown,
   Header, 
-  Segment } from '@fluentui/react-northstar';
+  Segment,
+  Text } from '@fluentui/react-northstar';
 import { Formik } from 'formik';
 
 export default function FormValidateFormik() {
   return (
-    <div>
+    <Box>
       <Box styles={{ marginTop: '20px' }}>
           <Segment>
             <Header as="h3" content="List with context menu" />
-            <p>Context menu can be opened by clicking on the more button or by right mouse button</p>
+            <Text>Context menu can be opened by clicking on the more button or by right mouse button</Text>
           </Segment>
           <Segment>
             <Flex>
@@ -77,6 +78,6 @@ export default function FormValidateFormik() {
             </Flex>
           </Segment>
         </Box>
-      </div>
+      </Box>
   )
 }

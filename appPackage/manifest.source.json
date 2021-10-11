@@ -147,10 +147,10 @@
     ],
     "staticTabs": [
         {
-            "entityId": "ui",
-            "name": "UI",
-            "contentUrl": "{baseUrl}/index.html#/ui",
-            "websiteUrl": "{baseUrl}/index.html#/ui",
+            "entityId": "teams toolkit",
+            "name": "Teams Toolkit",
+            "contentUrl": "{baseUrl}/index.html#/toolkit",
+            "websiteUrl": "{baseUrl}/index.html#/toolkit",
             "scopes": [
                 "personal"
             ]
@@ -165,10 +165,10 @@
             ]
         },
         {
-            "entityId": "teams toolkit",
-            "name": "Teams Toolkit",
-            "contentUrl": "{baseUrl}/index.html#/toolkit",
-            "websiteUrl": "{baseUrl}/index.html#/toolkit",
+            "entityId": "ui",
+            "name": "UI",
+            "contentUrl": "{baseUrl}/index.html#/ui",
+            "websiteUrl": "{baseUrl}/index.html#/ui",
             "scopes": [
                 "personal"
             ]
