@@ -1,5 +1,5 @@
 import * as microsoftTeams from '@microsoft/teams-js';
-import { Button, Flex, Text } from '@fluentui/react-northstar';
+import { Button, Flex, Image, Text } from '@fluentui/react-northstar';
 import DeepLinkCode from '!!raw-loader!../../../assets/code/tab/deepLink/DeepLinkCode.jsx'
 import DeepLinkDefinition from '!!raw-loader!../../../assets/code/tab/deepLink/DefinitionCode.txt'
 import EnvCode from '!!raw-loader!../../../assets/code/tab/deepLink/envCode.txt'
@@ -53,7 +53,17 @@ export default function DeepLink() {
       <Flex column>
         <Flex>
           <Text weight="regular" size="large"> 
-            2. Append code below to the <code>.fx/local.env</code> and <code>tabs/.env</code>
+            2. You can find your App id in Teams App Studio:
+          </Text>
+        </Flex>
+        <Flex class="StepContent"><Image src="pic/App_studio_location.png" /></Flex>
+        <Flex class="StepContent"><Image src="pic/Edit_your_app.png" /></Flex>
+        <Flex class="StepContent"><Image src="pic/App_id.png" /></Flex>
+      </Flex>
+      <Flex column>
+        <Flex>
+          <Text weight="regular" size="large"> 
+            3. Append code below to the <code>.fx/local.env</code> and <code>tabs/.env</code>
             in your project:
           </Text>
         </Flex>
