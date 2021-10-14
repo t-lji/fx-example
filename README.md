@@ -7,8 +7,8 @@ At current stage, Teams App has a wealth of features and many applications. At p
 # Features
 
 - Simple, intuitive interface for all developers for developers with limited acknowledge and experience on Teams App to be as simple and intuitive as possible.
-- Efficient – since reading documents and finding APIs on webs is time consuming, my App had to be efficient with examples such as getting the user information, uploading/downloading files and showing UI components.
-- Cross platform[optional] – the App be available across 2 platforms: Teams Client and Mobile Teams App. I chose to adaptive design to achieve the same experience both on computers and mobile phones.
+- Efficient – since reading documents and finding APIs on webs is time consuming, this App had to be efficient with examples such as getting the user information, uploading/downloading files and showing UI components.
+- Cross platform[optional] – the App be available across 2 platforms: Teams Client and Mobile Teams App. The app will be designed adaptively to achieve the same experience both on computers and mobile phones.
 
 # Structure
 
@@ -18,14 +18,14 @@ At current stage, Teams App has a wealth of features and many applications. At p
 
 ### Teams Toolkit
 
-This part shows our Teams Extension (Teams Toolkit) features, I may show almost all the features in the form of GIF graph and give tips:
+This part shows Teams Extension (Teams Toolkit) features, there are GIF pictures to display almost all the features giving tips:
 
 - **GETTING STARTED**: information about how to create an App by using a sample
 - **PROJECT**: includes Create New Project, Add Capabilities, Deploy to the Cloud and so on. You can create your own App and publish it on the Azure or Teams just in Visual Studio Code.
 
 ### Teams Dev
 
-This part shows how to use our Teams App ability step by step and [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/graph-explorer) in Teams, I may show some features in the form of GIF graph and give tips on [@microsoft/teams-js](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest) and [@microsoft/teamsfx](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teamsfx/?view=msteams-client-js-latest) SDK:
+This part shows how to use Teams App ability step by step and [Microsoft Graph API](https://developer.microsoft.com/en-us/graph/graph-explorer) in Teams, there are GIF pictures to display some features and giving tips on [@microsoft/teams-js](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teams-js/?view=msteams-client-js-latest) and [@microsoft/teamsfx](https://docs.microsoft.com/en-us/javascript/api/@microsoft/teamsfx/?view=msteams-client-js-latest) SDK:
 
 - **Tab**: includes Deeplink/Mobile tab[optional]/Static Tab - [README](./tabs/README.md)
 - **Bot**: includes Adaptive Card - [README](./bot/README.md)
