@@ -14,7 +14,7 @@ function CreateNewMeeting() {
 
 function MoveToTab() {
   const appId = process.env.REACT_APP_APP_ID;
-  var encodedWebUrl = encodeURI(process.env.REACT_APP_WEB_SITE + '/#/ui');
+  var encodedWebUrl = encodeURI(process.env.REACT_APP_WEBSITE + '/#/ui');
   var encodedContext = encodeURI('{ "subEntityId": "ui" "subEntityLabel": "ui", subEntityWebUrl: ' + encodedWebUrl + '}');
   var url = 'https://teams.microsoft.com/l/entity/' + appId + '/ui?webUrl=' + encodedWebUrl + '&context=' + encodedContext;
   microsoftTeams.executeDeepLink(url);
@@ -53,12 +53,13 @@ export default function DeepLink() {
       <Flex column>
         <Flex>
           <Text weight="regular" size="large"> 
-            2. You can find your App id in Teams App Studio:
+            2. You can find your App id and website in Teams App Studio:
           </Text>
         </Flex>
         <Flex class="StepContent"><Image src="pic/App_studio_location.png" /></Flex>
         <Flex class="StepContent"><Image src="pic/Edit_your_app.png" /></Flex>
         <Flex class="StepContent"><Image src="pic/App_id.png" /></Flex>
+        <Flex class="StepContent"><Image fluid src="pic/App_website.png" /></Flex>
       </Flex>
       <Flex column>
         <Flex>
