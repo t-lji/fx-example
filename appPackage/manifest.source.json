@@ -156,10 +156,10 @@
             ]
         },
         {
-            "entityId": "teams fx",
-            "name": "Teams Fx",
-            "contentUrl": "{baseUrl}/index.html#/fx",
-            "websiteUrl": "{baseUrl}/index.html#/fx",
+            "entityId": "teams Dev",
+            "name": "Teams Dev",
+            "contentUrl": "{baseUrl}/index.html#/dev",
+            "websiteUrl": "{baseUrl}/index.html#/dev",
             "scopes": [
                 "personal"
             ]

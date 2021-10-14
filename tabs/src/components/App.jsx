@@ -8,9 +8,9 @@ import TermsOfUse from "./TermsOfUse";
 import "./App.css";
 import TabConfig from "./TabConfig";
 import UI from "./FluentUI"
-import TeamsFx from "./TeamsFx"
+import TeamsDev from "./TeamsDev"
 import TeamsToolkit from "./TeamsToolkit"
-import PersonalTab from "./teamsfx/tab/PersonalTab";
+import PersonalTab from "./teamsdev/tab/PersonalTab";
 
 /**
  * The main app which handles the initialization and routing
@@ -32,7 +32,7 @@ export default function App() {
             <Route exact path="/termsofuse" component={TermsOfUse} />
             <Route exact path="/config" component={TabConfig} />
             <Route exact path="/ui" component={ UI } />
-            <Route exact path="/fx" component={ TeamsFx } />
+            <Route exact path="/dev" component={ TeamsDev } />
             <Route exact path="/toolkit" component={ TeamsToolkit } />
             <Route exact path="/personaltab" component={ PersonalTab } />
           </>

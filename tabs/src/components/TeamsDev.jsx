@@ -1,7 +1,7 @@
 import React from "react";
-import Tab from "./teamsfx/Tab"
-import Bot from "./teamsfx/Bot"
-import MessagingExtension from "./teamsfx/MessagingExtension"
+import Tab from "./teamsdev/Tab"
+import Bot from "./teamsdev/Bot"
+import MessagingExtension from "./teamsdev/MessagingExtension"
 import { Box, Menu } from '@fluentui/react-northstar'
 import "./App.css"
 
