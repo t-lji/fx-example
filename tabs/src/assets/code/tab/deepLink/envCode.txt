@@ -1,2 +1,2 @@
 REACT_APP_APP_ID=<Your-App-id>
-REACT_APP_WEBSITE=<Your-App-website>
+REACT_APP_WEB_SITE=<Your-App-website>

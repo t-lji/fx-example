@@ -1,2 +1,2 @@
 FRONTEND_REACT_APP_APP_ID=<Your-local-App-id>
-FRONTEND_REACT_APP_WEBSITE=<Your-local-App-website>
+FRONTEND_REACT_APP_WEB_SITE=<Your-local-App-website>
