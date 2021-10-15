@@ -1,2 +1,2 @@
-REACT_APP_APP_ID=acc4e997-211e-485c-a509-ca6506414517
-REACT_APP_WEB_SITE=https://fxexamplefe45e3c9.z13.web.core.windows.net
+REACT_APP_APP_ID=<Your-App-id>
+REACT_APP_WEBSITE=<Your-App-website>
